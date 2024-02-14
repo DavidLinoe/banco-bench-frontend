@@ -1,0 +1,33 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+/>
+
+<div class="bgimage">
+  <div class="login-box">
+    
+    <div class="login-content">
+      @if (conditionSignIn) {
+
+      <div class="container-login">
+        <app-signin> </app-signin>
+      </div>
+
+      } @else {
+
+      <div class="container-login">
+        <app-signup> </app-signup>
+      </div>
+
+      }
+    </div>
+  </div>
+</div>
+<!--
+
+  criar botao com a tag a
+  register 
+  login 
+  form
+
+-->

@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+
+.bgimage{
+height: 100vh;
+background-size: cover;
+background-repeat: no-repeat, repeat-x;
+background-position: center, center;
+  background-image: url('https://cucafresca.com.br/public/site/img/sections/cloud.jpeg');
+}
+.login-box{
+  display: flex;
+  padding: 10%;
+  align-items: center;
+  justify-content: center;
+
+}
+.login-content{
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+background-color: #3E86CF;
+
+width: 260px;
+height: 270px;
+border-radius: 12px;
+}

@@ -1,0 +1,29 @@
+<div class="register-box" [formGroup]="RegisterForm">
+  <h1>Sign Up</h1>
+
+  <br />
+
+  <input type="text" placeholder="Full Name" formControlName="user" />
+  <br />
+
+  <input type="text" placeholder="Phone Number" formControlName="phone" />
+  <br />
+
+  <input type="text" placeholder="Email" formControlName="email" />
+  <br />
+
+  <input type="password" placeholder="Senha" formControlName="senha" />
+</div>
+
+<div>
+
+
+  <a
+  (click)="enviarRegistro()"
+  class="btn"
+  
+  >Register
+
+  </a>
+</div>
+

@@ -1,0 +1,29 @@
+
+<div class="login-box" [formGroup]="loginForm">
+    
+    <h1>Sign In</h1>
+
+  <br/>
+
+    <input type="text" placeholder="Email" formControlName="email" />
+    <br/>
+
+    <input type="password" placeholder="Senha" formControlName="senha" />
+  </div>
+
+
+
+
+  <div>
+
+
+    <a
+    (click)="enviarLogin()"
+    class="btn"
+    
+    >Login
+
+    </a>
+  </div>
+
+  
