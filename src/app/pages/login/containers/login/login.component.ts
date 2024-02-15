@@ -41,7 +41,12 @@ export class LoginComponent implements OnInit {
           if (res.validation) console.log('Acessou!');
           else console.log('Acesso Negado!');
         };
-        error: (err: any) => {}
+        error: (err: any) => {};
       });
+  }
+  modificarCardLogin() {
+    setTimeout(() => {
+      this.conditionSignIn = !this.conditionSignIn;
+    }, 350);
   }
 }

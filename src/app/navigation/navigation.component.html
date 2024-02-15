@@ -1,0 +1,21 @@
+<nb-layout>
+    <nb-layout-header fixed>
+   <button nbButton status="info" size="tiny" (click)="toggleCompact()"> 
+      
+      <i src="../../assets/images/menu-outline.png"></i>
+      
+    </button> 
+    </nb-layout-header>
+
+    <nb-sidebar left tag="left">
+      @if (sidebarState === 'compacted') {
+        <h4>T.</h4>
+      }@else {
+        <h4>Teste</h4>
+      }
+    </nb-sidebar>
+  
+    <nb-layout-column class="colored-column-warning">
+      <router-outlet></router-outlet>
+    </nb-layout-column>
+  </nb-layout>
