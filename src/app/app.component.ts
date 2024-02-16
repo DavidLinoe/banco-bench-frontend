@@ -3,18 +3,20 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { LoginModule } from './pages/login/login.module';
-import { NbStatusService } from '@nebular/theme';
-
+import { NbRestoreScrollTopHelper, NbSidebarService, NbStatusService } from '@nebular/theme';
+import { HeaderComponent } from './header/header.component';
+import { NavigationModule } from './navigation/navigation.module';
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    FooterComponent,
-    LoginModule,
-   
   ],
-  providers:[NbStatusService],
+  providers:[
+    NbStatusService,
+    NbSidebarService,  
+    NbRestoreScrollTopHelper// nao sei pra que, mas precisa
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   

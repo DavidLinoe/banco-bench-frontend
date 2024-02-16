@@ -1,13 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SigninComponent } from './login/components/signin/signin.component';
+import { RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NbLayoutModule, NbSidebarModule } from '@nebular/theme';
+// import { NavigationComponent } from '../navigation/navigation.component';
 
-
+const routes: Routes = [
+  {
+    path: '',
+    component: DashboardComponent
+  }
+]
 
 @NgModule({
-  declarations: [],
+  declarations: [DashboardComponent],//declarar aqui as outras paginas que vao usar nb
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forChild(routes),
+    NbLayoutModule,
+    NbSidebarModule,
   ]
 })
-export class PagesModule { }
+export class PagesModule {
+  constructor(){
+    console.log('b');
+    
+  }
+}

@@ -1,0 +1,24 @@
+.header {
+
+  position: absolute;
+  background-image: url("..//..//assets/images/marca_cuca.png");
+
+
+  background-repeat: no-repeat, repeat-x;
+  background-position: right, center;
+
+height: 90%;
+width: 70px;
+}
+.navigate-buttons {
+ 
+  text-align: right;
+  padding-right: 170px;
+}
+.navigate-buttons ul li {
+  display: inline-block;
+  padding-right: 15px;
+}
+.navigate-buttons ul li a {
+  color: #ffffff;
+}
