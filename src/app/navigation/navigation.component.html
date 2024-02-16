@@ -1,21 +1,57 @@
 <nb-layout>
-    <nb-layout-header fixed>
-   <button nbButton status="info" size="tiny" (click)="toggleCompact()"> 
-      
-      <i src="../../assets/images/menu-outline.png"></i>
-      
-    </button> 
-    </nb-layout-header>
+  <nb-layout-header class="header" fixed>
+    <button nbButton status="info" size="tiny" (click)="toggleCompact()">
+      Menu
+    </button>
 
-    <nb-sidebar left tag="left">
-      @if (sidebarState === 'compacted') {
-        <h4>T.</h4>
-      }@else {
-        <h4>Teste</h4>
-      }
-    </nb-sidebar>
+    <div class="navigate-buttons">
+      <ul>
+        <li> <a href="http://localhost:4200/home"><img src="../../assets/images/Style=Filledsettings.png" class="img-top">Account</a></li>
+
+        <li>
+          <a href="http://localhost:4200/home"><img src="../../assets/images/Style=Filleddashboard.png" class="img-top">Dashboard</a>
+        </li>
+
+        <li> <a href="http://localhost:4200/home"><img src="../../assets/images/Style=Sharpsac.png" class="img-top">SAC</a>
+
+        <li>
+          <a href="http://localhost:4200/home"><img src="../../assets/images/Style=Roundpin.png" class="img-top">Quem Somos</a>
+
+        </li>
+      </ul>
+    </div> 
+  </nb-layout-header>
+
+  <nb-sidebar left tag="left">
+    @if (sidebarState === 'compacted') {
+    
+        <a href="http://localhost:4200/carteira"><img src="../../assets/images/Style=Roundwallet.png" class="img-side"></a>
+ 
+        <a href="http://localhost:4200/pix"><img src="../../assets/images/Style=Outlinedtransfer.png" class="img-side"></a>
+ 
+        <a href="http://localhost:4200/transferencia"><img src="../../assets/images/Style=Roundcard.png" class="img-side"></a>
   
-    <nb-layout-column class="colored-column-warning">
-      <router-outlet></router-outlet>
-    </nb-layout-column>
-  </nb-layout>
+        <a href="http://localhost:4200/boleto"><img src="../../assets/images/Style=Roundboleto.png" class="img-side"></a>
+  
+        <a href="http://localhost:4200/extrato"><img src="../../assets/images/Style=Filledextract.png" class="img-side"></a>
+
+ 
+ 
+
+    }@else {
+
+    <div class="navigate-buttons-side">
+      <a href="http:localhost:4200/carteira" class="btn1">Carteira</a>
+      <a href="http:localhost:4200/pix" class="btn2">Pix</a>
+      <a href="http:localhost:4200/transferencia" class="btn3">Transferencia</a>
+      <a href="http:localhost:4200/boleto" class="btn4">Boleto</a>
+      <a href="http:localhost:4200/extrato" class="btn5">Extrato</a>
+    </div>
+
+    }
+  </nb-sidebar>
+
+  <nb-layout-column class="colored-column-warning">
+    <router-outlet> </router-outlet>
+  </nb-layout-column>
+</nb-layout>

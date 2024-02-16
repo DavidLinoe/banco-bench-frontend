@@ -1,0 +1,75 @@
+.header {
+  position: fixed;
+  background-image: url("..//..//assets/images/marca_cuca.png");
+
+  box-shadow: rgba(108, 182, 255, 0.4) 0px 3px, rgba(108, 182, 255, 0.3) 0px 6px,
+    rgba(108, 182, 255, 0.2) 0px 9px, rgba(108, 182, 255, 0.1) 0px 12px,
+    rgba(108, 182, 255, 0.05) 0px 15px,rgba(108, 182, 255, 0.002) 0px 18px;
+
+  background-repeat: no-repeat, repeat-x;
+  background-position: right, center;
+
+  background-color: #6cb6ff;
+}
+.navigate-buttons {
+
+  text-decoration: none;
+align-items: center;
+  padding-right: 170px;
+}
+.navigate-buttons ul li {
+    
+  display: inline-block;
+  padding-right: 15px;
+  padding-left: 5px;
+}
+.navigate-buttons ul li a {
+    align-items: center;
+    display: flex;
+  text-decoration: none;
+  color: #ffffff;
+  margin: 0px 20px 0 20px;
+}
+
+
+.navigate-buttons-side a {
+  width: auto;
+  height: 30px;
+  display: block;
+  padding-top: 5px;
+padding-left: 4px;
+  text-align: left;
+  text-decoration: none;
+  color: #1399e7;
+  margin: 45px 40px 10px 40px;
+  font-size: 13px;
+  font-weight: 800;
+  align-items: center;
+border-radius: 12px;
+  background-color: #dfdfdf;
+  background-size: 20px;
+  background-repeat: no-repeat, repeat-x;
+  background-position: right, center;
+}
+.navigate-buttons-side :hover {
+  color: #36e1f8;
+  border-radius: 4px;
+}
+.img-side {
+  padding: 40px 0px 8px 0px;
+}
+.btn1 {
+  background-image: url(../../assets/images/Style=Roundprofile.png);
+}
+.btn2 {
+  background-image: url(../../assets/images/Style=Outlinedtransfer.png);
+}
+.btn3 {
+  background-image: url(../../assets/images/Style=Roundcard.png);
+}
+.btn4 {
+  background-image: url(../../assets/images/Style=Roundboleto.png);
+}
+.btn5 {
+  background-image: url(../../assets/images/Style=Filledextract.png);
+}
