@@ -9,6 +9,9 @@ import { ExtratoComponent } from './menu/extrato/extrato.component';
 import { TransferenciaComponent } from './menu/transferencia/transferencia.component';
 import { PixComponent } from './menu/pix/pix.component';
 import { CarteiraComponent } from './menu/carteira/carteira.component';
+import { SacComponent } from './menu/sac/sac.component';
+import { AboutComponent } from './menu/about/about.component';
+import { AccountComponent } from './menu/account/account.component';
 // import { NavigationComponent } from '../navigation/navigation.component';
 
 const routes: Routes = [
@@ -50,6 +53,18 @@ const routes: Routes = [
     path: 'extrato',
     component: ExtratoComponent,
   },
+  {
+    path: 'sac',
+    component: SacComponent,
+  },
+  {
+    path: 'about',
+    component: AboutComponent,
+  },
+  {
+    path: 'account',
+    component: AccountComponent,
+  },
 ]
 
 @NgModule({
@@ -62,8 +77,5 @@ const routes: Routes = [
   ]
 })
 export class PagesModule {
-  constructor(){
-    console.log('b');
-    
-  }
+
 }

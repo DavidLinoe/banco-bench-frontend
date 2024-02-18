@@ -1,1 +1,69 @@
-<p>pix works!</p>
+<div class="carteira-container">
+
+    <div class="profile">
+        <ul>
+            <li>
+                Olá {{user}}
+            </li>
+            <li>
+                Saldo:
+                <input type="radio" (click)="eye()" />
+                @if (eyeCondition) {
+
+                <img src="../../../../assets/images/Style=Roundopen_eye.png">
+
+                } @else {
+
+                <img src="../../../../assets/images/Style=Roundclose_eye.png">
+                }
+
+
+                {{saldo}}
+            </li>
+        </ul>
+    </div>
+
+    <div class="carteira-cartao">
+        <ul>
+            <li><input type="button" class="btn-pix" (Click)="pix()">Pagar/>
+
+
+            </li>
+
+
+            <li><button class="btn-pix" onclick="">Copia e Cola</button></li>
+
+        </ul>
+
+
+   
+    </div>
+    
+    @if(pix){
+
+        <h1 >dadadad</h1>
+
+        }
+        @else{
+
+            <h1 >ahhahhaha</h1>
+        }
+
+
+    <div class="extrato-buttons">
+        <div class="extrato-buttons-box">
+            <ul>
+                <li> <a href="http://localhost:4200/pages/extrato">Minhas Chaves</a></li>
+                <li>
+
+                    <a href="http://localhost:4200/pages/extrato"> Contatos</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+</div>

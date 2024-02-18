@@ -1,0 +1,125 @@
+.carteira-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    flex-direction: column;
+}
+
+.profile ul {
+
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+
+}
+
+.profile ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 30px;
+    border-radius: 1px 20px 1px 20px;
+
+    padding: 10px 20px 0px 20px;
+    background-color: #8ebfff;
+    color: #ffffff;
+    text-shadow: 2px 4px 4px rgba(46, 91, 173, 0.6);
+
+    height: 40px;
+}
+
+
+.profile ul li input {
+
+
+    align-items: center;
+
+}
+
+.carteira-cartao {
+
+    margin: 200px 0px 100px 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carteira-cartao ul li {
+
+    margin: 0px 100px 0px 20px;
+    background-image: url(../../../../assets/images/1200px-Logo_-_pix_powered_by_Banco_Central_\(Brazil\,_2020\).png);
+    background-size: 60%;
+
+    background-position: top;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 120px;
+    width: 300px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.541);
+
+}
+
+
+
+
+.carteira-cartao ul li {
+    text-align: center;
+    display: inline-block;
+    background-color: #b8b8b8;
+    padding-top: 75px;
+    justify-content: center;
+    text-decoration: none;
+    color: #000000;
+    font-size: 40px;
+    text-shadow: 2px 4px 4px rgba(255, 255, 255, 0.6);
+}
+
+
+
+.extrato-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+
+}
+
+.extrato-buttons ul li {
+    background-color: rgb(117, 117, 117);
+    border-style: solid;
+    border-color: rgb(61, 61, 61);
+
+    border-width: 10px;
+    height: 120px;
+    width: 450px;
+    display: inline-block;
+    margin-right: 80px;
+    border-radius: 15px;
+
+}
+
+.extrato-buttons ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+
+
+    text-shadow: 2px 4px 4px rgba(46, 91, 173, 0.6);
+    padding-right: 15px;
+    padding-left: 5px;
+}
+
+.btn-pix {
+    background-color: #ffffff;
+    color: #32dad1;
+    border-radius: 15px;
+    border-color: #8effdd;
+    cursor: cell;
+    height: auto;
+    width: 300px;
+
+}
