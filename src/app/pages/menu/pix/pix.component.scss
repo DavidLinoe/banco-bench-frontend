@@ -37,16 +37,16 @@
 
 }
 
-.carteira-cartao {
+.pix-cartao {
 
-    margin: 200px 0px 100px 0px;
+    margin:20px 0px 60px 0px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.carteira-cartao ul li {
+.pix-cartao ul li {
 
     margin: 0px 100px 0px 20px;
     background-image: url(../../../../assets/images/1200px-Logo_-_pix_powered_by_Banco_Central_\(Brazil\,_2020\).png);
@@ -65,7 +65,7 @@
 
 
 
-.carteira-cartao ul li {
+.pix-cartao ul li {
     text-align: center;
     display: inline-block;
     background-color: #b8b8b8;
@@ -97,7 +97,7 @@
     height: 120px;
     width: 450px;
     display: inline-block;
-    margin-right: 80px;
+    margin-right: 20px;
     border-radius: 15px;
 
 }
