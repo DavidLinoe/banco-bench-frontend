@@ -1,37 +1,13 @@
 <div class="carteira-container">
 
-    <div class="profile">
-        <ul>
-            <li>
-                Olá {{user}}
-            </li>
-            <li>
-                Saldo:
-                <input type="radio" (click)="eye()" />
-                @if (eyeCondition) {
-
-                <img src="../../../../assets/images/Style=Roundopen_eye.png">
-
-                } @else {
-
-                <img src="../../../../assets/images/Style=Roundclose_eye.png">
-                }
-
-
-                {{saldo}}
-            </li>
-        </ul>
-    </div>
-
     <div class="pix-cartao">
         <ul>
-            <li><button class="btn-pix" onclick="">Pagar</button>
-
+            <li><input type="button"value="Pagar"class="btn-pix"(click)="pagarPix()" />
 
             </li>
 
 
-            <li><button class="btn-pix" onclick="">Copia e Cola</button></li>
+            <li><input type="button"value="Copia e Cola"class="btn-pix2"(click)="copiaColaPix()"></li>
 
         </ul>
 
@@ -39,6 +15,7 @@
    
     </div>
     
+
 
     <div class="extrato-buttons">
         <div class="extrato-buttons-box">
@@ -55,5 +32,11 @@
 
 
 
-
 </div>
+
+
+<ng-template #pixpay>
+
+    <app-newpix class="newpix" (fecharPix)="fecharPix()" [tipoPix]="tipoPix"></app-newpix> <!-- quando tem (é um filho)   e quando tem [É o pai]-->
+    
+</ng-template>
