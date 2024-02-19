@@ -28,7 +28,6 @@ padding-left: 670px;
 }
 .close:focus {
   color: black;
-  text-decoration: none;
 }
 .pix-box {
   display: flex;
@@ -43,6 +42,10 @@ padding-left: 670px;
   flex-direction: center;
   align-items: center;
   text-align: center;
+  list-style: none;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 40px;
 }
 .amount{
 
@@ -51,6 +54,24 @@ padding-left: 670px;
 }
 .input-pix{
 
+  border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: none;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: none;
+    border-right-color: #f7f7f700;
+    border-bottom-color: #000033;
+    background-color: transparent;
+    padding-left: 4px;
+    margin-bottom: 25px;
+
+}
+.input-pix2{
+text-align: center;
+width:90px ;
   border-top-width: 1px;
     border-right-width: 1px;
     border-bottom-width: 1px;
