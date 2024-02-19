@@ -1,1 +1,23 @@
-<p>newpix works!</p>
+<nb-card> <!--Nb é de Nebular, esse é uma componente importado do Nebular-->
+  <div class="container">
+    @if(tipoPix === "pagar"){
+
+    <div class="pix-box">
+      Pix
+      <span type="button" class="close" (click)="fecharPix.emit(true)" id="Btn"
+        >&times;</span
+      >
+    </div>
+
+    }@else{
+    <div class="pix-box">
+      Copia e Cola
+      <span type="button" class="close" (click)="fecharPix.emit(true)" id="Btn"
+        >&times;</span
+      >
+
+      <div class="next"></div>
+    </div>
+    }
+  </div>
+</nb-card>

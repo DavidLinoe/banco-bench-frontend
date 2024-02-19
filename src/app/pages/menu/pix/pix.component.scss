@@ -5,41 +5,10 @@
     flex-direction: column;
 }
 
-.profile ul {
-
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-
-}
-
-.profile ul li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    font-size: 30px;
-    border-radius: 1px 20px 1px 20px;
-
-    padding: 10px 20px 0px 20px;
-    background-color: #8ebfff;
-    color: #ffffff;
-    text-shadow: 2px 4px 4px rgba(46, 91, 173, 0.6);
-
-    height: 40px;
-}
-
-
-.profile ul li input {
-
-
-    align-items: center;
-
-}
 
 .pix-cartao {
 
-    margin:20px 0px 60px 0px;
+    margin:20px 0px 20px 0px;
 
     display: flex;
     justify-content: center;
@@ -121,5 +90,21 @@
     cursor: cell;
     height: auto;
     width: 300px;
+
+}
+.btn-pix2 {
+    background-color: #ffffff;
+    color: #32dad1;
+    border-radius: 15px;
+    border-color: #8effdd;
+    cursor: cell;
+    height: auto;
+    width: 300px;
+
+}
+.newpix{
+
+z-index: 2;
+
 
 }
