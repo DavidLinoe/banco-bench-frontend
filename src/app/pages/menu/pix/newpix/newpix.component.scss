@@ -1,0 +1,37 @@
+
+.pix-box {
+  background-color: rgb(78, 180, 248);
+  width: 700px;
+  height: 350px;
+
+}
+.container {
+  
+    font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+ 
+}
+
+.close {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #ff0000;
+}
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+.pix-box {
+  display: flex;
+  align-items: baseline;
+  justify-content: end;
+  
+}
