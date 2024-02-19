@@ -102,6 +102,29 @@ se for usar local host -->
   </nb-sidebar>
 
   <nb-layout-column class="colored-column-warning">
+    
+    <div class="profile">
+      <ul>
+          <li>
+              Olá {{user}}
+          </li>
+          <li>
+              Saldo:
+            
+              @if (eyeCondition) {
+
+              <img (click)="eye()"src="../../../../assets/images/Style=Roundopen_eye.png">
+
+              } @else {
+
+              <img (click)="eye()"src="../../../../assets/images/Style=Roundclose_eye.png">
+              }
+
+
+              {{saldo}}
+          </li>
+      </ul>
+  </div>
     <router-outlet> </router-outlet>
   </nb-layout-column>
 </nb-layout>
