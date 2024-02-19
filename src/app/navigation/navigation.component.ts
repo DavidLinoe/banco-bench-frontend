@@ -27,8 +27,8 @@ export class NavigationComponent {
   
   public eyeCondition: boolean = true;
 
-  user: string = 'David Eduardo Lino'
-  saldo: string = ' 300 $'
+  user: string = 'Luis Henrique Martins Dos Santos'
+  saldo: string = ' '
   bSaldo = this.saldo
 
   eye() {
@@ -38,7 +38,7 @@ export class NavigationComponent {
       this.eyeCondition = !this.eyeCondition;
       if (!this.eyeCondition)
 
-        this.saldo = ''
+        this.saldo = '156800.75 $'
 
           ;
 

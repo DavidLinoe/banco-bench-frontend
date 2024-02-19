@@ -2,12 +2,41 @@
   <div class="container">
     @if(tipoPix === "pagar"){
 
+
+      <div class="box">
     <div class="pix-box">
-      Pix
+    
       <span type="button" class="close" (click)="fecharPix.emit(true)" id="Btn"
         >&times;</span
-      >
+      >  <a> Pix </a>
+
+
+      <div class="amount">
+
+        <h1>{{saldo}}</h1>
+        
+        
+<div class="input">
+    
+  <h1></h1>
+
+<br/>
+
+  <input type="text" placeholder="Chave" class="input-pix" formControlName="Chave" />
+  <br/>
+
+  <input type="number" placeholder="Valor" class="input-pix"formControlName="Valor "/>
+</div>
+
+        </div>
+
+      
     </div>
+   
+  </div>
+
+
+
 
     }@else{
     <div class="pix-box">

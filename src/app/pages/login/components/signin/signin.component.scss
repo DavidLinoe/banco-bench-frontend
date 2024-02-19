@@ -11,7 +11,20 @@ text-shadow: rgb(121, 121, 121) 0.05em 0.05em 0.2em;
 border-radius: 12px;
    margin-bottom: 20px;
   }
-  
+  .login-box input{
+
+    border-width: 1px;
+    color: #ffffff;
+    border-top-style: none;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: none;
+    border-right-color: #f7f7f700;
+    border-bottom-color: #000033;
+   background-color: #ffffff6e;
+    padding-left: 4px;
+
+  }
 
 .btn {
 display: block;
