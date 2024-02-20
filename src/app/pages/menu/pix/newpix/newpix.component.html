@@ -11,40 +11,34 @@
           (click)="fecharPix.emit(true)"
           id="Btn"
           >&times;</span
-        >
-        <a> Pix </a>
+        >     <a> Pix </a>
+            <h1>{{ saldo }}</h1>
 
-        <div class="amount">
-          <h1>{{ saldo }}</h1>
+            <div class="input">
+              <h1></h1>
 
-          <div class="input">
-            <h1></h1>
+              <br />
+              <select class="choose" id="choose">
+                <option value="volvo">CPF</option>
+                <option value="saab">CNPJ</option>
+                <option value="mercedes">CEL</option>
+                <option value="audi">EMAIL</option>
+              </select>
 
-            <br />
-
-            <input
-              type="text"
-              placeholder="Chave"
-              class="input-pix"
-              formControlName="Chave"
-            />
-            <br />
-
-            <input
-              type="number"
-              placeholder="Valor"
-              class="input-pix2"
-              formControlName="Valor "
-            />
+              <input type="search" placeholder="Chave" class="input-pix" />
+              <br />
+              <input type="number" placeholder="Valor" class="input-pix2" />
+          
+            </div>
           </div>
-        </div>
-      </div>
-      <button type="button"><</button>
-      <button type="button">Confirmar</button>
-      <button type="button">></button>
+        
+
+      <button type="button" class="btn-pix2"><</button>
+      <button type="button" class="btn-pix2">-</button>
+      <button type="button" class="btn-pix2">></button>
     </div>
 
-    }@else{
+    } @else{
 
     <div class="box">
       <div class="pix-box">
@@ -56,61 +50,47 @@
           >&times;</span
         >
 
-
-
-
         <a> Copia e Cola </a>
         @if(qrConditionView){
-          <div [class.esconderF]="!qrView">
+        <div [class.esconderF]="!qrView">
+          <div class="amount">
+            <h1>{{ saldo }}</h1>
 
+            <div class="input">
+             
 
-            <div class="amount">
-              <h1>{{ saldo }}</h1>
-    
-            
-              <div class="input">
-                <h1></h1>
-    
-                <br />
-    
-                <input
-                  type="text"
-                  placeholder="Colar"
-                  class="input-pix"
-                  formControlName="Chave"
-                />
-                <br />
-    
-    
-          </div>
+              <br />
 
-        </div>  </div>
-
-          }
-@else {
-
-          <div [class.esconder]="!qrView">
-            <div class="bg-img">
-              <img
-                src="../../../../../assets/images/qrcode-pix.png"
-                alt=""
+              <input
+                type="text"
+                placeholder="Colar"
+                class="input-pix"
+                [(ngModel)]="chaveAleatoria"
+                required
               />
+              <br />
             </div>
           </div>
+        </div>
 
-}
-         
+        } @else {
 
-
-            <button type="button" (click)="qrView()">
-              Gerar Qr Code 
-            </button>
+        <div [class.esconder]="!qrView">
+          <div class="bg-img">
+            <img src="../../../../../assets/images/qrcode-pix.png" alt="" />
           </div>
-      
-    
-      <button type="button"><</button>
-      <button type="button">-</button>
-      <button type="button">></button>
+        </div>
+
+        }
+
+        <button type="button" class="btn-pix" id="botaoForm" (click)="qrView()">
+          Gerar Qr Code
+        </button>
+      </div>
+
+      <button type="button" class="btn-pix2"><</button>
+      <button type="button" class="btn-pix2">-</button>
+      <button type="button" class="btn-pix2">></button>
     </div>
 
     }
