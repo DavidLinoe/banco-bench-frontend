@@ -29,15 +29,21 @@ export class NewpixComponent {
 
 
 
-
-
-
-
-
   @Output() public fecharPix: EventEmitter<boolean> = new EventEmitter(); //quando é um componente filho
 
 @Input() public tipoPix: string ;//quando é um componente pai
 
 
-  
+public qrConditionView: boolean = true;
+
+
+
+
+
+qrView(){
+
+  this.qrConditionView = !this.qrConditionView;
+
+}
+
 }
