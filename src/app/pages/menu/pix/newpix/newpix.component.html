@@ -1,54 +1,118 @@
-<nb-card> <!--Nb é de Nebular, esse é uma componente importado do Nebular-->
+<nb-card>
+  <!--Nb é de Nebular, esse é uma componente importado do Nebular-->
   <div class="container">
     @if(tipoPix === "pagar"){
 
+    <div class="box">
+      <div class="pix-box">
+        <span
+          type="button"
+          class="close"
+          (click)="fecharPix.emit(true)"
+          id="Btn"
+          >&times;</span
+        >
+        <a> Pix </a>
 
-      <div class="box">
-    <div class="pix-box">
-    
-      <span type="button" class="close" (click)="fecharPix.emit(true)" id="Btn"
-        >&times;</span
-      >  <a> Pix </a>
+        <div class="amount">
+          <h1>{{ saldo }}</h1>
 
+          <div class="input">
+            <h1></h1>
 
-      <div class="amount">
+            <br />
 
-        <h1>{{saldo}}</h1>
-        
-        
-<div class="input">
-    
-  <h1></h1>
+            <input
+              type="text"
+              placeholder="Chave"
+              class="input-pix"
+              formControlName="Chave"
+            />
+            <br />
 
-<br/>
-
-  <input type="text" placeholder="Chave" class="input-pix" formControlName="Chave" />
-  <br/>
-
-  <input type="number" placeholder="Valor" class="input-pix2"formControlName="Valor "/>
-</div>
-
+            <input
+              type="number"
+              placeholder="Valor"
+              class="input-pix2"
+              formControlName="Valor "
+            />
+          </div>
         </div>
-
-      
+      </div>
+      <button type="button"><</button>
+      <button type="button">Confirmar</button>
+      <button type="button">></button>
     </div>
-    <button type="button" > < </button>
-    <button type="button" > Confirmar </button>
-    <button type="button" > > </button>
-  </div>
-
-
-
 
     }@else{
-    <div class="pix-box">
-      Copia e Cola
-      <span type="button" class="close" (click)="fecharPix.emit(true)" id="Btn"
-        >&times;</span
-      >
 
-      <div class="next"></div>
+    <div class="box">
+      <div class="pix-box">
+        <span
+          type="button"
+          class="close"
+          (click)="fecharPix.emit(true)"
+          id="Btn"
+          >&times;</span
+        >
+
+
+
+
+        <a> Copia e Cola </a>
+        @if(qrConditionView){
+          <div [class.esconderF]="!qrView">
+
+
+            <div class="amount">
+              <h1>{{ saldo }}</h1>
+    
+            
+              <div class="input">
+                <h1></h1>
+    
+                <br />
+    
+                <input
+                  type="text"
+                  placeholder="Colar"
+                  class="input-pix"
+                  formControlName="Chave"
+                />
+                <br />
+    
+    
+          </div>
+
+        </div>  </div>
+
+          }
+@else {
+
+          <div [class.esconder]="!qrView">
+            <div class="bg-img">
+              <img
+                src="../../../../../assets/images/qrcode-pix.png"
+                alt=""
+              />
+            </div>
+          </div>
+
+}
+         
+
+
+            <button type="button" (click)="qrView()">
+              Gerar Qr Code 
+            </button>
+          </div>
+      
+    
+      <button type="button"><</button>
+      <button type="button">-</button>
+      <button type="button">></button>
     </div>
+
     }
   </div>
 </nb-card>
