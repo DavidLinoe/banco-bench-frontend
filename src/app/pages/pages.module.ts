@@ -13,6 +13,7 @@ import { SacComponent } from './menu/sac/sac.component';
 import { AboutComponent } from './menu/about/about.component';
 import { AccountComponent } from './menu/account/account.component';
 import { NewpixComponent } from './menu/pix/newpix/newpix.component';
+import { FormsModule } from '@angular/forms';
 // import { NavigationComponent } from '../navigation/navigation.component';
 
 const routes: Routes = [
@@ -77,6 +78,7 @@ const routes: Routes = [
     NbSidebarModule,
     NbDialogModule.forRoot(),
     NbCardModule,//Card do nebular
+    FormsModule,
     
   ]
 })
