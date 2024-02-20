@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output,} from '@angular/core';
 import { PixComponent } from '../pix.component';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
@@ -40,9 +40,32 @@ public qrConditionView: boolean = true;
 
 
 
+public xInput = 'input[input-pix="x"]';
+
+public chaveAleatoria:string = "";
+
 qrView(){
 
+ console.log(this.chaveAleatoria);
+
+  if (this.chaveAleatoria === ""){
+    alert("Todos os campos tem que estar preenchidos!")
+  
+}
+else if(this.chaveAleatoria === "chaveteste"){
+
   this.qrConditionView = !this.qrConditionView;
+
+  
+  // window.open('../../../../../assets/images/qrcode-pix.png')
+
+}
+else{
+
+  alert("Chave Invalida")
+
+}
+   
 
 }
 
