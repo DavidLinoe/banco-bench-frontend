@@ -49,7 +49,7 @@ qrView(){
  console.log(this.chaveAleatoria);
 
   if (this.chaveAleatoria === ""){
-    alert("Todos os campos tem que estar preenchidos!")
+    alert("Todos os campos devem estar preenchidos!")
   
 }
 else if(this.chaveAleatoria === "chaveteste"){
