@@ -3,13 +3,11 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-
 interface loginResponse {
   validation: boolean;
   email: string;
   senha: string;
 }
-
 
 @Component({
   selector: 'app-signin',
@@ -17,48 +15,39 @@ interface loginResponse {
   templateUrl: './signin.component.html',
   styleUrl: './signin.component.scss',
 })
-
 export class SigninComponent implements OnInit {
-
   public loginForm: FormGroup;
 
   constructor(
-    
-    private formBuilder: FormBuilder, 
+    private formBuilder: FormBuilder,
     private http: HttpClient,
-    private routerNavigate:Router
-    
-    
-    
-    ) {}
+    private routerNavigate: Router
+  ) {}
 
   ngOnInit(): void {
-
     this.loginForm = this.formBuilder.group({
-      email: ['email_teste2@gmail.com', [Validators.email, Validators.required]],
+      email: [
+        'devoltapropassado@gmail.com',
+        [Validators.email, Validators.required],
+      ],
 
-      senha: ['senha123', Validators.required],
-
+      senha: ['12345678', Validators.required],
     });
   }
 
   enviarLogin() {
-
-this.routerNavigate.navigateByUrl('pages')
-
-
-
-    // console.log(this.loginForm.value);
-    
-    // this.http
-    //   .post('http://localhost:3000/teste', { dados: this.loginForm.value })
-    //   .subscribe((response) => {
-    //     console.log(response)
-    //     next: (res: loginResponse) => {
-    //       if (res.validation) console.log('Acessou!');
-    //       else console.log('Acesso Negado!');
-    //     };
-    //     error: (err: any) => {}
-    //   });
+    this.http
+      .post('http://localhost:3000/authentication', {
+        dados: this.loginForm.value,
+      })
+      .subscribe({
+        next: (res: any) => {
+          console.log('res');
+          this.routerNavigate.navigateByUrl('pages');
+        },
+        error: (err: any) => {
+          console.log('erro');
+        },
+      });
   }
 }
