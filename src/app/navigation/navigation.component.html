@@ -27,7 +27,7 @@
         <!-- 
   se for usar local -->
         <li>
-          <a href="http://localhost:4200/pages/account"
+          <a routerLink="/pages/account"
             ><img
               src="../../assets/images/Style=Filledsettings.png"
               class="img-top"
@@ -36,7 +36,7 @@
         </li>
 
         <li>
-          <a href="http://localhost:4200/pages/dashboard"
+          <a routerLink="/pages/dashboard"
             ><img
               src="../../assets/images/Style=Filleddashboard.png"
               class="img-top"
@@ -45,7 +45,7 @@
         </li>
 
         <li>
-          <a href="http://localhost:4200/pages/sac"
+          <a routerLink="/pages/sac"
             ><img
               src="../../assets/images/Style=Sharpsac.png"
               class="img-top"
@@ -54,7 +54,7 @@
         </li>
 
         <li>
-          <a href="http://localhost:4200/pages/about"
+          <a routerLink="/pages/about"
             ><img
               src="../../assets/images/Style=Roundpin.png"
               class="img-top"
@@ -81,25 +81,25 @@
     <!--
           se for usar local -->
 
-    <a href="http://localhost:4200/pages/carteira"
+    <a routerLink="/pages/carteira"
       ><img src="../../assets/images/Style=Roundwallet.png" class="img-side"
     /></a>
 
-    <a href="http://localhost:4200/pages/pix"
+    <a routerLink="/pages/pix"
       ><img
         src="../../assets/images/Style=Outlinedtransfer.png"
         class="img-side"
     /></a>
 
-    <a href="http://localhost:4200/pages/transferencia"
+    <a routerLink="/pages/transferencia"
       ><img src="../../assets/images/Style=Roundcard.png" class="img-side"
     /></a>
 
-    <a href="http://localhost:4200/pages/boleto"
+    <a routerLink="/pages/boleto"
       ><img src="../../assets/images/Style=Roundboleto.png" class="img-side"
     /></a>
 
-    <a href="http://localhost:4200/pages/extrato"
+    <a routerLink="/pages/extrato"
       ><img src="../../assets/images/Style=Filledextract.png" class="img-side"
     /></a>
 
@@ -120,13 +120,13 @@
     <!--
 se for usar local host -->
     <div class="navigate-buttons-side">
-      <a href="http://localhost:4200/pages/carteira" class="btn1">Carteira</a>
-      <a href="http://localhost:4200/pages/pix" class="btn2">Pix</a>
-      <a href="http://localhost:4200/pages/transferencia" class="btn3"
+      <a routerLink="/pages/carteira" class="btn1">Carteira</a>
+      <a routerLink="/pages/pix"class="btn2">Pix</a>
+      <a routerLink="/pages/transferencia" class="btn3"
         >Transferencia</a
       >
-      <a href="http://localhost:4200/pages/boleto" class="btn4">Boleto</a>
-      <a href="http://localhost:4200/pages/extrato" class="btn5">Extrato</a>
+      <a routerLink="/pages/boleto"class="btn4">Boleto</a>
+      <a routerLink="/pages/extrato" class="btn5">Extrato</a>
     </div>
 
     }
@@ -135,7 +135,7 @@ se for usar local host -->
   <nb-layout-column class="colored-column-warning">
     <div class="profile">
       <ul>
-        <li>Olá {{ user }}</li>
+        <li>Olá {{ userService.usuario.getValue().nome_cliente }}</li>
         <li>
           Saldo: @if (eyeCondition) {
 
@@ -152,7 +152,8 @@ se for usar local host -->
 
           }
 
-          {{ saldo }}
+          {{  saldo  }}
+          
         </li>
       </ul>
     </div>
