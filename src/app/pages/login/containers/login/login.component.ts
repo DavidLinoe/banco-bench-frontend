@@ -33,17 +33,17 @@ export class LoginComponent implements OnInit {
     });
     //this.enviarLogin()
   }
-  enviarLogin() {
-    this.http
-      .post('http://localhost:3000/teste', { dados: this.loginForm.value })
-      .subscribe((response) => {
-        next: (res: loginResponse) => {
-          if (res.validation) console.log('Acessou!');
-          else console.log('Acesso Negado!');
-        };
-        error: (err: any) => {};
-      });
-  }
+  // enviarLogin() {
+  //   this.http
+  //     .post('http://localhost:3000/teste', { dados: this.loginForm.value })
+  //     .subscribe((response) => {
+  //       next: (res: loginResponse) => {
+  //         if (res.validation) console.log('Acessou!');
+  //         else console.log('Acesso Negado!');
+  //       };
+  //       error: (err: any) => {};
+  //     });
+  // }
   modificarCardLogin() {
     setTimeout(() => {
       this.conditionSignIn = !this.conditionSignIn;
