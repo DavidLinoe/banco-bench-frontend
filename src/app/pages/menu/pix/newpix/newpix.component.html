@@ -11,27 +11,31 @@
           (click)="fecharPix.emit(true)"
           id="Btn"
           >&times;</span
-        >     <a> Pix </a>
-            <h1>{{ saldo }}</h1>
+        >
+        <a> Pix </a>
+        <h1>{{ payForm.get("amount")?.value }}</h1>
 
-            <div class="input">
-              <h1></h1>
+        <div class="input" [formGroup]="payForm">
+          <h1></h1>
 
-              <br />
-              <select class="choose" id="choose">
-                <option value="volvo">CPF</option>
-                <option value="saab">CNPJ</option>
-                <option value="mercedes">CEL</option>
-                <option value="audi">EMAIL</option>
-              </select>
+          <br />
+          <select class="choose" id="choose">
+            <option value="volvo">CPF</option>
+            <option value="saab">CNPJ</option>
+            <option value="mercedes">CEL</option>
+            <option value="audi">EMAIL</option>
+          </select>
 
-              <input type="search" placeholder="Chave" class="input-pix" />
-              <br />
-              <input type="number" placeholder="Valor" class="input-pix2" />
-          
-            </div>
-          </div>
-        
+          <input type="search" placeholder="Chave" class="input-pix" />
+          <br />
+          <input
+            type="number"
+            placeholder="Valor"
+            class="input-pix2"
+            formControlName="amount"
+          />
+        </div>
+      </div>
 
       <button type="button" class="btn-pix2"><</button>
       <button type="button" class="btn-pix2">-</button>
@@ -54,11 +58,9 @@
         @if(qrConditionView){
         <div [class.esconderF]="!qrView">
           <div class="amount">
-            <h1>{{ saldo }}</h1>
+            <h1>{{ "saldo" }}</h1>
 
             <div class="input">
-             
-
               <br />
 
               <input
