@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from '../../../../services/user.service';
 
 interface loginResponse {
   validation: boolean;
@@ -21,7 +22,8 @@ export class SigninComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private routerNavigate: Router
+    private routerNavigate: Router,
+    private userService: UserService
   ) {}
 
   ngOnInit(): void {
@@ -42,8 +44,8 @@ export class SigninComponent implements OnInit {
       })
       .subscribe({
         next: (res: any) => {
-          console.log('res');
-          this.routerNavigate.navigateByUrl('pages');
+          this.userService.usuario.next(res) //envia a res para o service !
+          this.routerNavigate.navigateByUrl('/pages');
         },
         error: (err: any) => {
           console.log('erro');
