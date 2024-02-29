@@ -7,6 +7,10 @@ export const routes: Routes = [
     path: '',
     component: LoginComponent,
   },
+  {
+    path: 'reload',
+    component: LoginComponent,
+  },
 
   {
     path: '',
