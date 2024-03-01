@@ -44,12 +44,21 @@ export class SigninComponent implements OnInit {
       })
       .subscribe({
         next: (res: any) => {
-          this.userService.usuario.next(res) //envia a res para o service !
+          localStorage.setItem("id_cliente",res.id_cliente.toString())
+          //this.enviarDadosUser(res); //envia a res para o service !
+          // this.userService.usuario.next(res) //envia a res para o service !
+       
           this.routerNavigate.navigateByUrl('/pages');
+          // setTimeout(function() {
+          //   location.reload();
+          // }, 40);
+        
         },
         error: (err: any) => {
           console.log('erro');
         },
       });
   }
+
+
 }
