@@ -19,10 +19,20 @@ export class NewpixComponent {
   ngOnInit(): void {
     this.payForm = this.formBuilder.group({
       amount: [, [Validators.min(0), Validators.required]],
+      
     });
+    
+  }
+  mudarChave(){
+
+    var chave = document.getElementById('choose');
+  
+
+  console.log(chave)
   }
 
 
+   
 
   @Output() public fecharPix: EventEmitter<boolean> = new EventEmitter(); //quando é um componente filho
 
