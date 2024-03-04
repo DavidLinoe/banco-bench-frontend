@@ -1,0 +1,39 @@
+<span type="button" (click)="fecharModal()" class="close" id="Btn">&times;</span>
+
+<div class="pix-box">
+  <br />
+
+  @if(qrConditionView){
+
+  <a> Copia e Cola </a>
+
+ 
+
+    <input
+      type="text"
+      [(ngModel)]="chaveAleatoria"
+      required
+      placeholder="Colar"
+      class="input-pix"
+    />
+    <br />
+    <button type="button" [formGroup]="payForm" (click)="qrView()" class="btn-pix2">
+      Gerar Qr Code
+    </button>
+  
+
+  } @else {
+
+  <div class="bg-img">
+    <img src="../../../../../assets/images/qrcode-pix.png" alt="" />
+  </div>
+
+  }
+
+  <div class="buttons">
+    <button type="button" class="btn-pix"><</button>
+    <button type="button" class="btn-pix2">-</button>
+    <button type="button" class="btn-pix">></button>
+  </div>
+</div>
+
