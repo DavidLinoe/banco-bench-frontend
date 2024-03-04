@@ -14,6 +14,9 @@ import { AboutComponent } from './menu/about/about.component';
 import { AccountComponent } from './menu/account/account.component';
 import { NewpixComponent } from './menu/pix/newpix/newpix.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PixConfirmComponent } from './menu/pix/pix-confirm/pix-confirm.component';
+import { PixModalPagarComponent } from './menu/pix/pix-modal-pagar/pix-modal-pagar.component';
+import { PixModalCopiaColaComponent } from './menu/pix/pix-modal-copia-cola/pix-modal-copia-cola.component';
 // import { NavigationComponent } from '../navigation/navigation.component';
 
 const routes: Routes = [
@@ -70,7 +73,15 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [DashboardComponent,PixComponent,NewpixComponent],//declarar aqui as outras paginas que vao usar nb
+  declarations: [
+    DashboardComponent,
+    PixComponent,
+    NewpixComponent,
+    PixConfirmComponent,
+    PixModalPagarComponent,
+    PixModalCopiaColaComponent
+
+  ],//declarar aqui as outras paginas que vao usar nb
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
