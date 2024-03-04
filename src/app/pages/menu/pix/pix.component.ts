@@ -4,7 +4,6 @@ import { NbDialogRef, NbDialogService } from '@nebular/theme';
 
 @Component({
   selector: 'app-pix',
-
   templateUrl: './pix.component.html',
   styleUrl: './pix.component.scss',
 })
@@ -13,42 +12,26 @@ export class PixComponent {
 
   @ViewChild('pixpay') public newPixComponent: TemplateRef<NewpixComponent>;
 
-  public eyeCondition: boolean = true;
-  private _newPixComponent:NbDialogRef<NewpixComponent>;
+  private _newPixComponent: NbDialogRef<NewpixComponent>;
+
   public tipoPix: string;
+  public confirmarPix: string;
 
-  user: string = 'David Eduardo Lino';
-  saldo: string = ' 300 $';
-  bSaldo = this.saldo;
+  public eyeCondition: boolean = true;
 
-pagarPix(){
+  pagarPix() {
+    this._newPixComponent = this.dialogService.open(this.newPixComponent);
 
-this._newPixComponent = this.dialogService.open(this.newPixComponent)
-
-
-this.tipoPix = "pagar"
-}
-copiaColaPix(){
-
-  this._newPixComponent = this.dialogService.open(this.newPixComponent)
-  
-  
-  this.tipoPix = "copia e cola"
+    this.tipoPix = 'pagar';
   }
-  
+  copiaColaPix() {
+    this._newPixComponent = this.dialogService.open(this.newPixComponent);
 
-fecharPix(){
-
-this._newPixComponent.close();
-
-
-}
-  eye() {
-    setTimeout(() => {
-      this.eyeCondition = !this.eyeCondition;
-      if (!this.eyeCondition) this.saldo = '';
-      else this.saldo = this.bSaldo;
-    }, 400);
+    this.tipoPix = 'copiacola';
   }
 
+
+  fecharPix() {
+    this._newPixComponent.close();
+  }
 }
