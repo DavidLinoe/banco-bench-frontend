@@ -2,99 +2,19 @@
   <!--Nb é de Nebular, esse é uma componente importado do Nebular-->
   <div class="container">
     @if(tipoPix === "pagar"){
+    <app-pix-modal-pagar> </app-pix-modal-pagar>
 
-    <div class="box">
-      <div class="pix-box">
-        <span
-          type="button"
-          class="close"
-          (click)="fecharPix.emit(true)"
-          id="Btn"
-          >&times;</span
-        >
-        <a> Pix </a>
-        <h1>{{ payForm.get("amount")?.value }}</h1>
+    } @else if(tipoPix === "confirm"){
+    <app-pix-confirm> </app-pix-confirm>
 
-        <div class="input" [formGroup]="payForm">
-          <h1></h1>
+    }@else if(tipoPix === "comprovante"){
+    <app-pix-confirm> </app-pix-confirm>
 
-          <br />
-          <select class="choose" id="choose" name="choose"(click)="mudarChave()">
-            <option value="CPF">CPF</option>
-            <option value="CNPJ">CNPJ</option>
-            <option value="CEL">CEL</option>
-            <option value="EMAIL">EMAIL</option>
-          </select>
-
-          <input type="search" placeholder="Chave" class="input-pix" />
-          <br />
-          <input
-            type="number"
-            placeholder="Valor"
-            class="input-pix2"
-            formControlName="amount"
-          />
-        </div>
-      </div>
-
-      <button type="button" class="btn-pix2"><</button>
-      <button type="button" class="btn-pix2">-</button>
-      <button type="button" class="btn-pix2">></button>
-    </div>
+    }@else if(tipoPix === "copiacola"){
+    <app-pix-modal-copia-cola> </app-pix-modal-copia-cola>
 
     } @else{
-
-    <div class="box">
-      <div class="pix-box">
-        <span
-          type="button"
-          class="close"
-          (click)="fecharPix.emit(true)"
-          id="Btn"
-          >&times;</span
-        >
-
-        <a> Copia e Cola </a>
-        @if(qrConditionView){
-        <div [class.esconderF]="!qrView">
-          <div class="amount">
-            <h1>{{ "saldo" }}</h1>
-
-            <div class="input">
-              <br />
-
-              <input
-                type="text"
-                placeholder="Colar"
-                class="input-pix"
-                [(ngModel)]="chaveAleatoria"
-                required
-              />
-              <br />
-            </div>
-          </div>
-        </div>
-
-        } @else {
-
-        <div [class.esconder]="!qrView">
-          <div class="bg-img">
-            <img src="../../../../../assets/images/qrcode-pix.png" alt="" />
-          </div>
-        </div>
-
-        }
-
-        <button type="button" class="btn-pix" id="botaoForm" (click)="qrView()">
-          Gerar Qr Code
-        </button>
-      </div>
-
-      <button type="button" class="btn-pix2"><</button>
-      <button type="button" class="btn-pix2">-</button>
-      <button type="button" class="btn-pix2">></button>
-    </div>
-
+    <app-pix-modal-copia-cola> </app-pix-modal-copia-cola>
     }
   </div>
 </nb-card>
