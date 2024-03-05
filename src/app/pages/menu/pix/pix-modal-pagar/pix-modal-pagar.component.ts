@@ -4,28 +4,25 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-pix-modal-pagar',
   templateUrl: './pix-modal-pagar.component.html',
-  styleUrl: './pix-modal-pagar.component.scss'
+  styleUrl: './pix-modal-pagar.component.scss',
 })
 export class PixModalPagarComponent {
-
+  public state: string = "pagar";
   public payForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {}
   ngOnInit(): void {
     this.payForm = this.formBuilder.group({
       amount: [0, [Validators.min(0), Validators.required]],
-      
     });
-    
   }
-mudarChave(){
-
-}
-
-tipoIf(){
-
-}
-pixConfirm(){}
-
-
+  comprovante() {
+    this.state = 'comprovante';
+  }
+  pagar() {
+    this.state = 'pagar';
+  }
+  confirm() {
+    this.state = 'confirm';
+  }
 }
