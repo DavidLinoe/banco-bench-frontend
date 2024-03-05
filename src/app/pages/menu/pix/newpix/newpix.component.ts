@@ -7,40 +7,25 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './newpix.component.scss',
 })
 export class NewpixComponent {
-
-
-  mudarChave(){
-
+  mudarChave() {
     var chave = document.getElementById('choose');
-  
 
-  console.log(chave)
+    console.log(chave);
   }
-
 
   @Output() public fecharPix: EventEmitter<boolean> = new EventEmitter(); //quando é um componente filho
 
   @Input() public tipoPix: string; //quando é um componente pai
 
-
-
-
-
-  tipoIf(){
-
+  guardarRota() {
+    sessionStorage.setItem('rp', '#($*P#)');
     
-    this.tipoPix = "pagar"
-    }
+  }
+  guardarRotaAlternativa() {
+    sessionStorage.setItem('rp', '#($*#)');
+ 
+} 
 
 
-  pixConfirm(){
-
-    
-    this.tipoPix = "copia e cola"
-    }
-
-
-
-
-
-}
+  }
+ 
