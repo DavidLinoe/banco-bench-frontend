@@ -1,6 +1,7 @@
 import { Component, ElementRef, TemplateRef, ViewChild } from '@angular/core';
 import { NewpixComponent } from './newpix/newpix.component';
 import { NbDialogRef, NbDialogService } from '@nebular/theme';
+import { PixModalRouterComponent } from './pix-modal-router/pix-modal-router.component';
 
 @Component({
   selector: 'app-pix',
@@ -13,24 +14,20 @@ export class PixComponent {
   @ViewChild('pixpay') public newPixComponent: TemplateRef<NewpixComponent>;
 
   private _newPixComponent: NbDialogRef<NewpixComponent>;
+ 
 
   public tipoPix: string;
-  public confirmarPix: string;
-
-  public eyeCondition: boolean = true;
+ 
 
   pagarPix() {
     this._newPixComponent = this.dialogService.open(this.newPixComponent);
-
     this.tipoPix = 'pagar';
   }
   copiaColaPix() {
     this._newPixComponent = this.dialogService.open(this.newPixComponent);
-
     this.tipoPix = 'copiacola';
   }
-
-
+ 
   fecharPix() {
     this._newPixComponent.close();
   }
