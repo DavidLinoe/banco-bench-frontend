@@ -44,7 +44,9 @@ export class SigninComponent implements OnInit {
       })
       .subscribe({
         next: (res: any) => {
-          localStorage.setItem("id_cliente",res.id_cliente.toString())
+          sessionStorage.setItem("id_cliente",res.id_cliente.toString())
+
+         // localStorage.setItem("id_cliente",res.id_cliente.toString())
           //this.enviarDadosUser(res); //envia a res para o service !
           // this.userService.usuario.next(res) //envia a res para o service !
        
@@ -60,5 +62,5 @@ export class SigninComponent implements OnInit {
       });
   }
 
-
+ 
 }
