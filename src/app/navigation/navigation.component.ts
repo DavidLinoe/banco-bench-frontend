@@ -25,7 +25,9 @@ export class NavigationComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    const id_cliente= localStorage.getItem("id_cliente")
+    //const id_cliente = localStorage.getItem("id_cliente")
+    const id_cliente = sessionStorage.getItem("id_cliente")
+
     this.enviarDadosUser({id_cliente});
   }
   enviarDadosUser(res: any) {
