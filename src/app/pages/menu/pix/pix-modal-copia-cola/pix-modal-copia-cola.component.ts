@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,11 @@ import { FormGroup } from '@angular/forms';
   styleUrl: './pix-modal-copia-cola.component.scss',
 })
 export class PixModalCopiaColaComponent {
+
+  @Input() public fecharPix: EventEmitter<boolean> = new EventEmitter(); 
+  @Output() public tipoPix: string;
+
+
   public payForm: FormGroup;
 
   public qrConditionView: boolean = true;
@@ -23,6 +28,8 @@ export class PixModalCopiaColaComponent {
       alert('Chave Invalida');
     }
   }
-
+  modalPix() {
+    this.tipoPix = 'confirm';
+  }
   fecharModal() {}
 }
