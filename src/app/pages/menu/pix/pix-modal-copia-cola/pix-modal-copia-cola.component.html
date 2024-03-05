@@ -1,6 +1,5 @@
-<span type="button" (click)="fecharModal()" class="close" id="Btn">&times;</span>
 
-<div class="pix-box">
+<div class="modalPixBox">
   <br />
 
   @if(qrConditionView){
@@ -14,10 +13,10 @@
       [(ngModel)]="chaveAleatoria"
       required
       placeholder="Colar"
-      class="input-pix"
+      class="modalPixInput"
     />
     <br />
-    <button type="button" [formGroup]="payForm" (click)="qrView()" class="btn-pix2">
+    <button type="button" [formGroup]="payForm" (click)="qrView()" class="modalButtons2">
       Gerar Qr Code
     </button>
   
@@ -30,10 +29,6 @@
 
   }
 
-  <div class="buttons">
-    <button type="button" class="btn-pix"><</button>
-    <button type="button" class="btn-pix2">-</button>
-    <button type="button" class="btn-pix">></button>
-  </div>
+
 </div>
 
