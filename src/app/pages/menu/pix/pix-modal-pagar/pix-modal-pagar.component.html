@@ -1,35 +1,24 @@
-<span type="button" class="close"  id="Btn"
->&times;</span
->
-<!-- (click)="fecharPix.emit(true)" -->
-<div class="pix-box">
-<br />
+<div class="modalPixBox">
+  <a> PIX </a>
+  <a>R$ {{ payForm.get("amount")?.value }}</a>
 
-<a> PIX </a>
-<a>R$ {{ payForm.get("amount")?.value }}</a>
+  <div class="input" [formGroup]="payForm">
+    <br />
 
-<div class="input" [formGroup]="payForm">
-  <br />
+    <select class="modalPixSelect" id="choose" name="choose">
+      <option value="CPF">CPF</option>
+      <option value="CNPJ">CNPJ</option>
+      <option value="CEL">CEL</option>
+      <option value="EMAIL">EMAIL</option>
+    </select>
 
-  <select class="choose" id="choose" name="choose" (click)="mudarChave()">
-    <option value="CPF">CPF</option>
-    <option value="CNPJ">CNPJ</option>
-    <option value="CEL">CEL</option>
-    <option value="EMAIL">EMAIL</option>
-  </select>
-
-  <input type="search" placeholder="" class="input-pix" />
-  <br />
-  <input
-    type="number"
-    placeholder="Valor"
-    class="input-pix2"
-    formControlName="amount"
-  />
-</div>
-<div class="buttons">
-  <button type="button"  (click)="tipoIf()"class="btn-pix"><</button>
-  <button type="button" class="btn-pix2">-</button>
-  <button type="button" (click)="pixConfirm()"class="btn-pix">></button>
-</div>
+    <input type="search" placeholder="chave" class="modalPixInput" />
+    <br />
+    <input
+      type="number"
+      placeholder="Valor"
+      class="modalPixInput2"
+      formControlName="amount"
+    />
+  </div>
 </div>
