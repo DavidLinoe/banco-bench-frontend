@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="modalPixbox">
+    <span type="button" (click)="fecharPix.emit(true)" class="modalClose" id="Btn">&times;</span>
+    <!-- (click)="fecharPix.emit(true)" -->
+    <br />
+    {{keyF()}}
+    @if(key === "#($*P#)"){
+      
+      @if (state === "pagar") {
+
+    <app-pix-modal-pagar></app-pix-modal-pagar>
+
+    } @else if (state === "confirm") {
+
+    <app-pix-modal-conferir-dados></app-pix-modal-conferir-dados>
+
+    } @else{
+
+    <app-pix-modal-comprovante></app-pix-modal-comprovante>
+
+    } } @else {
+
+    <app-pix-modal-copia-cola></app-pix-modal-copia-cola>
+
+    }
+  </div>
+  <div class="modalButtons">
+    <button type="button" (click)="pagar()" class="modalButtons1"><</button>
+    <button type="button" (click)="comprovante()" class="modalButtons2">
+      -
+    </button>
+    <button type="button" (click)="confirm()" class="modalButtons1">></button>
+  </div>
+</div>
