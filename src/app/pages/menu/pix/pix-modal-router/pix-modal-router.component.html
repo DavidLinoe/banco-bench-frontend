@@ -3,7 +3,7 @@
     <span type="button" (click)="fecharPix.emit(true)" class="modalClose" id="Btn">&times;</span>
     <!-- (click)="fecharPix.emit(true)" -->
     <br />
-    {{keyF()}}
+  
     @if(key === "#($*P#)"){
       
       @if (state === "pagar") {
@@ -25,10 +25,12 @@
     }
   </div>
   <div class="modalButtons">
+
     <button type="button" (click)="pagar()" class="modalButtons1"><</button>
     <button type="button" (click)="comprovante()" class="modalButtons2">
       -
     </button>
-    <button type="button" (click)="confirm()" class="modalButtons1">></button>
+    <button type="button" [formGroup]="payForm" (click)="modalNext()" class="modalButtons1">></button>
   </div>
 </div>
+<!-- (click)="confirm()" -->
