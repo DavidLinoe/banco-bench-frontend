@@ -12,7 +12,7 @@
       <option value="EMAIL">EMAIL</option>
     </select>
 
-    <input type="search" placeholder="chave" class="modalPixInput" />
+    <input type="text" formControlName="chaveAleatoria" class="modalPixInput" />
     <br />
     <input
       type="number"
@@ -21,4 +21,6 @@
       formControlName="amount"
     />
   </div>
+  <button (click)="waitChange()">Buscar Chave</button>
+  <!-- BOTAO TEMPORARIO PARA ENTRAR NA FUNCAO waitChange() -->
 </div>
