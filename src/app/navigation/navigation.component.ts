@@ -33,7 +33,6 @@ export class NavigationComponent implements OnInit {
   enviarDadosUser(res: any) {
     this.http.post('http://localhost:3000/user', res).subscribe({
       next: (res: any) => {
-        console.log('dad', res);
         this.userService.usuario.next(res.user); //envia a res para o service !
 
       },
