@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PixService } from '../../../../services/pix.service';
 
 @Component({
   selector: 'app-pix-modal-router',
@@ -12,13 +13,23 @@ export class PixModalRouterComponent {
   public payForm: FormGroup;
   public key: any;
 
+  public qrConditionView: boolean = true;
+  public chaveAleatoria: any;
+  public chaveCorreta: any;
+  public valor: any;
+  public stateChange: any;
+
   @Output() public fecharPix: EventEmitter<boolean> = new EventEmitter(); //quando é um componente filho
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    public pixService: PixService
+  ) {}
   ngOnInit(): void {
     this.payForm = this.formBuilder.group({
       amount: [0, [Validators.min(0), Validators.required]],
     });
+    this.keyF();
   }
   comprovante() {
     this.state = 'comprovante';
@@ -28,11 +39,36 @@ export class PixModalRouterComponent {
   }
   confirm() {
     this.state = 'confirm';
+    localStorage.removeItem('chaveAleatoria');
+    localStorage.removeItem('chavePix');
   }
   keyF() {
     this.key = sessionStorage.getItem('rp');
     setTimeout(() => {
       sessionStorage.removeItem('rp');
     }, 500);
+  }
+
+  modalNext() {
+    localStorage.setItem('stateChange', 'true');
+    console.log(localStorage.getItem('stateChange'));
+
+    this.chaveAleatoria = localStorage.getItem('chaveAleatoria');
+    this.chaveCorreta = localStorage.getItem('chavePix');
+    this.valor = localStorage.getItem('valor');
+
+    // this.chaveCorreta = this.pixService.chaveExistente.getValue().telefone;//SE FOR USAR O SERVICE
+
+    console.log('log no modalRouter chave Digitada= ', this.chaveAleatoria);
+    console.log('log no modalRouter chave Correta= ', this.chaveCorreta);
+
+    if (this.chaveAleatoria === this.chaveCorreta &&this.chaveCorreta != null) 
+    {
+      this.confirm();
+      // } else if(this.valor === "valor"){
+      //   alert('Insira Um Valor Valido !');
+    } else {
+      alert('Insira Uma Chave Valida');
+    }
   }
 }
