@@ -71,11 +71,12 @@ export class PixModalRouterComponent {
       this.chaveAleatoria === this.chaveCorreta &&
       this.chaveCorreta != null
     ) {
-      this.confirm();
-      // localStorage.removeItem('stateChange');
-
-      // } else if(this.valor === "valor"){
-      //   alert('Insira Um Valor Valido !');
+      if (this.valor === 'valor') {
+        alert('Insira Um Valor Valido !');
+        localStorage.removeItem('valor');
+      } else {
+        this.confirm();
+      }
     } else {
       alert('Insira Uma Chave Valida');
     }
