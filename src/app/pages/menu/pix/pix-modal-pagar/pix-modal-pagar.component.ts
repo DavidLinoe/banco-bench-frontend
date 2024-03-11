@@ -42,13 +42,11 @@ export class PixModalPagarComponent {
     } else {
       console.log('Log no waitChange pix modal Router NAO FUNCIONAAAAAAA');
     }
-    console.log('Aguardando Ser True');
+    // console.log('Aguardando Ser True');
   }
   chaveAleatoria() {
     localStorage.setItem('chaveAleatoria', this.payForm.value.chaveAleatoria);
-    console.log(
-      ' log da chave digitada ',
-      localStorage.getItem('chaveAleatoria')
+    console.log(' log da chave digitada ',localStorage.getItem('chaveAleatoria')
     );
 
     this.verificarChave();
