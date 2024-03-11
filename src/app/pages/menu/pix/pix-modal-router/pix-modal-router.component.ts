@@ -48,7 +48,12 @@ export class PixModalRouterComponent {
       sessionStorage.removeItem('rp');
     }, 500);
   }
-
+  closePix() {
+    localStorage.setItem('modalOpen', 'fechar');
+    setTimeout(() => {
+      localStorage.removeItem('modalOpen');
+    }, 430);
+  }
   modalNext() {
     localStorage.setItem('stateChange', 'true');
     console.log('modal next ', localStorage.getItem('stateChange'));
