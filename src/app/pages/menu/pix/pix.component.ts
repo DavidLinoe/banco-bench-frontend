@@ -1,10 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  OnInit,
-  TemplateRef,
-  ViewChild,
-} from '@angular/core';
+import { Component,ElementRef, OnInit,TemplateRef,ViewChild} from '@angular/core';
 import { NewpixComponent } from './newpix/newpix.component';
 import { NbDialogRef, NbDialogService } from '@nebular/theme';
 import { PixModalRouterComponent } from './pix-modal-router/pix-modal-router.component';
