@@ -17,7 +17,7 @@ export class PixModalRouterComponent {
   public chaveAleatoria: any;
   public chaveCorreta: any;
   public valor: any;
-  public stateChange: any;
+  // public stateChange: any;
 
   @Output() public fecharPix: EventEmitter<boolean> = new EventEmitter(); //quando é um componente filho
 
@@ -51,7 +51,7 @@ export class PixModalRouterComponent {
 
   modalNext() {
     localStorage.setItem('stateChange', 'true');
-    console.log(localStorage.getItem('stateChange'));
+    console.log('modal next ', localStorage.getItem('stateChange'));
 
     this.chaveAleatoria = localStorage.getItem('chaveAleatoria');
     this.chaveCorreta = localStorage.getItem('chavePix');
@@ -62,9 +62,13 @@ export class PixModalRouterComponent {
     console.log('log no modalRouter chave Digitada= ', this.chaveAleatoria);
     console.log('log no modalRouter chave Correta= ', this.chaveCorreta);
 
-    if (this.chaveAleatoria === this.chaveCorreta &&this.chaveCorreta != null) 
-    {
+    if (
+      this.chaveAleatoria === this.chaveCorreta &&
+      this.chaveCorreta != null
+    ) {
       this.confirm();
+      // localStorage.removeItem('stateChange');
+
       // } else if(this.valor === "valor"){
       //   alert('Insira Um Valor Valido !');
     } else {
