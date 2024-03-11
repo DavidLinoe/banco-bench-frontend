@@ -1,29 +1,38 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { PixService } from '../../../../services/pix.service';
-
+import { PixModalConferirDadosComponent } from '../pix-modal-conferir-dados/pix-modal-conferir-dados.component';
 @Component({
   selector: 'app-pix-modal-pagar',
   templateUrl: './pix-modal-pagar.component.html',
   styleUrl: './pix-modal-pagar.component.scss',
 })
 export class PixModalPagarComponent {
-  public state: string = 'pagar';
-  public payForm: FormGroup;
-
-  constructor(
-    private formBuilder: FormBuilder,
-    private http: HttpClient,
-    public pixService: PixService
-  ) {}
+  
   ngOnInit(): void {
     this.payForm = this.formBuilder.group({
       amount: [0, [Validators.required]],
       chave: [],
       chaveAleatoria: [],
     });
+    
   }
+
+  public state: string = 'pagar';
+  public payForm: FormGroup;
+  valor: any;
+
+  @ViewChild('teste') public componente: string;
+  private _PixModalPagarComponent: PixModalPagarComponent;
+ 
+  @Output() public conferirValor: any ; //quando é um componente pai
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    public pixService: PixService
+  ) {}
 
   comprovante() {
     this.state = 'comprovante';
@@ -36,9 +45,16 @@ export class PixModalPagarComponent {
   }
 
   waitChange() {
+    this.conferirValor = this.payForm.value.amount
     if (localStorage.getItem('stateChange') == 'true') {
       console.log('Log no waitChange pix modal Router Funciona');
-      this.chaveAleatoria();
+      if(this.conferirValor > 0 ){
+        this.chaveAleatoria();
+      }else{
+        this.valor = localStorage.setItem("valor","valor");
+
+      }
+
     } else {
       console.log('Log no waitChange pix modal Router NAO FUNCIONAAAAAAA');
     }
