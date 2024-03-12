@@ -67,17 +67,16 @@ export class PixModalRouterComponent {
     console.log('log no modalRouter chave Digitada= ', this.chaveAleatoria);
     console.log('log no modalRouter chave Correta= ', this.chaveCorreta);
 
-    if (
-      this.chaveAleatoria === this.chaveCorreta &&
-      this.chaveCorreta != null
-    ) {
+    if (this.chaveAleatoria === this.chaveCorreta &&this.chaveCorreta != null) {
       if (this.valor === 'valor') {
         alert('Insira Um Valor Valido !');
         localStorage.removeItem('valor');
       } else {
+        localStorage.removeItem('valor');
         this.confirm();
       }
     } else {
+      localStorage.removeItem('valor');
       alert('Insira Uma Chave Valida');
     }
   }
