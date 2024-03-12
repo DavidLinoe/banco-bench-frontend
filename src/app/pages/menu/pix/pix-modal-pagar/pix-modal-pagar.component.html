@@ -5,12 +5,11 @@
   <div class="input" [formGroup]="payForm">
     <br />
 
-    <select class="modalPixSelect" id="choose" name="choose" required>
-      <option value="">None</option>
-      <option value="CPF">CPF</option>
-      <option value="CNPJ">CNPJ</option>
-      <option value="CEL">CEL</option>
-      <option value="EMAIL">EMAIL</option>
+    <select class="modalPixSelect" id="choose" (change)="waitChange()" formControlName="choose" required>
+      <option value="1">CPF</option>
+      <option value="2">CNPJ</option>
+      <option value="3">CEL</option>
+      <option value="4">EMAIL</option>
     </select>
 
     <input type="text" (change)="waitChange()" formControlName="chaveAleatoria" class="modalPixInput" />
