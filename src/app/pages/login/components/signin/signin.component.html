@@ -17,13 +17,8 @@
   <div>
 
 
-    <a
-    (click)="enviarLogin()"
-    class="btn"
+    <button (click)="enviarLogin()"class="btn" [disabled]="loginForm.invalid">Login </button>
     
-    >Login
-
-    </a>
   </div>
 
   
