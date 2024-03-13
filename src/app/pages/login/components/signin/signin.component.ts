@@ -28,12 +28,10 @@ export class SigninComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email: [
-        'devoltapropassado@gmail.com',
-        [Validators.email, Validators.required],
-      ],
+      email: [,[Validators.email, Validators.required],],
 
-      senha: ['12345678', Validators.required],
+      senha: [, Validators.required],
+
     });
   }
 
