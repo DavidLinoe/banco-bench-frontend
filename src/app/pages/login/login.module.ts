@@ -16,7 +16,7 @@ import { NbButtonModule,NbCardModule,NbThemeModule } from '@nebular/theme';
     ReactiveFormsModule,
     NbButtonModule,
     NbCardModule,
-    NbThemeModule.forRoot(),
+   // NbThemeModule.forRoot(),
   ]
 })
 export class LoginModule { }

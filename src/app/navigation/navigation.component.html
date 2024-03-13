@@ -1,0 +1,162 @@
+<nb-layout>
+  <nb-layout-header class="header" fixed>
+    <button nbButton status="info" size="tiny" (click)="toggleCompact()">
+      Menu
+    </button>
+
+    <div class="navigate-buttons">
+      <ul>
+        <!--Se for usar stackblictz 
+ 
+        <li> <a href="https://bancobenchfrontend-4vyv--4200--a9c8a5a3.local-credentialless.webcontainer.io/pages/account"><img src="../../assets/images/Style=Filledsettings.png" class="img-top">Account</a></li>
+
+        <li>
+          <a href="https://bancobenchfrontend-4vyv--4200--a9c8a5a3.local-credentialless.webcontainer.io/pages/dashboard"><img src="../../assets/images/Style=Filleddashboard.png" class="img-top">Dashboard</a>
+        </li>
+
+        <li> <a href="https://bancobenchfrontend-4vyv--4200--a9c8a5a3.local-credentialless.webcontainer.io/pages/sac"><img src="../../assets/images/Style=Sharpsac.png" class="img-top">SAC</a>
+
+        <li>
+          <a href="https://bancobenchfrontend-4vyv--4200--a9c8a5a3.local-credentialless.webcontainer.io/pages/about"><img src="../../assets/images/Style=Roundpin.png" class="img-top">Quem Somos</a>
+
+        </li> 
+
+
+-->
+
+        <!-- 
+  se for usar local -->
+        <li>
+          <a routerLink="/pages/account"
+            ><img
+              src="../../assets/images/Style=Filledsettings.png"
+              class="img-top"
+            />Account</a
+          >
+        </li>
+
+        <li>
+          <a routerLink="/pages/dashboard"
+            ><img
+              src="../../assets/images/Style=Filleddashboard.png"
+              class="img-top"
+            />Dashboard</a
+          >
+        </li>
+
+        <li>
+          <a routerLink="/pages/sac"
+            ><img
+              src="../../assets/images/Style=Sharpsac.png"
+              class="img-top"
+            />SAC</a
+          >
+        </li>
+
+        <li>
+          <a routerLink="/pages/about"
+            ><img
+              src="../../assets/images/Style=Roundpin.png"
+              class="img-top"
+            />Quem Somos</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nb-layout-header>
+
+  <nb-sidebar left tag="left">
+    @if (sidebarState === 'compacted') {
+    <!--Se for usar o stackblitz
+        <a href="https://bancobenchfrontend-4vyv--4200--a9c8a5a3.local-credentialless.webcontainer.io/pages/carteira"><img src="../../assets/images/Style=Roundwallet.png" class="img-side"></a>
+ 
+        <a href="https://bancobenchfrontend-4vyv--4200--a9c8a5a3.local-credentialless.webcontainer.io/pages/pix"><img src="../../assets/images/Style=Outlinedtransfer.png" class="img-side"></a>
+ 
+        <a href="https://bancobenchfrontend-4vyv--4200--a9c8a5a3.local-credentialless.webcontainer.io/pages/transferencia"><img src="../../assets/images/Style=Roundcard.png" class="img-side"></a>
+  
+        <a href="https://bancobenchfrontend-4vyv--4200--a9c8a5a3.local-credentialless.webcontainer.io/pages/boleto"><img src="../../assets/images/Style=Roundboleto.png" class="img-side"></a>
+  
+        <a href="https://bancobenchfrontend-4vyv--4200--a9c8a5a3.local-credentialless.webcontainer.io/pages/extrato"><img src="../../assets/images/Style=Filledextract.png" class="img-side"></a>
+-->
+    <!--
+          se for usar local -->
+
+    <a routerLink="/pages/carteira"
+      ><img src="../../assets/images/Style=Roundwallet.png" class="img-side"
+    /></a>
+
+    <a routerLink="/pages/pix"
+      ><img
+        src="../../assets/images/Style=Outlinedtransfer.png"
+        class="img-side"
+    /></a>
+
+    <a routerLink="/pages/transferencia"
+      ><img src="../../assets/images/Style=Roundcard.png" class="img-side"
+    /></a>
+
+    <a routerLink="/pages/boleto"
+      ><img src="../../assets/images/Style=Roundboleto.png" class="img-side"
+    /></a>
+
+    <a routerLink="/pages/extrato"
+      ><img src="../../assets/images/Style=Filledextract.png" class="img-side"
+    /></a>
+
+    }@else {
+
+    <!--Se for usar stackblitz
+
+      <div class="navigate-buttons-side">
+        <a href="https://bancobenchfrontend-4vyv--4200--a9c8a5a3.local-credentialless.webcontainer.io/pages/carteira" class="btn1">Carteira</a>
+        <a href="https://bancobenchfrontend-4vyv--4200--a9c8a5a3.local-credentialless.webcontainer.io/pages/pix" class="btn2">Pix</a>
+        <a href="https://bancobenchfrontend-4vyv--4200--a9c8a5a3.local-credentialless.webcontainer.io/pages/transferencia" class="btn3">Transferencia</a>
+        <a href="https://bancobenchfrontend-4vyv--4200--a9c8a5a3.local-credentialless.webcontainer.io/pages/boleto" class="btn4">Boleto</a>
+        <a href="https://bancobenchfrontend-4vyv--4200--a9c8a5a3.local-credentialless.webcontainer.io/pages/extrato" class="btn5">Extrato</a>
+      </div> 
+
+-->
+
+    <!--
+se for usar local host -->
+    <div class="navigate-buttons-side">
+      <a routerLink="/pages/carteira" class="btn1">Carteira</a>
+      <a routerLink="/pages/pix"class="btn2">Pix</a>
+      <a routerLink="/pages/transferencia" class="btn3"
+        >Transferencia</a
+      >
+      <a routerLink="/pages/boleto"class="btn4">Boleto</a>
+      <a routerLink="/pages/extrato" class="btn5">Extrato</a>
+    </div>
+
+    }
+  </nb-sidebar>
+
+  <nb-layout-column class="colored-column-warning">
+    <div class="profile">
+      <ul>
+        <li>Olá {{ userService.usuario.getValue().nome_cliente }}</li>
+        <li>
+          Saldo: @if (eyeCondition) {
+
+          <img
+            (click)="eye()"
+            src="../../../../assets/images/Style=Roundclose_eye.png"
+          />
+
+          } @else {
+          <img
+            (click)="eye()"
+            src="../../../../assets/images/Style=Roundopen_eye.png"
+          />
+
+          }
+
+          {{  saldo  }}
+          
+        </li>
+      </ul>
+    </div>
+    <router-outlet> </router-outlet>
+  </nb-layout-column>
+</nb-layout>

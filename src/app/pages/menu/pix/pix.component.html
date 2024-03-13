@@ -1,0 +1,60 @@
+<div class="carteira-container">
+  <div class="pix-cartao">
+    {{fecharPix()}}
+    <ul>
+      <li>
+        <input
+          type="button"
+          value="Pagar"
+          class="btn-pix"
+          (click)="pagarPix()"
+        />
+      </li>
+
+      <li>
+        <input
+          type="button"
+          value="Copia e Cola"
+          class="btn-pix2"
+          (click)="copiaColaPix()"
+        />
+      </li>
+    </ul>
+  </div>
+
+  <div class="extrato-buttons">
+    <div class="extrato-buttons-box">
+      <ul>
+        <li>
+          <input
+            type="button"
+            value="Copia e Cola"
+            class="btn-pix2"
+            (click)="copiaColaPix()"
+          />
+        </li>
+        <li>
+            <input
+            type="button"
+            value="Copia e Cola"
+            class="btn-pix2"
+            (click)="copiaColaPix()"
+          />
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<ng-template #pixpay>
+  <app-newpix
+    class="newpix"
+    (fecharPix)="fecharPix()"
+    [tipoPix]="tipoPix"
+  ></app-newpix>
+
+
+  <!-- quando tem (é um filho)   e quando tem [É o pai]-->
+</ng-template>
+
+

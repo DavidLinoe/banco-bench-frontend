@@ -1,0 +1,34 @@
+
+<div class="modalPixBox">
+  <br />
+
+  @if(qrConditionView){
+
+  <a> Copia e Cola </a>
+
+ 
+
+    <input
+      type="text"
+      [(ngModel)]="chaveAleatoria"
+      required
+      placeholder="Colar"
+      class="modalPixInput"
+    />
+    <br />
+    <button type="button" [formGroup]="payForm" (click)="qrView()" class="modalButtons2">
+      Gerar Qr Code
+    </button>
+  
+
+  } @else {
+
+  <div class="bg-img">
+    <img src="../../../../../assets/images/qrcode-pix.png" alt="" />
+  </div>
+
+  }
+
+
+</div>
+
