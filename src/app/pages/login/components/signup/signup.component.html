@@ -6,6 +6,8 @@
   <input type="text" placeholder="Full Name" formControlName="nome" />
   <br />
 
+  <input type="text" placeholder="CPF" formControlName="cpf" />
+
   <input type="text" placeholder="Phone Number" formControlName="telefone" />
   <br />
 
@@ -16,5 +18,7 @@
 </div>
 
 <div>
-  <button [disabled]="RegisterForm.invalid" (click)="enviarRegistro()" class="btn">Register</button>
+  <button [disabled]="RegisterForm.invalid" (click)="enviarRegistro()" class="btn">
+    Register
+  </button>
 </div>
