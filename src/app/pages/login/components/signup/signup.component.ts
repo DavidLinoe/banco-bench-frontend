@@ -18,13 +18,16 @@ export class SignupComponent implements OnInit {
     ) {}
   ngOnInit(): void {
     this.RegisterForm = this.formBuilder.group({
-      nome: [null, Validators.required],
+      nome: [, Validators.required],
 
-      telefone: [null, Validators.required],
+      telefone: [, Validators.required],
 
-      email: [null, [Validators.email, Validators.required]],
+      email: [, [Validators.email, Validators.required]],
 
-      senha: [null, Validators.required],
+      senha: [, Validators.required],
+
+      cpf: [, Validators.required],
+
     });
   }
   enviarRegistro() {
