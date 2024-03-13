@@ -9,6 +9,7 @@ import { PixModalConferirDadosComponent } from '../pix-modal-conferir-dados/pix-
   styleUrl: './pix-modal-pagar.component.scss',
 })
 export class PixModalPagarComponent {
+  valorAmount: any;
 
 
   ngOnInit(): void {
@@ -50,6 +51,9 @@ export class PixModalPagarComponent {
 
   waitChange() {
     this.conferirValor = this.payForm.value.amount;
+    this.valorAmount =  this.payForm.value.amount;
+    localStorage.setItem("valorAmount", this.valorAmount)
+
     if (localStorage.getItem('stateChange') == 'true') {
       console.log('Log no waitChange pix modal Router Funciona');
       if (this.conferirValor > 0) {
@@ -78,7 +82,7 @@ if(this.payForm.value.choose === "3" ){
 
 }
 else{
-  this.verificarChaveEmail();//cpf e cpnj depois
+  this.verificarChaveCpf();//cpf e cpnj depois
 
 }
   }
@@ -111,6 +115,22 @@ else{
         },
         error: (err: any) => {
           console.log('Nenhuma Chave Email Encontrada ! ');
+          localStorage.removeItem('chavePix');
+        },
+      });
+  }
+  verificarChaveCpf() {
+    this.http
+      .post('http://localhost:3000/verificar/chave/cpf', {
+        dadosChave: this.payForm.value.chaveAleatoria,
+      })
+      .subscribe({
+        next: (res: any) => {
+          localStorage.setItem('chavePix', res.cpf.toString());
+          console.log('Resposta do Next Email ', res.cpf.toString());
+        },
+        error: (err: any) => {
+          console.log('Nenhuma Chave Cpf Encontrada ! ');
           localStorage.removeItem('chavePix');
         },
       });
