@@ -1,0 +1,27 @@
+<div class="modalPixBox">
+  <a> PIX </a>
+  <a>R$ {{ payForm.get("amount")?.value }}</a>
+
+  <div class="input" [formGroup]="payForm">
+    <br />
+
+    <select class="modalPixSelect" id="choose" (change)="waitChange()" formControlName="choose" required>
+      <option value="1">CPF</option>
+      <option value="2">CNPJ</option>
+      <option value="3">CEL</option>
+      <option value="4">EMAIL</option>
+    </select>
+
+    <input type="text" (change)="waitChange()" formControlName="chaveAleatoria" class="modalPixInput" />
+    <br />
+    <input
+      type="number"
+      placeholder="Valor"
+      class="modalPixInput2"
+      formControlName="amount"
+      (change)="waitChange()"
+    />
+  </div>
+  <!-- <button (click)="waitChange()">Buscar Chave</button> -->
+  <!-- BOTAO TEMPORARIO PARA ENTRAR NA FUNCAO waitChange() -->
+</div>

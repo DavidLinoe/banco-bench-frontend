@@ -1,19 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormsModule,
-  ReactiveFormsModule,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
-
+import {FormBuilder, FormsModule, ReactiveFormsModule, FormGroup, Validators,} from '@angular/forms';
 interface loginResponse {
   validation: boolean;
   email: string;
   senha: string;
 }
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -31,19 +23,8 @@ export class LoginComponent implements OnInit {
 
       senha: ['senha123', Validators.required],
     });
-    //this.enviarLogin()
   }
-  enviarLogin() {
-    this.http
-      .post('http://localhost:3000/teste', { dados: this.loginForm.value })
-      .subscribe((response) => {
-        next: (res: loginResponse) => {
-          if (res.validation) console.log('Acessou!');
-          else console.log('Acesso Negado!');
-        };
-        error: (err: any) => {};
-      });
-  }
+
   modificarCardLogin() {
     setTimeout(() => {
       this.conditionSignIn = !this.conditionSignIn;

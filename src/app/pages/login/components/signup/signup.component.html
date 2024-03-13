@@ -3,10 +3,12 @@
 
   <br />
 
-  <input type="text" placeholder="Full Name" formControlName="user" />
+  <input type="text" placeholder="Full Name" formControlName="nome" />
   <br />
 
-  <input type="text" placeholder="Phone Number" formControlName="phone" />
+  <input type="text" placeholder="CPF" formControlName="cpf" />
+
+  <input type="text" placeholder="Phone Number" formControlName="telefone" />
   <br />
 
   <input type="text" placeholder="Email" formControlName="email" />
@@ -16,14 +18,7 @@
 </div>
 
 <div>
-
-
-  <a
-  (click)="enviarRegistro()"
-  class="btn"
-  
-  >Register
-
-  </a>
+  <button [disabled]="RegisterForm.invalid" (click)="enviarRegistro()" class="btn">
+    Register
+  </button>
 </div>
-
