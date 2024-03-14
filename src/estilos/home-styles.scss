@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Allerta&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+.img-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+p a {
+  color: #f68511;
+  font-size: 27px;
+}
+p a:hover {
+  color: #3e86cf;
+}
+
+p:hover {
+  color: #f68511;
+}
+p a::selection {
+  color: #f68511;
+}
+p::selection {
+  color: #3e86cf;
+}
+
+p {
+  margin-top: 30px;
+  margin-left: 50px;
+  margin-right: 50px;
+
+  text-align: left;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  color: #3e86cf;
+  //   margin-bottom: 65px;
+}
+
+img {
+  padding: 0px 20px 20px 25px;
+}
+.img-2 {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+  border-radius: 50%;
+}
+.img-1 img {
+  border-radius: 50px;
+}
+
+.img-2 img {
+  border-radius: 50px;
+}
