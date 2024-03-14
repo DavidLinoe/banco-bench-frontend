@@ -1,5 +1,6 @@
 <div class="register-box" [formGroup]="RegisterForm">
-  <h1>Sign Up</h1>
+  
+  <h1>Registrar</h1>
 
   <br />
 
@@ -17,8 +18,12 @@
   <input type="password" placeholder="Password" formControlName="senha" />
 </div>
 
-<div>
+<div style="justify-content: center; display: flex;">
+
   <button [disabled]="RegisterForm.invalid" (click)="enviarRegistro()" class="btn">
+   
     Register
   </button>
 </div>
+<a class="b1" (click)="check()">Ja possui uma conta ?</a>
+<!-- <app-checkbox></app-checkbox> -->
