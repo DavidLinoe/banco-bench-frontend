@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Allerta&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+$black: #131313;
+$black-light: #353535;
+$orange-logo: #f68511;
+$blue-logo: #5a97d6;
+$white: #fafafa;
+$blue-light: #68bdf1;
+$rgba-orange1: rgba(228, 137, 0, 0.4) 0px 3px;
+$rgba-orange2: rgba(228, 137, 0, 0.3) 0px 6px;
+$rgba-orange3: rgba(228, 137, 0, 0.2) 0px 9px;
+$rgba-orange4: rgba(228, 137, 0, 0.1) 0px 12px;
+$rgba-orange5: rgba(228, 137, 0, 0.05) 0px 15px;
+$rgba-orange6: rgba(228, 137, 0, 0.002) 0px 18px;
+
+.colored-column-warning {
+  background-color: $black-light;
+}
+.left {
+  background-color: $black;
+}
+.left.compacted {
+  background-color: $orange-logo;
+}
+.header {
+  background-color: $black;
+  position: fixed;
+  background-image: url("../assets/images/Group\ 1bench-logo.png");
+  background-size: 230px;
+  //   margin-right: 20px;
+  box-shadow: $rgba-orange1, $rgba-orange2, $rgba-orange3, $rgba-orange4,
+    $rgba-orange5, $rgba-orange6;
+
+  background-repeat: no-repeat, repeat-x;
+  background-position: right, center;
+}
+.navigate-buttons {
+  text-decoration: none;
+  align-items: center;
+  //   padding-right: 170px;
+}
+.navigate-buttons ul li {
+  display: inline-block;
+  padding-right: 15px;
+  padding-left: 5px;
+  border-radius: 20px;
+}
+.navigate-buttons ul li a {
+  align-items: center;
+  display: flex;
+  text-decoration: none;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  color: $white;
+  margin: 0px 20px 0 20px;
+}
+.navigate-buttons ul :hover {
+  text-decoration: none;
+  align-items: center;
+  cursor: pointer;
+  background-color: $orange-logo;
+}
+.navigate-buttons ::selection {
+  color: $blue-logo;
+}
+.button {
+  text-decoration: none;
+  align-items: center;
+  cursor: pointer;
+  color: $white;
+  background-color: #000000;
+  border-radius: 10px;
+}
+
+.button::selection {
+  color: $orange-logo;
+}
+.button:hover {
+  text-decoration: none;
+  align-items: center;
+  cursor: pointer;
+  background-color: $orange-logo;
+}
+.navigate-buttons-side a {
+  width: auto;
+  height: 30px;
+  display: block;
+  padding-top: 5px;
+  padding-left: 4px;
+  text-align: left;
+  text-decoration: none;
+  color: $orange-logo;
+  margin: 45px 40px 10px 40px;
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  align-items: center;
+  border-radius: 12px;
+  background-color: $white;
+  background-size: 20px;
+  background-repeat: no-repeat, repeat-x;
+  background-position: right, center;
+}
+.navigate-buttons-side :hover {
+  color: $blue-logo;
+}
+.navigate-buttons-side ::selection {
+  color: $blue-logo;
+}
+
+.img-side {
+  padding: 40px 0px 8px 0px;
+}
+.btn1 {
+  background-image: url(../assets/images/Style=Roundprofile.png);
+}
+.btn2 {
+  background-image: url(../assets/images/Style=Outlinedtransfer.png);
+}
+.btn3 {
+  background-image: url(../assets/images/Style=Roundcard.png);
+}
+.btn4 {
+  background-image: url(../assets/images/Style=Roundboleto.png);
+}
+.btn5 {
+  background-image: url(../assets/images/Style=Filledextract.png);
+}
+
+.profile ul {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.profile ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  border-radius: 1px 20px 1px 20px;
+
+  padding: 10px 20px 0px 20px;
+  background-color: $orange-logo;
+  color: #ffffff;
+  text-shadow: 2px 4px 4px rgba(46, 91, 173, 0.6);
+
+  height: 40px;
+}
+.profile ul li::selection {
+  color: $blue-logo;
+}
+.profile ul li img::selection {
+  color: $blue-logo;
+}
