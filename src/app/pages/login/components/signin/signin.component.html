@@ -1,29 +1,31 @@
-
 <div class="login-box" [formGroup]="loginForm">
     
-    <h1>Sign In</h1>
+    <h1>Logar</h1>
 
   <br/>
 
     <input type="text" placeholder="Email" formControlName="email" />
     <br/>
 
-    <input type="password" placeholder="Senha" formControlName="senha" />
-  </div>
+    <input type="password" placeholder="Password" formControlName="senha" />
 
+    <app-checkbox>
+    
+    </app-checkbox>
+<!-- 
+    <div class="container-checkbox">
+      <p>não possui uma conta ainda ?</p>
 
+      <div class="checkbox">
 
+        <input type="checkbox" (click)="null" />
+      </div>
+    </div> -->
 
   <div>
 
-
-    <a
-    (click)="enviarLogin()"
-    class="btn"
+    <button (click)="enviarLogin()"class="btn" [disabled]="loginForm.invalid">Login </button>
     
-    >Login
-
-    </a>
   </div>
 
-  
+</div>

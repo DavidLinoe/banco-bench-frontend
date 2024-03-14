@@ -1,33 +1,57 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserService } from '../../../../services/user.service';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrl: './signup.component.scss'
+  styleUrl: './signup.component.scss',
 })
-export class SignupComponent implements OnInit{
+export class SignupComponent implements OnInit {
+  public RegisterForm: FormGroup;
+  constructor(private formBuilder: FormBuilder,
+     private http: HttpClient,
+     private routerNavigate: Router,
+     private userService: UserService
+    ) {}
+  ngOnInit(): void {
+    this.RegisterForm = this.formBuilder.group({
+      nome: [, Validators.required],
 
+      telefone: [, Validators.required],
 
-  public RegisterForm: FormGroup
-constructor(private formBuilder :FormBuilder,private http:HttpClient){}
-ngOnInit(): void {
-this.RegisterForm = this.formBuilder.group({
+      email: [, [Validators.email, Validators.required]],
 
-  
-  user:[null,Validators.required],
+      senha: [, Validators.required],
 
-  phone:[null,Validators.required],
+      cpf: [, Validators.required],
 
-  email:[null,[Validators.email,Validators.required]],
-
-  senha:[null,Validators.required]
-})
+    });
+  }
+  enviarRegistro() {
+   
+    this.http
+      .post('http://localhost:3000/authentication/register', { dados: this.RegisterForm.value })
+      .subscribe({
+        next: (res: any) => {
+          console.log('res');
+          this.routerNavigate.navigateByUrl('/reload');
+        },
+        error: (err: any) => {
+          console.log('erro');
+        },
+      });
 }
-enviarRegistro(){
-console.log(this.RegisterForm.value)
-  this.http.post('http://localhost:3000/teste',{dados:this.RegisterForm.value}).subscribe(response =>{
-console.log(response)})
+checked: any;
+check() {
+  this.checked = !this.checked;
+
+  if (!this.checked) {
+    localStorage.setItem('check', 'checked');
+  } else {
+    localStorage.setItem('check', '');
+  }
 }
 }

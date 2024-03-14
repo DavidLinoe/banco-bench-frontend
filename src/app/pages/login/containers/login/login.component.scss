@@ -1,28 +1,108 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 
-.bgimage{
-height: 100vh;
-background-size: cover;
-background-repeat: no-repeat, repeat-x;
-background-position: center, center;
-  background-image: url('https://cucafresca.com.br/public/site/img/sections/cloud.jpeg');
-}
-.login-box{
-  display: flex;
-  padding: 10%;
-  align-items: center;
-  justify-content: center;
 
-}
-.login-content{
+@use "./../../../../../estilos/login-styles.scss";
 
-  display: flex;
+// @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 
-  align-items: center;
-  justify-content: center;
-background-color: #3E86CF;
+// .bgimage{
+  
+//  padding-top: 75px;//Tirar depois que for usar o header
 
-width: 260px;
-height: 270px;
-border-radius: 12px;
-}
+
+// height: 100vh;
+// background-size: cover;
+// background-repeat: no-repeat, repeat-x;
+// background-position: center, center;
+// background-color: #27A0EC;
+// background-image: url('..//..//..//..//..//assets/images/cartao.png');
+// }
+// .login-box{
+//   display: flex;
+//   padding-top: 20px;
+//   align-items: center;
+//   justify-content: center;
+
+// }
+// .login-content{
+
+//   display: flex;
+//   box-shadow: 2px 2px 2px 1px rgba(1, 1, 1, 0.6);
+//   align-items: center;
+//   justify-content: center;
+// background-color: #3E86CF;
+
+// width: 260px;
+// height: 270px;
+// border-radius: 12px;
+// }
+// .container-checkbox{
+
+//   display: flex;
+// padding-top: 0px;
+//   align-items: center;
+//   justify-content: center;
+
+// }
+
+// .h1{
+//   color: white; 
+//   text-shadow: black 0.1em 0.1em 0.2em;
+
+// font-size: 25px;
+//   display: flex;
+// padding-top: 30px;
+//   align-items: center;
+//   justify-content: center;
+
+// }
+//   .checkbox{
+//     --size: 70px;
+//   }
+
+//   .checkbox input[type="checkbox"] {
+//     -webkit-appearance: none;
+//     width: var(--size);
+//     height: calc(var(--size) / 2);
+//     background-color: #FAFAFA;
+//     border: 3px solid #222;
+//     border-radius: 30px 100px 100px 100px;
+//     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+//     outline: none;  
+//     cursor: pointer;
+//     position: relative;
+//     transition: all 0.5s;
+//   }
+
+//   .checkbox input[type="checkbox"]::before {
+//     content: "";
+//     position: absolute;
+//     width: calc(var(--size) / 2);
+//     height: calc(var(--size) / 2);
+//     left: 0;
+//     top: 50%;
+//     transform: translateY(-50%) scale(0.7);
+//     border: 3px solid #222;
+//     border-radius: 30px 100px 100px 100px;
+//     background-color: #27A0EC;
+//     box-sizing: border-box;
+//     transition: all 0.5s;
+//   }
+
+//   .checkbox input[type="checkbox"]:checked {
+//     background-color: #27A0EC;
+//     border-radius: 100px 30px 100px 100px;
+//   }
+
+//   .checkbox input[type="checkbox"]:checked::before {
+//     left: 50%;
+//     background-color: #FAFAFA;
+//     border-radius: 100px 30px 100px 100px;
+//   }
+
+
+
+
+
+
+
+  

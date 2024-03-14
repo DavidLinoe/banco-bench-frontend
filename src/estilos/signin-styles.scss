@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Allerta&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+.login-box h1 {
+  text-align: center;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 48px;
+  color: #3e86cf;
+  margin-bottom: 65px;
+  text-shadow: rgb(121, 121, 121) 0.05em 0.05em 0.2em;
+}
+
+.login-box h1::selection {
+  color: #f68511;
+}
+
+.login-box {
+  border-radius: 12px;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.login-box input {
+  border-width: 1px;
+  color: #ffffff;
+  background-color: #f68511;
+  height: 40px;
+  width: 340px;
+  border-color: #00000000;
+  border-radius: 25px;
+  padding-left: 10px;
+  margin-top: 8px;
+}
+.login-box input::placeholder {
+  color: #ffffff;
+  font-family: "Allerta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+}
+.login-box input::selection {
+  color: #3e86cf;
+  text-decoration: none;
+}
+
+.btn {
+  //   display: block;
+  border-radius: 25px;
+  margin-top: 70px;
+  height: 45px;
+  width: 175px;
+  font-family: "Allerta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  color: #ffffff;
+  align-items: center;
+  background-color: #5a97d6;
+}
+.btn:hover {
+  background-color: #3fbcee;
+  color: #ffffff;
+}
+.b1 {
+  padding-left: 2dvh;
+  background-color: rgba(127, 255, 212, 0);
+  border-style: none;
+}
+.b1:hover {
+  cursor: pointer;
+}
+.b1::selection {
+  color: #f68511;
+}

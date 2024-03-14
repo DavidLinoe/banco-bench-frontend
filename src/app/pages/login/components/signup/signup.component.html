@@ -1,29 +1,29 @@
 <div class="register-box" [formGroup]="RegisterForm">
-  <h1>Sign Up</h1>
+  
+  <h1>Registrar</h1>
 
   <br />
 
-  <input type="text" placeholder="Full Name" formControlName="user" />
+  <input type="text" placeholder="Full Name" formControlName="nome" />
   <br />
 
-  <input type="text" placeholder="Phone Number" formControlName="phone" />
+  <input type="text" placeholder="CPF" formControlName="cpf" />
+
+  <input type="text" placeholder="Phone Number" formControlName="telefone" />
   <br />
 
   <input type="text" placeholder="Email" formControlName="email" />
   <br />
 
-  <input type="password" placeholder="Senha" formControlName="senha" />
+  <input type="password" placeholder="Password" formControlName="senha" />
 </div>
 
-<div>
+<div style="justify-content: center; display: flex;">
 
-
-  <a
-  (click)="enviarRegistro()"
-  class="btn"
-  
-  >Register
-
-  </a>
+  <button [disabled]="RegisterForm.invalid" (click)="enviarRegistro()" class="btn">
+   
+    Register
+  </button>
 </div>
-
+<a class="b1" (click)="check()">Ja possui uma conta ?</a>
+<!-- <app-checkbox></app-checkbox> -->

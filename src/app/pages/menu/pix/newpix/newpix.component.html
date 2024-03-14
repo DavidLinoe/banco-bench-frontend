@@ -1,0 +1,22 @@
+<nb-card>
+  <!--Nb é de Nebular, esse é uma componente importado do Nebular-->
+  <div class="container">
+    @if(tipoPix === "pagar"){
+    {{ guardarRota() }}
+    <app-pix-modal-router></app-pix-modal-router>
+   
+    } @else if(tipoPix === "copiacola"){
+    {{ guardarRotaAlternativa() }}
+    <app-pix-modal-router></app-pix-modal-router>
+
+    }
+    @else{
+
+      <h1>else</h1>
+  
+      }
+  
+
+
+  </div>
+</nb-card>

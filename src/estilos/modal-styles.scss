@@ -1,0 +1,132 @@
+.container {
+  display: block;
+
+  align-items: center;
+  background-color: #63a2e2;
+  border-radius: 25px;
+  padding-top: 12px;
+  height: 400px;
+  width: 530px;
+}
+.modalPixBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #5a97d6;
+  border-radius: 25px;
+  height: 280px;
+  width: 530px;
+}
+.modalPixBox a {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 40px;
+  padding-bottom: 25px;
+  cursor: zoom-in;
+  text-shadow: 2px 2px 5px rgb(94, 94, 94);
+}
+.modalPixBox p {
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: zoom-in;
+  text-shadow: 2px 2px 5px rgb(94, 94, 94);
+}
+.modalPixInput {
+  width: 222px;
+  color: #5a97d6;
+  background-color: #f7f7f7;
+  border-style: none;
+  border-radius: 5px;
+  height: 38px;
+  padding-left: 15px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgb(169, 192, 255);
+}
+.modalPixInput ::placeholder {
+  color: #5a97d6;
+}
+.modalPixInput2 {
+  color: #5a97d6;
+  background-color: #f7f7f7;
+  border-style: none;
+  border-radius: 50px;
+  width: 90px;
+  height: 38px;
+  margin-top: 20px;
+  padding-left: 10px;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgb(169, 192, 255);
+}
+.modalPixInput2::placeholder {
+  color: #5a97d6;
+}
+
+.modalPixSelect {
+  background-color: #fafafa;
+  display: 120px;
+  color: #5a97d6;
+  background-color: #f7f7f7;
+  border-style: none;
+  border-radius: 5px;
+  height: 38px;
+  text-shadow: 2px 2px 5px rgb(169, 192, 255);
+  color: #5a97d6;
+}
+.modalClose {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+
+  margin-left: 480px;
+}
+
+.modalClose:hover {
+  color: #ff0000;
+}
+
+.modalButtons {
+  padding-top: 25px;
+  display: inline-flex;
+}
+.modalButtons1 {
+  background-color: #fafafa;
+  color: #5a97d6;
+  border-radius: 40px;
+  cursor: cell;
+  height: 35px;
+  border-color: rgba(0, 0, 51, 0);
+  width: 70px;
+  margin: 0 60px 0 60px;
+  margin-top: 10px;
+}
+
+.modalButtons1:hover {
+  background-color: #72d7ff;
+  color: #ffffff;
+}
+
+.modalButtons2 {
+  background-color: #fafafa;
+  color: #5a97d6;
+  border-radius: 50px;
+  cursor: cell;
+  height: 35px;
+  width: 112px;
+  margin-top: 10px;
+  border-color: rgba(0, 0, 51, 0);
+}
+
+.modalButtons2:hover {
+  background-color: #72d7ff;
+  color: #ffffff;
+}
+.bg-img img {
+  width: 200px;
+  height: 200px;
+}
