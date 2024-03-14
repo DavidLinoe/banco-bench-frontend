@@ -1,7 +1,6 @@
-
 <div class="login-box" [formGroup]="loginForm">
     
-    <h1>Sign In</h1>
+    <h1>Logar</h1>
 
   <br/>
 
@@ -9,16 +8,24 @@
     <br/>
 
     <input type="password" placeholder="Password" formControlName="senha" />
-  </div>
 
+    <app-checkbox>
+    
+    </app-checkbox>
+<!-- 
+    <div class="container-checkbox">
+      <p>não possui uma conta ainda ?</p>
 
+      <div class="checkbox">
 
+        <input type="checkbox" (click)="null" />
+      </div>
+    </div> -->
 
   <div>
-
 
     <button (click)="enviarLogin()"class="btn" [disabled]="loginForm.invalid">Login </button>
     
   </div>
 
-  
+</div>
