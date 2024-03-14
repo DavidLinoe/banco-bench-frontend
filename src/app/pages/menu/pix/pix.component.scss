@@ -1,3 +1,10 @@
+$black: #131313;
+$black-light: #353535;
+$orange-logo: #f68511;
+$blue-logo: #5a97d6;
+$white: #fafafa;
+$blue-light: #68bdf1;
+
 .carteira-container {
     display: flex;
     flex-wrap: wrap;
@@ -18,8 +25,8 @@
 .pix-cartao ul li {
 
     margin: 0px 20px 0px 20px;
-    background-image: url(../../../../assets/images/1200px-Logo_-_pix_powered_by_Banco_Central_\(Brazil\,_2020\).png);
-    background-size: 60%;
+    background-image: url(../../../../assets/images/pix-svgrepo-com\ \(1\).png);
+    background-size: 20%;
 
     background-position: top;
     background-repeat: no-repeat;
@@ -85,9 +92,9 @@
 
 .btn-pix {
     background-color: #ffffff;
-    color: #32dad1;
+    color:$orange-logo;
     border-radius: 15px;
-    border-color: #8effdd;
+    border-color:$orange-logo;
     cursor: cell;
     height: auto;
     width: 300px;
@@ -95,9 +102,9 @@
 }
 .btn-pix2 {
     background-color: #ffffff;
-    color: #32dad1;
+    color:$orange-logo;
     border-radius: 15px;
-    border-color: #8effdd;
+    border-color:$orange-logo;
     cursor: cell;
     height: auto;
     width: 300px;

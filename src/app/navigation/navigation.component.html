@@ -1,6 +1,10 @@
+
 <nb-layout>
+ 
+
+  
   <nb-layout-header class="header" fixed>
-    <button nbButton status="info" size="tiny" (click)="toggleCompact()">
+    <button class="button"  size="tiny" (click)="toggleCompact()">
       Menu
     </button>
 
@@ -131,7 +135,6 @@ se for usar local host -->
 
     }
   </nb-sidebar>
-
   <nb-layout-column class="colored-column-warning">
     <div class="profile">
       <ul>
@@ -158,5 +161,7 @@ se for usar local host -->
       </ul>
     </div>
     <router-outlet> </router-outlet>
+
   </nb-layout-column>
+
 </nb-layout>
