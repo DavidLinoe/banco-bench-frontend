@@ -44,5 +44,14 @@ export class SignupComponent implements OnInit {
         },
       });
 }
+checked: any;
+check() {
+  this.checked = !this.checked;
 
+  if (!this.checked) {
+    localStorage.setItem('check', 'checked');
+  } else {
+    localStorage.setItem('check', '');
+  }
+}
 }
