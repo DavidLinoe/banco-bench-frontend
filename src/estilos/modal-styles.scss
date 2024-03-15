@@ -4,7 +4,7 @@ $orange-logo: #f68511;
 $blue-logo: #5a97d6;
 $white: #fafafa;
 $blue-light: #68bdf1;
-$orange-dark:#ff7300;
+$orange-dark: #ff7300;
 .container {
   display: block;
 
@@ -20,11 +20,12 @@ $orange-dark:#ff7300;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-color:$orange-dark;
+  background-color: $orange-dark;
   border-radius: 25px;
   height: 280px;
   width: 530px;
 }
+
 .modalPixBox a {
   display: flex;
   text-align: center;
@@ -43,6 +44,7 @@ $orange-dark:#ff7300;
   cursor: zoom-in;
   text-shadow: 2px 2px 5px rgb(94, 94, 94);
 }
+
 .modalPixInput {
   width: 222px;
   color: $blue-light;
@@ -55,10 +57,10 @@ $orange-dark:#ff7300;
   text-shadow: 2px 2px 5px rgb(169, 192, 255);
 }
 .modalPixInput ::placeholder {
-  color:$blue-light;
+  color: $blue-light;
 }
 .modalPixInput2 {
-  color:$blue-light;
+  color: $blue-light;
   background-color: #f7f7f7;
   border-style: none;
   border-radius: 50px;
@@ -76,7 +78,7 @@ $orange-dark:#ff7300;
 .modalPixSelect {
   background-color: #fafafa;
   display: 120px;
-  color:$blue-light;
+  color: $blue-light;
   background-color: #f7f7f7;
   border-style: none;
   border-radius: 5px;
@@ -120,7 +122,7 @@ $orange-dark:#ff7300;
 
 .modalButtons2 {
   background-color: #fafafa;
-  color:$orange-dark;
+  color: $orange-dark;
   border-radius: 50px;
   cursor: cell;
   height: 35px;
@@ -136,4 +138,78 @@ $orange-dark:#ff7300;
 .bg-img img {
   width: 200px;
   height: 200px;
+}
+
+.modalPixBoxC a {
+  color: $white;
+  font-size: 30px;
+  cursor: zoom-in;
+  text-shadow: 2px 2px 5px rgb(94, 94, 94);
+  text-decoration: none;
+}
+.a a{
+  color: $white;
+  font-size: 15px;
+  cursor: zoom-in;
+  text-shadow: 2px 2px 5px rgb(94, 94, 94);
+  text-decoration: none;
+}
+.inner-box a {
+  display: flex;
+  // text-align: center;
+  justify-content: center;
+  color: $blue-logo;
+  text-decoration: none;
+  font-size: 15px;
+  // padding-bottom: 25px;
+  cursor: zoom-in;
+  text-shadow: 2px 2px 5px rgb(255, 201, 140);
+}
+.box {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 10px;
+  align-items: center;
+  background-color: $orange-logo;
+  border-radius: 25px;
+  height: 240px;
+  width: 250px;
+}
+.inner-box {
+  justify-content: center;
+  flex-direction: column;
+  align-items: baseline;
+
+
+  display: inline-flex;
+  flex-wrap: wrap;
+
+
+  background-color: $white;
+  border-radius: 20px;
+  padding-left: 10px;
+  height: 220px;
+  width: 230px;
+}
+.modalPixBoxC {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  background-color: $orange-dark;
+  border-radius: 25px;
+  height: 280px;
+  width: 530px;
+}
+.box-logo{
+  background-color: $white;
+  border-radius: 15px;
+  height: 100px;
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }

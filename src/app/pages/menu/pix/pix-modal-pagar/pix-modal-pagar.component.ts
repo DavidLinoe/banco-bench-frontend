@@ -11,17 +11,15 @@ import { PixModalConferirDadosComponent } from '../pix-modal-conferir-dados/pix-
 export class PixModalPagarComponent {
   valorAmount: any;
 
-
   ngOnInit(): void {
     this.payForm = this.formBuilder.group({
       amount: [0, [Validators.required]],
       chave: [],
       chaveAleatoria: [],
-      choose:[]
+      choose: [],
     });
-    
-    // const chaveSelecionada = this.payForm.value.choose
 
+    // const chaveSelecionada = this.payForm.value.choose
   }
 
   public state: string = 'pagar';
@@ -51,14 +49,14 @@ export class PixModalPagarComponent {
 
   waitChange() {
     this.conferirValor = this.payForm.value.amount;
-    this.valorAmount =  this.payForm.value.amount;
-    localStorage.setItem("valorAmount", this.valorAmount)
+    this.valorAmount = this.payForm.value.amount;
+    localStorage.setItem('valorAmount', this.valorAmount);
 
     if (localStorage.getItem('stateChange') == 'true') {
       console.log('Log no waitChange pix modal Router Funciona');
       if (this.conferirValor > 0) {
         this.chaveAleatoria();
-        localStorage.removeItem("valor")
+        localStorage.removeItem('valor');
       } else {
         this.valor = localStorage.setItem('valor', 'valor');
       }
@@ -72,19 +70,15 @@ export class PixModalPagarComponent {
       ' log da chave digitada ',
       localStorage.getItem('chaveAleatoria')
     );
-    console.log("log do choose",this.payForm.value.choose);
-    
-if(this.payForm.value.choose === "3" ){
-  this.verificarChaveTelefone();
+    console.log('log do choose', this.payForm.value.choose);
 
-}else if(this.payForm.value.choose === "4" ){
-  this.verificarChaveEmail();
-
-}
-else{
-  this.verificarChaveCpf();//cpf e cpnj depois
-
-}
+    if (this.payForm.value.choose === '3') {
+      this.verificarChaveTelefone();
+    } else if (this.payForm.value.choose === '4') {
+      this.verificarChaveEmail();
+    } else {
+      this.verificarChaveCpf(); //cpf e cpnj depois
+    }
   }
 
   verificarChaveTelefone() {
@@ -96,6 +90,7 @@ else{
         next: (res: any) => {
           localStorage.setItem('chavePix', res.telefone.toString());
           console.log('Resposta do Next Telefone  ', res.telefone.toString());
+          this.pixService.chaveExistente.next(res); //envia a res para o service !
         },
         error: (err: any) => {
           console.log('Nenhuma Chave Telefone Encontrada !');
@@ -112,6 +107,7 @@ else{
         next: (res: any) => {
           localStorage.setItem('chavePix', res.email.toString());
           console.log('Resposta do Next Email ', res.email.toString());
+          this.pixService.chaveExistente.next(res); //envia a res para o service !
         },
         error: (err: any) => {
           console.log('Nenhuma Chave Email Encontrada ! ');
@@ -128,6 +124,7 @@ else{
         next: (res: any) => {
           localStorage.setItem('chavePix', res.cpf.toString());
           console.log('Resposta do Next Email ', res.cpf.toString());
+          this.pixService.chaveExistente.next(res); //envia a res para o service !
         },
         error: (err: any) => {
           console.log('Nenhuma Chave Cpf Encontrada ! ');
