@@ -56,6 +56,7 @@ export class SigninComponent implements OnInit {
         },
         error: (err: any) => {
           console.log('erro');
+          alert("Email ou Senha Invalidos !")
         },
       });
   }
