@@ -11,11 +11,12 @@ import { UserService } from '../../../../services/user.service';
 })
 export class SignupComponent implements OnInit {
   public RegisterForm: FormGroup;
-  constructor(private formBuilder: FormBuilder,
-     private http: HttpClient,
-     private routerNavigate: Router,
-     private userService: UserService
-    ) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private routerNavigate: Router,
+    private userService: UserService
+  ) {}
   ngOnInit(): void {
     this.RegisterForm = this.formBuilder.group({
       nome: [, Validators.required],
@@ -27,31 +28,34 @@ export class SignupComponent implements OnInit {
       senha: [, Validators.required],
 
       cpf: [, Validators.required],
-
     });
   }
   enviarRegistro() {
-   
     this.http
-      .post('http://localhost:3000/authentication/register', { dados: this.RegisterForm.value })
+      .post('http://localhost:3000/authentication/register', {
+        dados: this.RegisterForm.value,
+      })
       .subscribe({
         next: (res: any) => {
           console.log('res');
           this.routerNavigate.navigateByUrl('/reload');
+          localStorage.setItem('check', '');
+          alert('Cadastro Realizado Com Sucesso!');
         },
         error: (err: any) => {
           console.log('erro');
+          localStorage.setItem('check', 'checked');
         },
       });
-}
-checked: any;
-check() {
-  this.checked = !this.checked;
-
-  if (!this.checked) {
-    localStorage.setItem('check', 'checked');
-  } else {
-    localStorage.setItem('check', '');
   }
-}
+  checked: any;
+  check() {
+    this.checked = !this.checked;
+
+    if (!this.checked) {
+      localStorage.setItem('check', 'checked');
+    } else {
+      localStorage.setItem('check', '');
+    }
+  }
 }
