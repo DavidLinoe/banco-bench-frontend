@@ -26,19 +26,20 @@ $rgba-orange6: rgba(228, 137, 0, 0.002) 0px 18px;
 .header {
   background-color: $black;
   position: fixed;
-  background-image: url("../assets/images/Group\ 1bench-logo.png");
-  background-size: 230px;
-  //   margin-right: 20px;
+  // background-image: url("../assets/images/bb-logo.png");
+  background-size: 100px;
+
   box-shadow: $rgba-orange1, $rgba-orange2, $rgba-orange3, $rgba-orange4,
     $rgba-orange5, $rgba-orange6;
 
   background-repeat: no-repeat, repeat-x;
   background-position: right, center;
+  display: flex;
+  justify-content: flex-end;
 }
 .navigate-buttons {
   text-decoration: none;
   align-items: center;
-  //   padding-right: 170px;
 }
 .navigate-buttons ul li {
   display: inline-block;
@@ -71,6 +72,8 @@ $rgba-orange6: rgba(228, 137, 0, 0.002) 0px 18px;
   color: $white;
   background-color: #000000;
   border-radius: 10px;
+  margin-right: 550px;
+
 }
 
 .button::selection {
