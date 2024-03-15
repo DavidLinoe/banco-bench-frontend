@@ -1,8 +1,36 @@
-<div class="modalPixBox">
-  <p>Comprovante de Pix</p>
-  <br />
-  <p>De: {{ userService.usuario.getValue().nome_cliente }}</p>
-  <p>Para: Humberto Souza</p>
-  <br />
-  <p>Valor 147 reais</p>
+<div class="modalPixBoxC">
+  <a>Comprovante</a>
+
+  <div class="box">
+    <div class="inner-box">
+      <a>De: {{ userService.usuario.getValue().nome_cliente }}</a>
+      <a>Agencia: {{ agencia }}</a>
+      <a>CPF: {{ cpf }}</a>
+      <br />
+      <a>Para: {{ nome }}</a>
+      <a>Chave: {{ chave}}</a>
+      <a>Agencia: {{ nome }}</a>
+
+      <br />
+      <a>Valor {{ valor }} reais</a>
+    </div>
+  </div>
+
+  <div class="img">
+    <div class="box-logo">
+      <img src="./../../../../../assets/images/bb-logo.png" alt="logo" />
+    </div>
+  </div>
+
+  <div class="a">
+    <a>ID DA TRANSAÇÂO : </a>
+    <br />
+
+    <a>I1534553$#152561411D</a>
+    <br />
+    <a>Banco Bench Pagamentos LTDA</a>
+    <br />
+
+    <a>CNPJ 342152311</a>
+  </div>
 </div>
