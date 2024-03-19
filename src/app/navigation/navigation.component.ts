@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NbSidebarService } from '@nebular/theme';
 import { UserService } from '../services/user.service';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -13,7 +14,9 @@ export class NavigationComponent implements OnInit {
   constructor(
     private sidebarService: NbSidebarService,
     public userService: UserService,
-    private http: HttpClient
+    private http: HttpClient,
+    private routerNavigate: Router
+
   ) {}
 
   toggleCompact() {
@@ -31,13 +34,21 @@ export class NavigationComponent implements OnInit {
     this.enviarDadosUser({id_cliente});
   }
   enviarDadosUser(res: any) {
-    this.http.post('http://localhost:3000/user', res).subscribe({
+    this.http.post('http://localhost:3000/user', res)
+    .subscribe({
       next: (res: any) => {
-        this.userService.usuario.next(res.user); //envia a res para o service !
 
+        console.log("Resposta do enviar dados User: ",res.id_cliente)
+        console.log("Resposta do enviar dados User: ",res.nome_cliente)
+        console.log("Resposta do enviar dados User: ",res.saldo_cliente)
+
+        this.userService.usuario.next(res); //envia a res para o service !
       },
       error: (err: any) => {
-        console.log('erro');
+        console.log('erro no enviar dados user !');
+        alert("Sessão Expirada !")
+        this.routerNavigate.navigateByUrl('/');
+
       },
     });
   }
