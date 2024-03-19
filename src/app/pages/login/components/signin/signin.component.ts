@@ -42,12 +42,29 @@ export class SigninComponent implements OnInit {
       })
       .subscribe({
         next: (res: any) => {
-          sessionStorage.setItem("id_cliente",res.id_cliente.toString())
+          // sessionStorage.setItem("id_cliente",res.id_cliente.toString())
+          // const id_cliente = res.id_cliente.toString()
+
+          sessionStorage.setItem("id_cliente",res.token)
+
+          // const id_cliente = sessionStorage.getItem("id_cliente")
+
+
+          // // const token_cliente = res.id_cliente.toString()
+          // console.log("Token do Usuario: ",id_cliente)
+
+
+
+          // sessionStorage.setItem("token_cliente",res.token.toString())
+          // this.enviarDadosUser(res.token.toString()); //envia a res para o service !
 
          // localStorage.setItem("id_cliente",res.id_cliente.toString())
-          //this.enviarDadosUser(res); //envia a res para o service !
           // this.userService.usuario.next(res) //envia a res para o service !
-       
+          // const id_cliente = sessionStorage.getItem("id_cliente")
+
+          // this.enviarDadosUser({token_cliente});
+          // this.enviarDadosUser({id_cliente});
+
           this.routerNavigate.navigateByUrl('/pages');
           // setTimeout(function() {
           //   location.reload();
@@ -60,6 +77,7 @@ export class SigninComponent implements OnInit {
         },
       });
   }
+
 
  
 }
