@@ -79,5 +79,27 @@ export class PixModalRouterComponent {
       localStorage.removeItem('valor');
       alert('Insira Uma Chave Valida');
     }
+
+
+ 
+      const date = new Date();
+      const dia = date.getDate();
+      const mes = date.getMonth() + 1;
+      const ano = date.getFullYear();
+      const hora = date.getHours();
+      const min = date.getMinutes();
+  
+      const data = dia + '/' + mes + '/' + ano + ' ' + hora + 'h ' + min + 'min';
+      // const hoje = dia + '/' + mes + '/' + ano ;
+
+  
+      console.log(data);
+      localStorage.setItem('last-operation', data);
+  
+    
+    
+
+
+
   }
 }
