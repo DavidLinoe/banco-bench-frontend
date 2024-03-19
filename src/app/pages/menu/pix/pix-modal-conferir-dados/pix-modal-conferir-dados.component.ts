@@ -10,35 +10,15 @@ import { isDate } from 'util/types';
 export class PixModalConferirDadosComponent {
   @Input() public conferirValor: string; //quando é um componente pai
   constructor() {
-    const date = new Date();
-    const dia = date.getDate();
-    const mes = date.getMonth() + 1;
-    const ano = date.getFullYear();
-    const hora = date.getHours();
-    const min = date.getMinutes();
-
-    // const hoje = dia + '/' + mes + '/' + ano + ' ' + hora + 'h ' + min + 'min';
-    const hoje = dia + '/' + mes + '/' + ano ;
-
-
-    localStorage.setItem('dia', hoje);
-
-    console.log(hoje);
+ 
   }
-  // atualizarDados(){
 
-  //   var data = localStorage.getItem('dia');
-  //   var valor = localStorage.getItem('valorAmount');
-  //   var nome = localStorage.getItem('nome');
-
-  // }
   public atualizarDados = {
-    "data": localStorage.getItem('dia'),
+    
+    "data": localStorage.getItem('last-operation'),
     "valor": localStorage.getItem('valorAmount'),
     "nome": localStorage.getItem('nome')
   }
 
-  // public buscarDadosLocalStarege(name: string){
-  //   return localStorage.getItem(name)
-  // }
+
 }
