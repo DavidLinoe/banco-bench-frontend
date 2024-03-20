@@ -51,8 +51,10 @@ export class PixModalPagarComponent {
     this.conferirValor = this.payForm.value.amount;
     this.valorAmount = this.payForm.value.amount;
     localStorage.setItem('valorAmount', this.valorAmount);
+    localStorage.setItem('stateChange', 'mdlnext');
+    localStorage.setItem('chaveAleatoria', this.payForm.value.chaveAleatoria);
 
-    if (localStorage.getItem('stateChange') == 'true') {
+    if (localStorage.getItem('stateChange') == 'mdlnext') {
       console.log('Log no waitChange pix modal Router Funciona');
       if (this.conferirValor > 0) {
         this.chaveAleatoria();
@@ -89,7 +91,7 @@ export class PixModalPagarComponent {
       .subscribe({
         next: (res: any) => {
           localStorage.setItem('chavePix', res.telefone.toString());
-          console.log('Resposta do Next Telefone  ', res.telefone.toString());
+          console.log('Resposta do Next Telefone  ', res.telefone);
           this.pixService.chaveExistente.next(res); //envia a res para o service !
         },
         error: (err: any) => {
