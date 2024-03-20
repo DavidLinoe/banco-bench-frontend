@@ -30,13 +30,15 @@ export class NavigationComponent implements OnInit {
     //const id_cliente = localStorage.getItem("id_cliente")
     try {
       const id_cliente = sessionStorage.getItem('id_cliente');
+      this.enviarDadosUser({ id_cliente });
+
     } catch (error) {
       console.error('Nenhum Usuario Logado');
-    }
 
-    const id_cliente = sessionStorage.getItem('id_cliente');
-    localStorage.clear();
-    this.enviarDadosUser({ id_cliente });
+    }
+    // localStorage.clear();s
+
+    // const id_cliente = sessionStorage.getItem('id_cliente');
   }
   enviarDadosUser(res: any) {
     this.http.post('http://localhost:3000/user', res).subscribe({
