@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Allerta&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Allerta&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 .register-box h1 {
@@ -36,7 +36,7 @@
 }
 .register-box input::placeholder {
   color: #ffffff;
-  font-family: "Allerta", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 14px;
@@ -51,7 +51,7 @@
   margin-top: 8px;
   height: 45px;
   width: 175px;
-  font-family: "Allerta", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
