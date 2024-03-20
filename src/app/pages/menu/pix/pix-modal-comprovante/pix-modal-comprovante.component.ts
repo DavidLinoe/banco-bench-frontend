@@ -15,7 +15,7 @@ export class PixModalComprovanteComponent {
 
     ) {}
 
-  nome = localStorage.getItem('nome');
+  nome = this.pixService.chaveExistente.getValue().nome_cliente;
   valor = localStorage.getItem('valorAmount');
 
   cpf = '21432535325';
