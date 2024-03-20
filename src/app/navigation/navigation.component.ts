@@ -28,6 +28,12 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit(): void {
     //const id_cliente = localStorage.getItem("id_cliente")
+    try {
+      const id_cliente = sessionStorage.getItem('id_cliente');
+    } catch (error) {
+      console.error('Nenhum Usuario Logado');
+    }
+
     const id_cliente = sessionStorage.getItem('id_cliente');
     localStorage.clear();
     this.enviarDadosUser({ id_cliente });
