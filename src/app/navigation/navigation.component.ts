@@ -16,7 +16,6 @@ export class NavigationComponent implements OnInit {
     public userService: UserService,
     private http: HttpClient,
     private routerNavigate: Router
-
   ) {}
 
   toggleCompact() {
@@ -26,34 +25,31 @@ export class NavigationComponent implements OnInit {
       this.sidebarState = state;
     });
   }
-  
+
   ngOnInit(): void {
     //const id_cliente = localStorage.getItem("id_cliente")
-    const id_cliente = sessionStorage.getItem("id_cliente")
-
-    this.enviarDadosUser({id_cliente});
+    const id_cliente = sessionStorage.getItem('id_cliente');
+    localStorage.clear();
+    this.enviarDadosUser({ id_cliente });
   }
   enviarDadosUser(res: any) {
-    this.http.post('http://localhost:3000/user', res)
-    .subscribe({
+    this.http.post('http://localhost:3000/user', res).subscribe({
       next: (res: any) => {
-
-        console.log("Resposta do enviar dados User: ",res.id_cliente)
-        console.log("Resposta do enviar dados User: ",res.nome_cliente)
-        console.log("Resposta do enviar dados User: ",res.saldo_cliente)
+        console.log('Resposta do enviar dados User: ', res.id_cliente);
+        console.log('Resposta do enviar dados User: ', res.nome_cliente);
+        console.log('Resposta do enviar dados User: ', res.saldo_cliente);
 
         this.userService.usuario.next(res); //envia a res para o service !
       },
       error: (err: any) => {
         console.log('erro no enviar dados user !');
-        alert("Sessão Expirada !")
+        alert('Sessão Expirada !');
         this.routerNavigate.navigateByUrl('/');
-
       },
     });
   }
   r = 'R$ ';
-  saldo = "***";
+  saldo = '***';
   bSaldo = '***';
 
   public eyeCondition: boolean = true;
@@ -61,9 +57,9 @@ export class NavigationComponent implements OnInit {
   eye() {
     setTimeout(() => {
       this.eyeCondition = !this.eyeCondition;
-      if (this.eyeCondition)
-      this.saldo = this.bSaldo;
-      else  this.saldo = this.r + this.userService.usuario.getValue().saldo_cliente;
+      if (this.eyeCondition) this.saldo = this.bSaldo;
+      else
+        this.saldo = this.r + this.userService.usuario.getValue().saldo_cliente;
     }, 400);
   }
 }
