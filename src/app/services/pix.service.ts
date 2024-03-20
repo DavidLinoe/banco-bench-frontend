@@ -14,9 +14,9 @@ interface chave {
 })
 export class PixService {
   constructor() {
-    this.chaveExistente.subscribe((value) =>
-      console.log('log no service do Pix ', value.id_cliente)
-    );
+    // this.chaveExistente.subscribe((value) =>
+    //   console.log('log no service do Pix ', value.id_cliente)
+    // );
   }
 
   public chaveExistente: BehaviorSubject<chave> = new BehaviorSubject<chave>({
