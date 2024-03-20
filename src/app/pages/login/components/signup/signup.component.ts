@@ -12,11 +12,11 @@ import { UserService } from '../../../../services/user.service';
 export class SignupComponent implements OnInit {
   public RegisterForm: FormGroup;
   constructor(
-    private formBuilder: FormBuilder,
-    private http: HttpClient,
-    private routerNavigate: Router,
-    private userService: UserService
-  ) {}
+     private formBuilder: FormBuilder,
+     private http: HttpClient,
+     private routerNavigate: Router,
+     private userService: UserService
+    ) {}
   ngOnInit(): void {
     this.RegisterForm = this.formBuilder.group({
       nome: [, Validators.required],
@@ -47,15 +47,15 @@ export class SignupComponent implements OnInit {
           localStorage.setItem('check', 'checked');
         },
       });
-  }
-  checked: any;
-  check() {
-    this.checked = !this.checked;
+}
+checked: any;
+check() {
+  this.checked = !this.checked;
 
-    if (!this.checked) {
-      localStorage.setItem('check', 'checked');
-    } else {
-      localStorage.setItem('check', '');
-    }
+  if (!this.checked) {
+    localStorage.setItem('check', 'checked');
+  } else {
+    localStorage.setItem('check', '');
   }
+}
 }
