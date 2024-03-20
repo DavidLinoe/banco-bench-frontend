@@ -1,7 +1,7 @@
 
 <div class="modalPixBox">
   <p> Confirme Os Dados PIX </p>
-  <p>Nome:{{ atualizarDados['nome'] }}</p>
+  <p>Nome:{{pixService.chaveExistente.getValue().nome_cliente }}</p>
   <p>Valor: {{ atualizarDados['valor'] }}</p>
   <p>Instituição:{{ "Banco Bench Do Brasil ag 123-4/4" }}</p>
   <p>Data Prevista do Pagamento: {{ atualizarDados['data'] }}</p>
