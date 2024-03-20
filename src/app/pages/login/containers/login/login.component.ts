@@ -1,6 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormsModule, ReactiveFormsModule, FormGroup, Validators,} from '@angular/forms';
+import {
+  FormBuilder,
+  FormsModule,
+  ReactiveFormsModule,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 interface loginResponse {
   validation: boolean;
   email: string;
@@ -26,8 +32,10 @@ export class LoginComponent implements OnInit {
   }
 
   modificarCardLogin() {
-   if(localStorage.getItem("check") === "checked")
-      this.conditionSignIn = !this.conditionSignIn;
-  
+    try {
+      if (localStorage.getItem('check') === 'checked')
+        this.conditionSignIn = !this.conditionSignIn;
+    } catch (error) {
+    }
   }
 }

@@ -1,7 +1,7 @@
 import { Component, Input, Output, ViewChild } from '@angular/core';
 import { PixModalPagarComponent } from '../pix-modal-pagar/pix-modal-pagar.component';
 import { isDate } from 'util/types';
-
+import { PixService } from "./../../../../services/pix.service";
 @Component({
   selector: 'app-pix-modal-conferir-dados',
   templateUrl: './pix-modal-conferir-dados.component.html',
@@ -9,9 +9,9 @@ import { isDate } from 'util/types';
 })
 export class PixModalConferirDadosComponent {
   @Input() public conferirValor: string; //quando é um componente pai
-  constructor() {
- 
-  }
+  constructor(
+    public pixService: PixService,
+  ) {}
 
   public atualizarDados = {
     
