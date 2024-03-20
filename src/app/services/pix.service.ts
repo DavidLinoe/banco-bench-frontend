@@ -5,7 +5,8 @@ interface chave {
   telefone: string;
   email: string;
   cpf: string;
-
+  id_cliente: number;
+  nome_cliente: string;
 }
 
 @Injectable({
@@ -14,7 +15,7 @@ interface chave {
 export class PixService {
   constructor() {
     this.chaveExistente.subscribe((value) =>
-      console.log('log no service do Pix ', { value })
+      console.log('log no service do Pix ', value.id_cliente)
     );
   }
 
@@ -22,6 +23,7 @@ export class PixService {
     telefone: '',
     email: '',
     cpf: '',
-
+    id_cliente: 0,
+    nome_cliente: '',
   });
 }
