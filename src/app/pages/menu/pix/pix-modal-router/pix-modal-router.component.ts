@@ -68,7 +68,7 @@ export class PixModalRouterComponent {
         location.reload();
       }, 400);
 
-      localStorage.clear();
+      // localStorage.clear();
     }
 
     setTimeout(() => {
