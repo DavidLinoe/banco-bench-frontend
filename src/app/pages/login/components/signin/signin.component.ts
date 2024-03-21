@@ -12,7 +12,7 @@ interface loginResponse {
 
 @Component({
   selector: 'app-signin',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './signin.component.html',
   styleUrl: './signin.component.scss',
 })
