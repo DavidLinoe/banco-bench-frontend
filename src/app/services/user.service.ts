@@ -13,7 +13,7 @@ interface usuario {
 export class UserService {
   constructor() {
     
-    this.usuario.subscribe((value) => console.log("log User Service",{ value }));
+    // this.usuario.subscribe((value) => console.log("log User Service",{ value }));
   }
  
   
