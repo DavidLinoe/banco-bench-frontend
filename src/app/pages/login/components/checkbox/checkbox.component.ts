@@ -10,17 +10,12 @@ import { Component } from '@angular/core';
 export class CheckboxComponent {
   checked: any;
   check() {
-    try {
-      if (localStorage.getItem('check') != 'checked') {
+   
+       
         localStorage.setItem('check', 'checked');
       
-      }
-    } catch (error) {
-      console.error('Erro no check');
-      setTimeout(function () {
-        location.reload();
-      }, 400);
-    }
+      
+ 
   }
 }
 
