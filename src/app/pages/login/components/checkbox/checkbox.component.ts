@@ -8,18 +8,13 @@ import { Component } from '@angular/core';
   styleUrl: './checkbox.component.scss',
 })
 export class CheckboxComponent {
-  checked: any;
+  checked: boolean;
   check() {
-   
-       setTimeout(() => {
-        localStorage.setItem('check', 'checked');
-          location.reload();
-    
-  
-       }, 400);
-      
-      
- 
+    this.checked = !this.checked;
+    if (this.checked) {  
+      localStorage.setItem('check', 'checked');
+    } else {
+      localStorage.removeItem('check');
+    }
   }
 }
-
