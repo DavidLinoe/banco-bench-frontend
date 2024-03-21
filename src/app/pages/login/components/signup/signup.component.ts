@@ -54,5 +54,9 @@ export class SignupComponent implements OnInit {
 }
 check() {
   sessionStorage.removeItem('check');
+  setTimeout(function () {
+    location.reload();
+  }, 400);
+
 }
 }
