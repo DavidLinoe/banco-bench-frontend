@@ -38,14 +38,14 @@ export class LoginComponent implements OnInit {
 
   modificarCardLogin() {
     try {
-      if (sessionStorage.getItem('check') !='checked')
+      if (localStorage.getItem('check') !='checked')
         this.conditionSignIn = !this.conditionSignIn;
         if(this.conditionSignIn!){
-          sessionStorage.removeItem('check');
+          localStorage.removeItem('check');
 
         }
     } catch (error) {
-      sessionStorage.removeItem('check');
+      localStorage.removeItem('check');
 
     }
   }
