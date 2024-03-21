@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       'BACKEND',
       'https://4625-129-148-59-251.ngrok-free.app' 
     );
-    localStorage.setItem('check', 'checked');
+        // localStorage.setItem('check', 'checked');
 
     this.loginForm = this.formBuilder.group({
       email: ['david@gmail.com', [Validators.email, Validators.required]],
