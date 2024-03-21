@@ -10,10 +10,13 @@ import { Component } from '@angular/core';
 export class CheckboxComponent {
   checked: any;
   check() {
-   
-    sessionStorage.setItem('check', 'checked');
-
-   
-   
+    try {
+      if (sessionStorage.getItem('check') != 'checked') {
+        sessionStorage.setItem('check', 'checked');
+      
+      }
+    } catch (error) {
+      console.error(error);
+    }
   }
 }
