@@ -13,9 +13,9 @@ export class CheckboxComponent {
     this.checked = !this.checked;
 
     if (this.checked) {
-      localStorage.setItem('check', 'checked');
+      sessionStorage.setItem('check', 'checked');
     } else {
-      localStorage.setItem('check', '');
+      sessionStorage.removeItem('check');
     }
   }
 }
