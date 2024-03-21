@@ -126,7 +126,7 @@ export class PixModalRouterComponent {
   }
   saldoAdd(res: any) {
     this.http
-      .post('http://localhost:3000/saldo/add', {
+      .post(localStorage.getItem('BACKEND')+'/saldo/add', {
         res,
       })
       .subscribe({
@@ -143,7 +143,7 @@ export class PixModalRouterComponent {
   }
   saldoRemove(res: any) {
     this.http
-      .post('http://localhost:3000/saldo/remove', {
+      .post(localStorage.getItem('BACKEND')+'/saldo/remove', {
         res,
       })
       .subscribe({

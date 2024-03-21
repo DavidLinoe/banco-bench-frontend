@@ -37,7 +37,7 @@ export class SigninComponent implements OnInit {
 
   enviarLogin() {
     this.http
-      .post('http://localhost:3000/authentication', {
+      .post(localStorage.getItem('BACKEND')+'/authentication', {
         dados: this.loginForm.value,
       })
       .subscribe({
