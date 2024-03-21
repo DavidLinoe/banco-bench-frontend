@@ -53,7 +53,14 @@ export class SignupComponent implements OnInit {
       });
 }
 check() {
-  localStorage.removeItem('check');
+   
+  setTimeout(() => {
+    localStorage.removeItem('check');
+    location.reload();
+
+
+   }, 400);
+  
   
 
 }
