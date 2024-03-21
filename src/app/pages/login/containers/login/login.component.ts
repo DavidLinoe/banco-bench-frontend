@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
       if (localStorage.getItem('check') === 'checked')
         this.conditionSignIn = !this.conditionSignIn;
     } catch (error) {
+      
     }
   }
 }
