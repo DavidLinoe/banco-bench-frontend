@@ -11,8 +11,8 @@ export class CheckboxComponent {
   checked: any;
   check() {
     try {
-      if (sessionStorage.getItem('check') != 'checked') {
-        sessionStorage.setItem('check', 'checked');
+      if (localStorage.getItem('check') != 'checked') {
+        localStorage.setItem('check', 'checked');
       
       }
     } catch (error) {
