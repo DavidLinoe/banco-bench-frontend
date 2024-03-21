@@ -10,7 +10,12 @@ import { Router } from '@angular/router';
   styleUrl: './navigation.component.scss',
 })
 export class NavigationComponent implements OnInit {
+  
   public sidebarState = '';
+
+  public rotaDinamica:string | null = localStorage.getItem('BACKEND');
+
+
   constructor(
     private sidebarService: NbSidebarService,
     public userService: UserService,
@@ -40,7 +45,7 @@ export class NavigationComponent implements OnInit {
     // const id_cliente = sessionStorage.getItem('id_cliente');
   }
   enviarDadosUser(res: any) {
-    this.http.post(localStorage.getItem('BACKEND')+'/user', res).subscribe({
+    this.http.post(this.rotaDinamica +'/user', res).subscribe({
       next: (res: any) => {
         console.log('Resposta do enviar dados User: ', res.id_cliente);
         console.log('Resposta do enviar dados User: ', res.nome_cliente);

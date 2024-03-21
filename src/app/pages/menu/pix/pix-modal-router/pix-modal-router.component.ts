@@ -26,6 +26,9 @@ export class PixModalRouterComponent {
   public clear: any;
   public clx: any;
 
+  public rotaDinamica:string | null = localStorage.getItem('BACKEND');
+
+
   @Output() public fecharPix: EventEmitter<boolean> = new EventEmitter(); //quando é um componente filho
 
   constructor(
@@ -126,7 +129,7 @@ export class PixModalRouterComponent {
   }
   saldoAdd(res: any) {
     this.http
-      .post(localStorage.getItem('BACKEND')+'/saldo/add', {
+      .post(this.rotaDinamica +'/saldo/add', {
         res,
       })
       .subscribe({
@@ -143,7 +146,7 @@ export class PixModalRouterComponent {
   }
   saldoRemove(res: any) {
     this.http
-      .post(localStorage.getItem('BACKEND')+'/saldo/remove', {
+      .post(this.rotaDinamica +'/saldo/remove', {
         res,
       })
       .subscribe({
