@@ -11,8 +11,12 @@ export class CheckboxComponent {
   checked: any;
   check() {
    
-       
+       setTimeout(() => {
         localStorage.setItem('check', 'checked');
+          location.reload();
+    
+  
+       }, 400);
       
       
  
