@@ -20,11 +20,14 @@ interface loginResponse {
 export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
 
-  public conditionSignIn: boolean = true;
+  public conditionSignIn: boolean ;
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {}
   ngOnInit(): void {
-    localStorage.setItem("BACKEND","https://4625-129-148-59-251.ngrok-free.app")
+    localStorage.setItem(
+      'BACKEND',
+      'https://4625-129-148-59-251.ngrok-free.app'
+    );
 
     this.loginForm = this.formBuilder.group({
       email: ['david@gmail.com', [Validators.email, Validators.required]],
@@ -35,10 +38,9 @@ export class LoginComponent implements OnInit {
 
   modificarCardLogin() {
     try {
-      if (sessionStorage.getItem('check') === 'checked')
+      if (sessionStorage.getItem('check') !='checked')
         this.conditionSignIn = !this.conditionSignIn;
-    } catch (error) {
-
-    }
+        
+    } catch (error) {}
   }
 }

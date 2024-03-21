@@ -48,18 +48,14 @@ export class SignupComponent implements OnInit {
         },
         error: (err: any) => {
           console.log('erro');
-          localStorage.setItem('check', 'checked');
+          // localStorage.setItem('check', 'checked');
         },
       });
 }
-checked: any;
 check() {
-  this.checked = !this.checked;
+  sessionStorage.removeItem('check');
 
-  if (!this.checked) {
-    localStorage.setItem('check', 'checked');
-  } else {
-    localStorage.setItem('check', '');
-  }
+ 
+
 }
 }
