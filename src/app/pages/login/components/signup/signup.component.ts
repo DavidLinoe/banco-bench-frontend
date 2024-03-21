@@ -32,7 +32,7 @@ export class SignupComponent implements OnInit {
   }
   enviarRegistro() {
     this.http
-      .post('http://localhost:3000/authentication/register', {
+      .post(localStorage.getItem('BACKEND')+'/authentication/register', {
         dados: this.RegisterForm.value,
       })
       .subscribe({

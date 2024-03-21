@@ -85,7 +85,7 @@ export class PixModalPagarComponent {
 
   verificarChaveTelefone() {
     this.http
-      .post('http://localhost:3000/verificar/chave/telefone', {
+      .post(localStorage.getItem('BACKEND')+'/verificar/chave/telefone', {
         dadosChave: this.payForm.value.chaveAleatoria,
       })
       .subscribe({
@@ -102,7 +102,7 @@ export class PixModalPagarComponent {
   }
   verificarChaveEmail() {
     this.http
-      .post('http://localhost:3000/verificar/chave/email', {
+      .post(localStorage.getItem('BACKEND')+'/verificar/chave/email', {
         dadosChave: this.payForm.value.chaveAleatoria,
       })
       .subscribe({
@@ -119,7 +119,7 @@ export class PixModalPagarComponent {
   }
   verificarChaveCpf() {
     this.http
-      .post('http://localhost:3000/verificar/chave/cpf', {
+      .post(localStorage.getItem('BACKEND')+'/verificar/chave/cpf', {
         dadosChave: this.payForm.value.chaveAleatoria,
       })
       .subscribe({

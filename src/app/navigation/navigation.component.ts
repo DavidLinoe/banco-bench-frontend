@@ -31,7 +31,6 @@ export class NavigationComponent implements OnInit {
     try {
       const id_cliente = sessionStorage.getItem('id_cliente');
       this.enviarDadosUser({ id_cliente });
-
     } catch (error) {
       console.error('Nenhum Usuario Logado');
 
@@ -41,7 +40,7 @@ export class NavigationComponent implements OnInit {
     // const id_cliente = sessionStorage.getItem('id_cliente');
   }
   enviarDadosUser(res: any) {
-    this.http.post('http://localhost:3000/user', res).subscribe({
+    this.http.post(localStorage.getItem('BACKEND')+'/user', res).subscribe({
       next: (res: any) => {
         console.log('Resposta do enviar dados User: ', res.id_cliente);
         console.log('Resposta do enviar dados User: ', res.nome_cliente);

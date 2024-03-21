@@ -24,6 +24,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {}
   ngOnInit(): void {
+    localStorage.setItem("BACKEND","https://4625-129-148-59-251.ngrok-free.app ")
+
     this.loginForm = this.formBuilder.group({
       email: ['david@gmail.com', [Validators.email, Validators.required]],
 
