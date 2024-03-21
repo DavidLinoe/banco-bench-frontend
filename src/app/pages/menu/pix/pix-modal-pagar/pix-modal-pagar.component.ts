@@ -10,6 +10,7 @@ import { PixModalConferirDadosComponent } from '../pix-modal-conferir-dados/pix-
 })
 export class PixModalPagarComponent {
   valorAmount: any;
+  public rotaDinamica:string | null = localStorage.getItem('BACKEND');
 
   ngOnInit(): void {
     this.payForm = this.formBuilder.group({
@@ -85,7 +86,7 @@ export class PixModalPagarComponent {
 
   verificarChaveTelefone() {
     this.http
-      .post(localStorage.getItem('BACKEND')+'/verificar/chave/telefone', {
+      .post(this.rotaDinamica +'/verificar/chave/telefone', {
         dadosChave: this.payForm.value.chaveAleatoria,
       })
       .subscribe({
@@ -102,7 +103,7 @@ export class PixModalPagarComponent {
   }
   verificarChaveEmail() {
     this.http
-      .post(localStorage.getItem('BACKEND')+'/verificar/chave/email', {
+      .post(this.rotaDinamica +'/verificar/chave/email', {
         dadosChave: this.payForm.value.chaveAleatoria,
       })
       .subscribe({
@@ -119,7 +120,7 @@ export class PixModalPagarComponent {
   }
   verificarChaveCpf() {
     this.http
-      .post(localStorage.getItem('BACKEND')+'/verificar/chave/cpf', {
+      .post(this.rotaDinamica +'/verificar/chave/cpf', {
         dadosChave: this.payForm.value.chaveAleatoria,
       })
       .subscribe({

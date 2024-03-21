@@ -10,6 +10,10 @@ import { UserService } from '../../../../services/user.service';
   styleUrl: './signup.component.scss',
 })
 export class SignupComponent implements OnInit {
+
+  public rotaDinamica:string | null = localStorage.getItem('BACKEND');
+
+
   public RegisterForm: FormGroup;
   constructor(
      private formBuilder: FormBuilder,
@@ -32,7 +36,7 @@ export class SignupComponent implements OnInit {
   }
   enviarRegistro() {
     this.http
-      .post(localStorage.getItem('BACKEND')+'/authentication/register', {
+      .post(this.rotaDinamica +'/authentication/register', {
         dados: this.RegisterForm.value,
       })
       .subscribe({

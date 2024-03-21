@@ -18,6 +18,7 @@ interface loginResponse {
 })
 export class SigninComponent implements OnInit {
   public loginForm: FormGroup;
+  public rotaDinamica:string | null = localStorage.getItem('BACKEND');
 
   constructor(
     private formBuilder: FormBuilder,
@@ -37,7 +38,7 @@ export class SigninComponent implements OnInit {
 
   enviarLogin() {
     this.http
-      .post(localStorage.getItem('BACKEND')+'/authentication', {
+      .post(this.rotaDinamica + '/authentication', {
         dados: this.loginForm.value,
       })
       .subscribe({
