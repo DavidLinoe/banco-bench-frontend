@@ -16,7 +16,11 @@ export class CheckboxComponent {
       
       }
     } catch (error) {
-      console.error(error);
+      console.error('Erro no check');
+      setTimeout(function () {
+        location.reload();
+      }, 400);
     }
   }
 }
+
