@@ -10,17 +10,15 @@ import { UserService } from '../../../../services/user.service';
   styleUrl: './signup.component.scss',
 })
 export class SignupComponent implements OnInit {
-
-  public rotaDinamica:string | null = localStorage.getItem('BACKEND');
-
+  public rotaDinamica: string | null = localStorage.getItem('BACKEND');
 
   public RegisterForm: FormGroup;
   constructor(
-     private formBuilder: FormBuilder,
-     private http: HttpClient,
-     private routerNavigate: Router,
-     private userService: UserService
-    ) {}
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private routerNavigate: Router,
+    private userService: UserService
+  ) {}
   ngOnInit(): void {
     this.RegisterForm = this.formBuilder.group({
       nome: [, Validators.required],
@@ -35,14 +33,17 @@ export class SignupComponent implements OnInit {
     });
   }
   enviarRegistro() {
+
+
+
     this.http
-      .post(this.rotaDinamica +'/authentication/register', {
+      .post(this.rotaDinamica + '/authentication/register', {
         dados: this.RegisterForm.value,
       })
       .subscribe({
         next: (res: any) => {
           console.log('res');
-          this.routerNavigate.navigateByUrl('/reload');
+          // this.routerNavigate.navigateByUrl('/reload');
           localStorage.removeItem('check');
           alert('Cadastro Realizado Com Sucesso!');
         },
@@ -51,17 +52,8 @@ export class SignupComponent implements OnInit {
           // localStorage.setItem('check', 'checked');
         },
       });
-}
-check() {
-   
-  setTimeout(() => {
+  }
+  check() {
     localStorage.removeItem('check');
-    location.reload();
-
-
-   }, 400);
-  
-  
-
-}
+  }
 }
