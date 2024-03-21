@@ -43,7 +43,7 @@ export class SignupComponent implements OnInit {
         next: (res: any) => {
           console.log('res');
           this.routerNavigate.navigateByUrl('/reload');
-          sessionStorage.removeItem('check');
+          sessionStorage.clear();
           alert('Cadastro Realizado Com Sucesso!');
         },
         error: (err: any) => {
