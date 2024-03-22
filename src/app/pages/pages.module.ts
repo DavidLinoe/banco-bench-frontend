@@ -2,7 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { NbCardModule, NbDialogModule, NbLayoutModule, NbSidebarModule } from '@nebular/theme';
+import {
+  NbCardModule,
+  NbDialogModule,
+  NbLayoutModule,
+  NbSidebarModule,
+} from '@nebular/theme';
 import { LoginComponent } from './login/containers/login/login.component';
 import { BoletoComponent } from './menu/boleto/boleto.component';
 import { ExtratoComponent } from './menu/extrato/extrato.component';
@@ -19,14 +24,20 @@ import { PixModalCopiaColaComponent } from './menu/pix/pix-modal-copia-cola/pix-
 import { PixModalConferirDadosComponent } from './menu/pix/pix-modal-conferir-dados/pix-modal-conferir-dados.component';
 import { PixModalRouterComponent } from './menu/pix/pix-modal-router/pix-modal-router.component';
 import { PixModalComprovanteComponent } from './menu/pix/pix-modal-comprovante/pix-modal-comprovante.component';
+import {
+  NgxMaskDirective,
+  NgxMaskPipe,
+  provideEnvironmentNgxMask,
+  provideNgxMask,
+} from 'ngx-mask';
 // import { NavigationComponent } from '../navigation/navigation.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: DashboardComponent
+    component: DashboardComponent,
   },
-  
+
   {
     path: 'home',
     component: LoginComponent,
@@ -72,7 +83,7 @@ const routes: Routes = [
     path: 'account',
     component: AccountComponent,
   },
-]
+];
 
 @NgModule({
   declarations: [
@@ -84,21 +95,19 @@ const routes: Routes = [
     PixModalCopiaColaComponent,
     PixModalConferirDadosComponent,
     PixModalRouterComponent,
-    PixModalComprovanteComponent
-
-  ],//declarar aqui as outras paginas que vao usar nb
+    PixModalComprovanteComponent,
+  ], //declarar aqui as outras paginas que vao usar nb
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     NbLayoutModule,
     NbSidebarModule,
     NbDialogModule.forRoot(),
-    NbCardModule,//Card do nebular'
+    NbCardModule, //Card do nebular'
     FormsModule,
-    ReactiveFormsModule
-    
-  ]
+    ReactiveFormsModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
+  ],
 })
-export class PagesModule {
-
-}
+export class PagesModule {}

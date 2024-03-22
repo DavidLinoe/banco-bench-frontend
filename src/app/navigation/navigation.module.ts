@@ -9,6 +9,7 @@ import {
   NbSidebarService,
   NbThemeModule,
 } from '@nebular/theme';
+import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
 
 @NgModule({
   declarations: [NavigationComponent],
@@ -18,6 +19,8 @@ import {
     NbLayoutModule,
     NbSidebarModule,
     NbButtonModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
   ],
   exports:[
     NavigationComponent
