@@ -73,7 +73,7 @@ export class SignupComponent implements OnInit {
       .subscribe({
         next: (res: any) => {
           console.log('res');
-          // this.routerNavigate.navigateByUrl('/reload');
+          this.routerNavigate.navigateByUrl('/reload');
           localStorage.removeItem('check');
           alert('Cadastro Realizado Com Sucesso!');
         },
