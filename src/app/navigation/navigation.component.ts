@@ -10,11 +10,9 @@ import { Router } from '@angular/router';
   styleUrl: './navigation.component.scss',
 })
 export class NavigationComponent implements OnInit {
-  
   public sidebarState = '';
 
-  public rotaDinamica:string | null = localStorage.getItem('BACKEND');
-
+  public rotaDinamica: string | null = localStorage.getItem('BACKEND');
 
   constructor(
     private sidebarService: NbSidebarService,
@@ -38,14 +36,13 @@ export class NavigationComponent implements OnInit {
       this.enviarDadosUser({ id_cliente });
     } catch (error) {
       console.error('Nenhum Usuario Logado');
-
     }
     // localStorage.clear();s
 
     // const id_cliente = sessionStorage.getItem('id_cliente');
   }
   enviarDadosUser(res: any) {
-    this.http.post(this.rotaDinamica +'/user', res).subscribe({
+    this.http.post(this.rotaDinamica + '/user', res).subscribe({
       next: (res: any) => {
         console.log('Resposta do enviar dados User: ', res.id_cliente);
         console.log('Resposta do enviar dados User: ', res.nome_cliente);
@@ -60,18 +57,27 @@ export class NavigationComponent implements OnInit {
       },
     });
   }
-  r = 'R$ ';
-  saldo = '***';
+
   bSaldo = '***';
+  saldoFormat: any;
 
   public eyeCondition: boolean = true;
 
   eye() {
+    const currencyFormatter = (amount: number) => {
+      return new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+      }).format(amount);
+    };
+
     setTimeout(() => {
       this.eyeCondition = !this.eyeCondition;
-      if (this.eyeCondition) this.saldo = this.bSaldo;
+      if (this.eyeCondition) this.saldoFormat = this.bSaldo;
       else
-        this.saldo = this.r + this.userService.usuario.getValue().saldo_cliente;
+        this.saldoFormat = currencyFormatter(
+          this.userService.usuario.getValue().saldo_cliente
+        );
     }, 400);
   }
 }
