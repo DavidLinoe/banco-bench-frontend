@@ -3,7 +3,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
 
 interface usuario {
   nome_cliente: string;
-  saldo_cliente: string;
+  saldo_cliente: number;
   id_cliente:number;
 }
 
@@ -18,7 +18,7 @@ export class UserService {
  
   
   public usuario: BehaviorSubject<usuario> = new BehaviorSubject<usuario>({
-    saldo_cliente:'',
+    saldo_cliente:0,
     nome_cliente: '',
     id_cliente: 0,
  
