@@ -28,6 +28,8 @@ export class PixModalRouterComponent {
 
   public rotaDinamica:string | null = localStorage.getItem('BACKEND');
 
+  public btnState: boolean = true;
+
 
   @Output() public fecharPix: EventEmitter<boolean> = new EventEmitter(); //quando é um componente filho
 
@@ -52,6 +54,7 @@ export class PixModalRouterComponent {
     this.state = 'confirm';
     localStorage.removeItem('chaveAleatoria');
     localStorage.removeItem('chavePix');
+    this.btnState = !this.btnState
   }
   keyF() {
     this.key = sessionStorage.getItem('rp');
