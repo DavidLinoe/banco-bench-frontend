@@ -2,6 +2,7 @@
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
 />
+<!-- {{ modificarCardLogin() }} -->
 
 <div class="bgimage">
   <div class="logo">
@@ -14,17 +15,21 @@
 
   <div class="login-box">
     <div class="login-content">
-      {{ modificarCardLogin() }}
       @if (conditionSignIn) {
 
       <div class="container-login">
         <app-signin> </app-signin>
+        <a (click)="modificarCardLogin()">Nao Possui uma Conta Ainda?</a>
+
       </div>
 
       } @else {
 
       <div class="container-login">
+
         <app-signup> </app-signup>
+        <a (click)="modificarCardLogin()">Ja Possui Uma Conta ?</a>
+
       </div>
 
       }
@@ -32,9 +37,5 @@
   </div>
 </div>
 
-<app-home>
-
-</app-home>
-<app-footer>
-
-</app-footer>
+<app-home> </app-home>
+<app-footer> </app-footer>

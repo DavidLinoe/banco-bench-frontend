@@ -12,6 +12,8 @@ import { UserService } from '../../../../services/user.service';
 export class SignupComponent implements OnInit {
   public rotaDinamica: string | null = localStorage.getItem('BACKEND');
 
+  public registerErr: string;
+
   public RegisterForm: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
@@ -21,15 +23,46 @@ export class SignupComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.RegisterForm = this.formBuilder.group({
-      nome: [, Validators.required],
+      nome: [
+        ,
+        [
+          Validators.maxLength(35),
+          Validators.required,
+          Validators.pattern('[a-zA-Z ]*'),
+        ],
+      ],
 
-      telefone: [, Validators.required],
+      telefone: [
+        ,
+        [
+          Validators.maxLength(11),
+          Validators.required,
+          Validators.pattern('[0-9]*'),
+        ],
+      ],
 
-      email: [, [Validators.email, Validators.required]],
+      email: [
+        ,
+        [Validators.email, Validators.required, Validators.maxLength(50)],
+      ],
 
-      senha: [, Validators.required],
+      senha: [
+        ,
+        [
+          Validators.minLength(6),
+          Validators.maxLength(12),
+          Validators.required,
+        ],
+      ],
 
-      cpf: [, Validators.required],
+      cpf: [
+        ,
+        [
+          Validators.maxLength(11),
+          Validators.required,
+          Validators.pattern('[0-9]*'),
+        ],
+      ],
     });
   }
   enviarRegistro() {
@@ -50,11 +83,44 @@ export class SignupComponent implements OnInit {
         },
       });
   }
-  check() {
-    setTimeout(() => {
-      localStorage.removeItem('check');
-      location.reload();
-    }, 400);
-    localStorage.removeItem('check');
+  // check() {
+   
+  //   localStorage.removeItem('check');
+  // }
+
+  registerError() {
+    if (this.RegisterForm.get('senha')!.hasError('maxlength')) {
+      this.registerErr = 'Senha Muito Grande, Tu vai esquecer !';
+    
+    } else if (this.RegisterForm.get('senha')!.hasError('minlength')) {
+      this.registerErr = 'Senha Muito Miuda, Vao te Hackear !';
+    
+    } else if (this.RegisterForm.get('email')!.hasError('email')) {
+      this.registerErr = 'Não é um formato de email válido.';
+    
+    } else if (this.RegisterForm.get('email')!.hasError('maxlength')) {
+      this.registerErr = 'Email Gigante, Tu vai esquecer !';
+   
+    } else if (this.RegisterForm.get('nome')!.hasError('maxlength')) {
+      this.registerErr = 'Nome Gigante Ein, Dom Predo De Primas?';
+    
+    } else if (this.RegisterForm.get('nome')!.hasError('pattern')) {
+      this.registerErr = 'Nome De Numero? Novidade No Cartorio';
+    
+    } else if (this.RegisterForm.get('telefone')!.hasError('maxlength')) {
+      this.registerErr = 'Telefone de outro Planeta ? Digita um valido ai !';
+    
+    } else if (this.RegisterForm.get('telefone')!.hasError('pattern')) {
+      this.registerErr = 'Telefone ou Texto ? Converte ele para Binario';
+   
+    } else if (this.RegisterForm.get('cpf')!.hasError('maxlength')) {
+      this.registerErr = ' CPF de outro Planeta ? Digita um valido ai !';
+   
+    } else if (this.RegisterForm.get('cpf')!.hasError('pattern')) {
+      this.registerErr = 'CPF Apenas Numeros';
+   
+    } else {
+      this.registerErr = '';
+    }
   }
 }
