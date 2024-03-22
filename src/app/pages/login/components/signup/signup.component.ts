@@ -84,41 +84,31 @@ export class SignupComponent implements OnInit {
       });
   }
   // check() {
-   
+
   //   localStorage.removeItem('check');
   // }
 
   registerError() {
     if (this.RegisterForm.get('senha')!.hasError('maxlength')) {
-      this.registerErr = 'Senha Muito Grande, Tu vai esquecer !';
-    
+      this.registerErr = 'Senha Muito Grande, Tu vai esquecer ! ';
     } else if (this.RegisterForm.get('senha')!.hasError('minlength')) {
-      this.registerErr = 'Senha Muito Miuda, Vao te Hackear !';
-    
+      this.registerErr = 'Senha Muito Miuda, Vao te Hackear ! ';
     } else if (this.RegisterForm.get('email')!.hasError('email')) {
-      this.registerErr = 'Não é um formato de email válido.';
-    
+      this.registerErr = 'Não é um formato de email válido. ';
     } else if (this.RegisterForm.get('email')!.hasError('maxlength')) {
-      this.registerErr = 'Email Gigante, Tu vai esquecer !';
-   
+      this.registerErr = 'Email Gigante, Tu vai esquecer ! ';
     } else if (this.RegisterForm.get('nome')!.hasError('maxlength')) {
-      this.registerErr = 'Nome Gigante Ein, Dom Predo De Primas?';
-    
+      this.registerErr = 'Nome Gigante Ein, Dom Predo De Primas?  ';
     } else if (this.RegisterForm.get('nome')!.hasError('pattern')) {
-      this.registerErr = 'Nome De Numero? Novidade No Cartorio';
-    
+      this.registerErr = 'Nome De Numero? Novidade No Cartorio  ';
     } else if (this.RegisterForm.get('telefone')!.hasError('maxlength')) {
-      this.registerErr = 'Telefone de outro Planeta ? Digita um valido ai !';
-    
+      this.registerErr = 'Telefone de outro Planeta ? Digita um valido ai ';
     } else if (this.RegisterForm.get('telefone')!.hasError('pattern')) {
-      this.registerErr = 'Telefone ou Texto ? Converte ele para Binario';
-   
+      this.registerErr = 'Telefone ou Texto ? Converte ele para Binario  ';
     } else if (this.RegisterForm.get('cpf')!.hasError('maxlength')) {
-      this.registerErr = ' CPF de outro Planeta ? Digita um valido ai !';
-   
+      this.registerErr = ' CPF de outro Planeta ? Digita um valido ai !  ';
     } else if (this.RegisterForm.get('cpf')!.hasError('pattern')) {
-      this.registerErr = 'CPF Apenas Numeros';
-   
+      this.registerErr = 'CPF Apenas Numeros ';
     } else {
       this.registerErr = '';
     }
