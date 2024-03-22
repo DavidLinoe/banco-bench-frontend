@@ -18,7 +18,9 @@ interface loginResponse {
 })
 export class SigninComponent implements OnInit {
   public loginForm: FormGroup;
-  public rotaDinamica:string | null = localStorage.getItem('BACKEND');
+  public rotaDinamica: string | null = localStorage.getItem('BACKEND');
+
+  public loginErr: string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -29,10 +31,19 @@ export class SigninComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email: [,[Validators.email, Validators.required],],
+      email: [
+        ,
+        [Validators.email, Validators.required, Validators.maxLength(50)],
+      ],
 
-      senha: [, Validators.required],
-
+      senha: [
+        ,
+        [
+          Validators.minLength(6),
+          Validators.maxLength(12),
+          Validators.required,
+        ],
+      ],
     });
   }
 
@@ -46,20 +57,17 @@ export class SigninComponent implements OnInit {
           // sessionStorage.setItem("id_cliente",res.id_cliente.toString())
           // const id_cliente = res.id_cliente.toString()
 
-          sessionStorage.setItem("id_cliente",res.token)
+          sessionStorage.setItem('id_cliente', res.token);
 
           // const id_cliente = sessionStorage.getItem("id_cliente")
-
 
           // // const token_cliente = res.id_cliente.toString()
           // console.log("Token do Usuario: ",id_cliente)
 
-
-
           // sessionStorage.setItem("token_cliente",res.token.toString())
           // this.enviarDadosUser(res.token.toString()); //envia a res para o service !
 
-         // localStorage.setItem("id_cliente",res.id_cliente.toString())
+          // localStorage.setItem("id_cliente",res.id_cliente.toString())
           // this.userService.usuario.next(res) //envia a res para o service !
           // const id_cliente = sessionStorage.getItem("id_cliente")
 
@@ -70,15 +78,23 @@ export class SigninComponent implements OnInit {
           // setTimeout(function() {
           //   location.reload();
           // }, 40);
-        
         },
         error: (err: any) => {
           console.log('erro');
-          alert("Email ou Senha Invalidos !")
+          alert('Email ou Senha Invalidos !');
         },
       });
   }
 
-
- 
+  loginError() {
+    if (this.loginForm.get('senha')!.hasError('maxlength')) {
+      this.loginErr = 'Senha Exede o Tamanho Maximo!';
+    } else if (this.loginForm.get('email')!.hasError('maxlength')) {
+      this.loginErr = 'Email Exede o Tamanho Maximo!';
+    } else if (this.loginForm.get('email')!.hasError('email')) {
+      this.loginErr = 'Email invalido!';
+    } else {
+      this.loginErr = '';
+    }
+  }
 }

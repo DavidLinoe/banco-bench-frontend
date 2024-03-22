@@ -11,19 +11,13 @@
 
   <input type="text" placeholder="Phone Number" formControlName="telefone" />
   <br />
-  <div *ngIf="RegisterForm.get('telefone')!.hasError('telefone')">
-    Não é um formato de email válido. 
-  </div>
+ 
   <input type="text" placeholder="Email" formControlName="email" />
   <br />
-  <!-- <div *ngIf="RegisterForm.get('email')!.hasError('email')">
-    Não é um formato de email válido. 
-  </div> -->
+  
   <input type="password" placeholder="Password" formControlName="senha" />
 </div>
-<!-- <div *ngIf="RegisterForm.get('senha')!.hasError('maxlength')"> 
-A sua senha deve conter até 10 caracteres !
-</div> -->
+
 <div style="justify-content: center; display: flex;">
 
   <button [disabled]="RegisterForm.invalid" (click)="enviarRegistro()" class="btn">
@@ -32,8 +26,13 @@ A sua senha deve conter até 10 caracteres !
   </button>
 </div>
 
-
- @if(RegisterForm.invalid ){
- {{registerError()}}
- {{registerErr}}
- }
+<div class="erros">
+  
+  @if(RegisterForm.invalid ){
+ 
+  {{registerError()}}
+  
+  {{registerErr}}
+  
+  }
+</div>

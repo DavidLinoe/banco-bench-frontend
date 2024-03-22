@@ -71,6 +71,19 @@
   text-align: center;
 
 }
+
+.login-content a{
+ background-color: rgba(255, 255, 255, 0.884);
+ border-radius: 20px;
+padding: 5px;
+ color: #27a0ec;
+ font-size: 12px;
+}
+
+.login-content a::selection{
+  color: #fda043;
+
+ }
 // .checkbox {
 //   --size: 70px;
 // }
