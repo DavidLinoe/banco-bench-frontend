@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {
   FormBuilder,
   FormsModule,
@@ -14,21 +14,22 @@ interface loginResponse {
 }
 @Component({
   selector: 'app-login',
+  changeDetection: ChangeDetectionStrategy.Default,
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
 export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
 
-  public conditionSignIn: boolean = true;
+  public conditionSignIn: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {}
   ngOnInit(): void {
     localStorage.setItem(
       'BACKEND',
-      'https://9a0c-129-148-59-251.ngrok-free.app' 
+      'https://9a0c-129-148-59-251.ngrok-free.app'
     );
-        // localStorage.setItem('check', 'checked');
+    // localStorage.setItem('check', 'checked');
 
     this.loginForm = this.formBuilder.group({
       email: ['david@gmail.com', [Validators.email, Validators.required]],
@@ -38,14 +39,6 @@ export class LoginComponent implements OnInit {
   }
 
   modificarCardLogin() {
-    try {
-      if (localStorage.getItem('check') != 'checked'){
-        this.conditionSignIn = !this.conditionSignIn;
-
-      }
-     
-    } catch (error) {
-
-    }
+    this.conditionSignIn = !this.conditionSignIn;
   }
 }
