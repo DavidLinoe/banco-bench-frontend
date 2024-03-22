@@ -20,7 +20,7 @@ interface loginResponse {
 export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
 
-  public conditionSignIn: boolean ;
+  public conditionSignIn: boolean = true;
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {}
   ngOnInit(): void {
@@ -39,14 +39,12 @@ export class LoginComponent implements OnInit {
 
   modificarCardLogin() {
     try {
-      if (localStorage.getItem('check') !='checked')
+      if (localStorage.getItem('check') != 'checked'){
         this.conditionSignIn = !this.conditionSignIn;
-        if(this.conditionSignIn!){
-          localStorage.removeItem('check');
 
-        }
+      }
+     
     } catch (error) {
-      localStorage.removeItem('check');
 
     }
   }
