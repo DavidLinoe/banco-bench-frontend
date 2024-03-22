@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     localStorage.setItem(
       'BACKEND',
-      'https://4625-129-148-59-251.ngrok-free.app' 
+      'https://9a0c-129-148-59-251.ngrok-free.app' 
     );
         // localStorage.setItem('check', 'checked');
 
