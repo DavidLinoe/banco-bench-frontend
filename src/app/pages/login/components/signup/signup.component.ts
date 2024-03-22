@@ -33,9 +33,6 @@ export class SignupComponent implements OnInit {
     });
   }
   enviarRegistro() {
-
-
-
     this.http
       .post(this.rotaDinamica + '/authentication/register', {
         dados: this.RegisterForm.value,
@@ -54,15 +51,10 @@ export class SignupComponent implements OnInit {
       });
   }
   check() {
-
-
     setTimeout(() => {
       localStorage.removeItem('check');
-        location.reload();
-  
-
-     }, 400);
-    
-    
+      location.reload();
+    }, 400);
+    localStorage.removeItem('check');
   }
 }

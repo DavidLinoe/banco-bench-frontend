@@ -11,8 +11,12 @@ export class CheckboxComponent {
   checked: boolean;
   check() {
     this.checked = !this.checked;
-    if (this.checked) {  
+    if (this.checked) {
       localStorage.setItem('check', 'checked');
+      setTimeout(() => {
+        location.reload();
+        localStorage.setItem('check', 'checked');
+      }, 100);
     } else {
       localStorage.removeItem('check');
     }
