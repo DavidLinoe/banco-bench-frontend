@@ -9,6 +9,7 @@ import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { FooterComponent } from '../../footer/footer.component';
 import { HeaderComponent } from '../../header/header.component';
 import { HomeComponent } from '../../home/home.component';
+import { NgxMaskDirective, NgxMaskPipe, provideEnvironmentNgxMask, provideNgxMask } from 'ngx-mask';
 
 
 
@@ -23,8 +24,11 @@ import { HomeComponent } from '../../home/home.component';
     CheckboxComponent,
     FooterComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    NgxMaskDirective,
+    NgxMaskPipe,
    // NbThemeModule.forRoot(),
-  ]
+  ],
+
 })
 export class LoginModule { }

@@ -27,10 +27,8 @@
   <div class="modalButtons">
 
     <button type="button" (click)="pagar()" class="modalButtons1"><</button>
-    <button type="button" (click)="comprovante()" class="modalButtons2">
-      -
-    </button>
-    <button type="button" [formGroup]="payForm" (click)="modalNext()" class="modalButtons1">></button>
+    <button type="button" [disabled]="btnState" (click)="comprovante()" class="modalButtons2" >confirmar</button>
+<button type="button"  (click)="modalNext()" class="modalButtons1">></button>
   </div>
 </div>
 <!-- (click)="confirm()" -->
