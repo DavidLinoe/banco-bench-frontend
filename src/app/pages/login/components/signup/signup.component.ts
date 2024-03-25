@@ -78,8 +78,35 @@ export class SignupComponent implements OnInit {
           alert('Cadastro Realizado Com Sucesso!');
         },
         error: (err: any) => {
-          console.log('erro');
-          // localStorage.setItem('check', 'checked');
+          if(err.status == 405) {
+            alert('Email ja Cadastrado ! Tente Logar');
+           }
+          else if(err.status == 409) {
+            alert('CPF ja Cadastrado !');
+           }
+           else if (err.status == 412) {
+            alert('Telefone ja Cadastrado !');
+           }
+           else{
+            alert('UAI!');
+
+           }
+          // }
+          //   else if ((err.status = 409)) {
+          //     console.log(err.status);
+          //     alert('Cpf ja Cadastrado !');
+          //   }
+
+          //   else if ((err.status = 412)) {
+          //     console.log(err.status);
+          //     alert('Telefone ja Cadastrado !');
+          //   }
+          //   else{
+          //     alert('UAI !!!');
+
+          //   }
+
+          // console.log('erro');
         },
       });
   }
