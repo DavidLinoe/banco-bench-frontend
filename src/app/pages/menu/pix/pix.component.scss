@@ -63,16 +63,24 @@ $blue-light: #68bdf1;
 
 
 }
+.extrato-buttons ul  {
+    display: flex;
 
+
+
+}
 .extrato-buttons ul li {
     background-color: rgb(117, 117, 117);
     border-style: solid;
     border-color: rgb(61, 61, 61);
 
     border-width: 10px;
-    height: 120px;
+    // height: 120px;
     width: 450px;
-    display: inline-block;
+    display: table;
+    max-height: 100px;
+ 
+
     margin-right: 10px;
     margin-left: 10px;
     border-radius: 15px;
