@@ -4,12 +4,12 @@
   <div>
     <form id="clienteForm">
       <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" required /><br />
+      <input type="text" id="nome" name="nome" placeholder="{{userService.usuario.getValue().nome_cliente}}" /><br />
 
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required /><br />
+      <input type="email" id="email" name="email"placeholder="{{pixService.chaveExistente.getValue().email}}" required /><br />
 
-      <label for="senha">Senha:</label>
+      <label for="senha">Senha Atual:</label>
       <input type="password" id="senha" name="senha" required /><br />
     </form>
   </div>
@@ -19,10 +19,10 @@
       <label for="conta">Conta:</label>
       <input type="text" id="conta" name="conta" required /><br />
 
-      <label for="agencia">Agência:</label>
+      <label for="agencia">Telefone:</label>
       <input type="text" id="agencia" name="agencia" required /><br />
 
-      <label for="telefone">Telefone:</label>
+      <label for="telefone">Nova Senha:</label>
       <input type="text" id="telefone" name="telefone" required /><br />
 
     </form>
