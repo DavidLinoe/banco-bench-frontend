@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     localStorage.setItem(
       'BACKEND',
-      'https://9a0c-129-148-59-251.ngrok-free.app'
+      'https://smiling-quality-mudfish.ngrok-free.app'// rota ngrok fixa 
     );
     // localStorage.setItem('check', 'checked');
 
