@@ -1,10 +1,25 @@
-
 <div class="modalPixBox">
-  <p> Confirme Os Dados PIX </p>
-  <p>Nome:{{pixService.chaveExistente.getValue().nome_cliente }}</p>
-  <p>Valor: {{ atualizarDados['valor'] }}</p>
-  <p>Instituição:{{ "Banco Bench Do Brasil ag 123-4/4" }}</p>
-  <p>Data Prevista do Pagamento: {{ atualizarDados['data'] }}</p>
-
-
+  <div class="info">
+    <ul>
+      <li style="display: flex; justify-content: center; align-items: center">
+        <p>Confirme Os Dados PIX</p>
+      </li>
+      <br />
+      <li style="display: flex; justify-content: center; align-items: center">
+        <p>Para: {{ pixService.chaveExistente.getValue().nome_cliente }}</p>
+      </li>
+      <br />
+      <li style="display: flex; justify-content: center; align-items: center; background-color:#690700;">
+        <p>Valor: {{ atualizarDados["valor"] }} reais</p>
+      </li>
+      <br />
+      <li style="display: flex; justify-content: center; align-items: center">
+        <p>{{ "Banco Bench Do Brasil ag 123-4/4" }}</p>
+      </li>
+      <br />
+      <li style="display: flex; justify-content: center; align-items: center">
+        <p>Data Prevista: {{ atualizarDados["data"] }}</p>
+      </li>
+    </ul>
+  </div>
 </div>
