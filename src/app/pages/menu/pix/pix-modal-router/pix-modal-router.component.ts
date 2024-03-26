@@ -26,10 +26,9 @@ export class PixModalRouterComponent {
   public clear: any;
   public clx: any;
 
-  public rotaDinamica:string | null = localStorage.getItem('BACKEND');
+  public rotaDinamica: string | null = localStorage.getItem('BACKEND');
 
   public btnState: boolean = true;
-
 
   @Output() public fecharPix: EventEmitter<boolean> = new EventEmitter(); //quando é um componente filho
 
@@ -54,7 +53,7 @@ export class PixModalRouterComponent {
     this.state = 'confirm';
     localStorage.removeItem('chaveAleatoria');
     localStorage.removeItem('chavePix');
-    this.btnState = !this.btnState
+    this.btnState = !this.btnState;
   }
   keyF() {
     this.key = sessionStorage.getItem('rp');
@@ -132,7 +131,7 @@ export class PixModalRouterComponent {
   }
   saldoAdd(res: any) {
     this.http
-      .post(this.rotaDinamica +'/saldo/add', {
+      .post(this.rotaDinamica + '/saldo/add', {
         res,
       })
       .subscribe({
@@ -148,24 +147,74 @@ export class PixModalRouterComponent {
       });
   }
   saldoRemove(res: any) {
-    this.http
-      .post(this.rotaDinamica +'/saldo/remove', {
-        res,
-      })
-      .subscribe({
-        next: (res: any) => {
-          console.log('Next Do Comprovante! ');
+    let resposta: any;
+    let sucess: boolean = true;
 
-          this.saldoAdd({
-            id_cliente: this.pixService.chaveExistente.getValue().id_cliente,
-            saldo: this.currentAmount,
-          });
-          //
-        },
-        error: (err: any) => {
-          console.log('Error Do Comprovante! ', err);
-          alert('Erro ao concluir o Pix, Verifique os campos e saldo !');
-        },
-      });
+    if (!resposta) {
+      //? this.routerNavigate.navigateByUrl('/loading');
+      this.state = 'load';
+
+      sucess = false;
+
+      setTimeout(() => {
+        if (!sucess) {
+          this.http
+            .post(this.rotaDinamica + '/saldo/remove', {
+              res,
+            })
+            .subscribe({
+              next: (res: any) => {
+                console.log('Next Do Comprovante! ');
+
+                this.saldoAdd({
+                  id_cliente:
+                    this.pixService.chaveExistente.getValue().id_cliente,
+                  saldo: this.currentAmount,
+                });
+                //
+              },
+              error: (err: any) => {
+                console.log('Error Do Comprovante! ', err);
+                alert('Erro ao concluir o Pix, Verifique os campos e saldo !');
+              },
+            });
+        }
+      }, 1000);
+
+    }
   }
 }
+//todo  enviarLogin() {
+//todo  let resposta: any;
+//todo  let sucess: boolean = true;
+
+//todo  if (!resposta) {
+//todo    this.routerNavigate.navigateByUrl('/loading');
+//todo    sucess = false;
+
+//todo    setTimeout(() => {
+//todo      if (!sucess) {
+//todo        resposta = this.http
+//todo          .post(this.rotaDinamica + '/authentication', {
+//todo            dados: this.loginForm.value,
+//todo          })
+//todo          .subscribe({
+//todo            next: (res: any) => {
+//todo              sessionStorage.setItem('id_cliente', res.token);
+
+//todo              this.routerNavigate.navigateByUrl('/pages');
+//todo              // setTimeout(function() {
+//todo              //   location.reload();
+//todo              // }, 40);
+//todo            },
+//todo            error: (err: any) => {
+//todo              console.log('erro');
+//todo              alert('Email ou Senha Invalidos !');
+//todo              this.routerNavigate.navigateByUrl('/');
+
+//todo            },
+//todo          });
+//todo      }
+//todo    },1000);
+//todo  }
+//todo}
