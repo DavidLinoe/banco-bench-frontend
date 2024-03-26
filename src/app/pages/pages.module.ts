@@ -30,6 +30,7 @@ import {
   provideEnvironmentNgxMask,
   provideNgxMask,
 } from 'ngx-mask';
+import { LoadingComponent } from '../loading/loading.component';
 // import { NavigationComponent } from '../navigation/navigation.component';
 
 const routes: Routes = [
@@ -96,6 +97,7 @@ const routes: Routes = [
     PixModalConferirDadosComponent,
     PixModalRouterComponent,
     PixModalComprovanteComponent,
+    LoadingComponent
   ], //declarar aqui as outras paginas que vao usar nb
   imports: [
     CommonModule,
