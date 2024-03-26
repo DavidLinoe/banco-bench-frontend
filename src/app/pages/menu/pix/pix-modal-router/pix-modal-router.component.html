@@ -1,12 +1,12 @@
 <div class="container">
   <div class="modalPixbox">
-    <span type="button" (click)="closePix()" class="modalClose" id="Btn">&times;</span>
+    <span type="button" (click)="closePix()" class="modalClose" id="Btn"
+      >&times;</span
+    >
     <!-- (click)="fecharPix.emit(true)" -->
     <br />
-  
-    @if(key === "#($*P#)"){
-      
-      @if (state === "pagar") {
+
+    @if(key === "#($*P#)"){ @if (state === "pagar") {
 
     <app-pix-modal-pagar></app-pix-modal-pagar>
 
@@ -14,7 +14,11 @@
 
     <app-pix-modal-conferir-dados></app-pix-modal-conferir-dados>
 
-    } @else{
+    }@else if (state === "load") {
+
+  <app-loading></app-loading>
+
+    }@else{
 
     <app-pix-modal-comprovante></app-pix-modal-comprovante>
 
@@ -25,10 +29,16 @@
     }
   </div>
   <div class="modalButtons">
-
     <button type="button" (click)="pagar()" class="modalButtons1"><</button>
-    <button type="button" [disabled]="btnState" (click)="comprovante()" class="modalButtons2" >confirmar</button>
-<button type="button"  (click)="modalNext()" class="modalButtons1">></button>
+    <button
+      type="button"
+      [disabled]="btnState"
+      (click)="comprovante()"
+      class="modalButtons2"
+    >
+      confirmar
+    </button>
+    <button type="button" (click)="modalNext()" class="modalButtons1">></button>
   </div>
 </div>
 <!-- (click)="confirm()" -->
