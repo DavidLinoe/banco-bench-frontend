@@ -22,6 +22,8 @@ export class SigninComponent implements OnInit {
 
   public loginErr: string;
 
+  public load: boolean;
+
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
@@ -48,42 +50,38 @@ export class SigninComponent implements OnInit {
   }
 
   enviarLogin() {
-    this.http
-      .post(this.rotaDinamica + '/authentication', {
-        dados: this.loginForm.value,
-      })
-      .subscribe({
-        next: (res: any) => {
-          // sessionStorage.setItem("id_cliente",res.id_cliente.toString())
-          // const id_cliente = res.id_cliente.toString()
+    let resposta: any;
+    let sucess: boolean = true;
 
-          sessionStorage.setItem('id_cliente', res.token);
+    if (!resposta) {
+      this.routerNavigate.navigateByUrl('/loading');
+      sucess = false;
 
-          // const id_cliente = sessionStorage.getItem("id_cliente")
+      setTimeout(() => {
+        if (!sucess) {
+          resposta = this.http
+            .post(this.rotaDinamica + '/authentication', {
+              dados: this.loginForm.value,
+            })
+            .subscribe({
+              next: (res: any) => {
+                sessionStorage.setItem('id_cliente', res.token);
 
-          // // const token_cliente = res.id_cliente.toString()
-          // console.log("Token do Usuario: ",id_cliente)
+                this.routerNavigate.navigateByUrl('/pages');
+                // setTimeout(function() {
+                //   location.reload();
+                // }, 40);
+              },
+              error: (err: any) => {
+                console.log('erro');
+                alert('Email ou Senha Invalidos !');
+                this.routerNavigate.navigateByUrl('/');
 
-          // sessionStorage.setItem("token_cliente",res.token.toString())
-          // this.enviarDadosUser(res.token.toString()); //envia a res para o service !
-
-          // localStorage.setItem("id_cliente",res.id_cliente.toString())
-          // this.userService.usuario.next(res) //envia a res para o service !
-          // const id_cliente = sessionStorage.getItem("id_cliente")
-
-          // this.enviarDadosUser({token_cliente});
-          // this.enviarDadosUser({id_cliente});
-
-          this.routerNavigate.navigateByUrl('/pages');
-          // setTimeout(function() {
-          //   location.reload();
-          // }, 40);
-        },
-        error: (err: any) => {
-          console.log('erro');
-          alert('Email ou Senha Invalidos !');
-        },
-      });
+              },
+            });
+        }
+      },1000);
+    }
   }
 
   loginError() {
@@ -98,3 +96,32 @@ export class SigninComponent implements OnInit {
     }
   }
 }
+// while (!resposta)
+// try {
+//   resposta = this.http
+//     .post(this.rotaDinamica + '/authentication', {
+//       dados: this.loginForm.value,
+//     })
+//     .subscribe({
+//       next: (res: any) => {
+//         sessionStorage.setItem('id_cliente', res.token);
+
+//         this.routerNavigate.navigateByUrl('/pages');
+//         // setTimeout(function() {
+//         //   location.reload();
+//         // }, 40);
+//       },
+//       error: (err: any) => {
+//         console.log('erro');
+//         alert('Email ou Senha Invalidos !');
+//       },
+//     });
+// } catch (error) {
+//   this.load = !this.load;
+
+//   if (this.load) {
+//     setTimeout(() => {
+//       this.routerNavigate.navigateByUrl('/loading');
+//     }, 2000);
+//   }
+// }

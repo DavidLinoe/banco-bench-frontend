@@ -2,3 +2,16 @@
 @use "./../../../../../estilos/modal-styles.scss";
 
 
+.info{
+    text-decoration: none;
+}
+
+.info ul li{
+background-color: #5A97D6;
+width: 400px;
+height: 40px;
+border-radius: 10px;
+list-style: none;
+
+
+}
