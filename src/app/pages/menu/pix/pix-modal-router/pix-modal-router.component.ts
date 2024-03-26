@@ -120,6 +120,8 @@ export class PixModalRouterComponent {
     localStorage.setItem('last-operation', data);
   }
   comprovante() {
+    this.btnState = !this.btnState;
+
     // const id_cliente = '1'
     // this.saldoAdd({id_cliente});//id_Remetente
     this.currentAmount = localStorage.getItem('valorAmount');
