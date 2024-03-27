@@ -18,12 +18,22 @@
 .carteira-cartao ul li {
 
     margin: 0px 40px 0px 40px;
-    background-image: url(../../../../assets/images/cartao-fundo.png);
+    background-image: url(../../../../assets/images/Mask\ groupcartao-black.png);
+    background-size: cover;
+    
+    background-repeat: no-repeat;
     display: inline-block;
     height: 170px;
     width: 300px;
     border-radius: 15px;
     background-color: rgba(255, 255, 255, 0.541);
+
+}
+.carteira-cartao ul li:hover{
+
+    //! filter: opacity(20%);
+
+    filter: brightness(20%);
 
 }
 
