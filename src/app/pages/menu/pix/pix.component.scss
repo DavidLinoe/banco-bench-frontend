@@ -118,6 +118,14 @@ $blue-light: #68bdf1;
     width: 300px;
 
 }
+.btn-pix:hover {
+filter: contrast(45%);
+}
+.btn-pix2:hover {
+   
+    filter: contrast(45%);
+
+}
 .newpix{
 
 z-index: 2;
