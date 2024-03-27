@@ -1,1 +1,83 @@
-<h1> SAC Em Desenvolvimento !</h1>
+
+  <div class="chat">
+    @if(mState){
+
+    <div class="modal">
+      <div class="modalContent">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <!-- <p>Teste</p> -->
+      </div>
+    </div>
+
+    }@else { }
+  </div>
+
+  <div class="header">
+    <h2>Central De Atendimento</h2>
+  </div>
+  <div class="container" [formGroup]="sacForm">
+    <div class="search-bar">
+      <input
+        type="search"
+        placeholder="Pesquisar um Artigo"
+        formControlName="searchQuery"
+      />
+      <button (click)="search()">Pesquisar</button>
+
+      @if (searchH) {
+      {{ searchH | titlecase }}
+
+      }@else { Selecione um tópico: }
+    </div>
+
+    <!-- @if(filteredItems.length < 0){
+
+oi
+  } -->
+    <!-- <div *ngIf="filteredItems.length < 0">
+    <ul>
+      <li *ngFor="let item of filteredItems">{{ "item" }}</li>
+    </ul>
+  </div> -->
+
+    <div class="select-wrapper" [formGroup]="sacForm">
+      <select id="select1" (change)="funcao()" formControlName="select1">
+        <option value="">Pix</option>
+        <option value="1">Dúvida 1</option>
+        <option value="2">Dúvida 2</option>
+        <option value="3">Dúvida 3</option>
+      </select>
+
+      <select id="select2" (change)="funcao()" formControlName="select2">
+        <option value="">Conta</option>
+        <option value="1">Dúvida 1</option>
+        <option value="2">Dúvida 2</option>
+        <option value="3">Dúvida 3</option>
+      </select>
+
+      <select id="select3" (change)="funcao()" formControlName="select3">
+        <option value="">Geral</option>
+        <option value="1">Dúvida 1</option>
+        <option value="2">Dúvida 2</option>
+        <option value="3">Dúvida 3</option>
+      </select>
+    </div>
+    <div class="topicos">
+      <div
+        [innerHTML]="topicosList"
+        class="texto"
+        style="margin-left: 40px; color: white;"
+      ></div>
+      <div [innerHTML]="topicosList2" class="texto"></div>
+      <div
+        [innerHTML]="topicosList3"
+        class="texto"
+        style="margin-right: 40px;color: white;"
+      ></div>
+    </div>
+    <button class="chat-icon" (click)="openModal()">Chat</button>
+
+    <div id="topicos" formControlName="topicos" style="display: none">
+      <ul id="topicos-list" formControlName="topipicosId"></ul>
+    </div>
+  </div>
