@@ -31,6 +31,7 @@ import {
   provideNgxMask,
 } from 'ngx-mask';
 import { LoadingComponent } from '../loading/loading.component';
+import { NgPipesModule } from 'ng-pipes';
 // import { NavigationComponent } from '../navigation/navigation.component';
 
 const routes: Routes = [
@@ -72,10 +73,10 @@ const routes: Routes = [
     path: 'extrato',
     component: ExtratoComponent,
   },
-  {
-    path: 'sac',
-    component: SacComponent,
-  },
+  // {
+  //   path: 'sac',
+  //   component: SacComponent,
+  // },
   {
     path: 'about',
     component: AboutComponent,
@@ -97,7 +98,8 @@ const routes: Routes = [
     PixModalConferirDadosComponent,
     PixModalRouterComponent,
     PixModalComprovanteComponent,
-    LoadingComponent
+    LoadingComponent,
+    SacComponent
   ], //declarar aqui as outras paginas que vao usar nb
   imports: [
     CommonModule,
@@ -110,6 +112,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     NgxMaskDirective,
     NgxMaskPipe,
+   
+  
   ],
 })
 export class PagesModule {}

@@ -1,16 +1,9 @@
-
 <nb-layout>
- 
-
-  
   <nb-layout-header class="header" fixed>
-    <button class="button"  size="tiny" (click)="toggleCompact()">
-      Menu
-    </button>
+    <button class="button" size="tiny" (click)="toggleCompact()">Menu</button>
 
     <div class="navigate-buttons">
       <ul>
-   
         <li>
           <a routerLink="/pages/account"
             ><img
@@ -30,7 +23,7 @@
         </li>
 
         <li>
-          <a routerLink="/pages/sac"
+          <a href="/sac"
             ><img
               src="../../assets/images/Style=Sharpsac.png"
               class="img-top"
@@ -48,13 +41,17 @@
         </li>
       </ul>
     </div>
-    <img src="./../../assets/images/bb-logo.png" routerLink="/pages/dashboard" alt="bb-logo">
+    <img
+      src="./../../assets/images/bb-logo.png"
+      routerLink="/pages/dashboard"
+      alt="bb-logo"
+      style="cursor: pointer;"
 
+    />
   </nb-layout-header>
 
   <nb-sidebar left tag="left">
     @if (sidebarState === 'compacted') {
-
 
     <a routerLink="/pages/carteira"
       ><img src="../../assets/images/Style=Roundwallet.png" class="img-side"
@@ -82,11 +79,9 @@
 
     <div class="navigate-buttons-side">
       <a routerLink="/pages/carteira" class="btn1">Carteira</a>
-      <a routerLink="/pages/pix"class="btn2">Pix</a>
-      <a routerLink="/pages/transferencia" class="btn3"
-        >Transferencia</a
-      >
-      <a routerLink="/pages/boleto"class="btn4">Boleto</a>
+      <a routerLink="/pages/pix" class="btn2">Pix</a>
+      <a routerLink="/pages/transferencia" class="btn3">Transferencia</a>
+      <a routerLink="/pages/boleto" class="btn4">Boleto</a>
       <a routerLink="/pages/extrato" class="btn5">Extrato</a>
     </div>
 
@@ -100,12 +95,14 @@
           Saldo: @if (eyeCondition) {
 
           <img
+            style="cursor: pointer"
             (click)="eye()"
             src="../../../../assets/images/Style=Roundclose_eye.png"
           />
 
           } @else {
           <img
+            style="cursor: pointer"
             (click)="eye()"
             src="../../../../assets/images/Style=Roundopen_eye.png"
           />
@@ -114,13 +111,10 @@
           <!-- {{  saldo | mask:"00" }} -->
 
           <!-- {{  saldo }} -->
-          {{  saldoFormat }}
-
+          {{ saldoFormat }}
         </li>
       </ul>
     </div>
     <router-outlet> </router-outlet>
-
   </nb-layout-column>
-
 </nb-layout>
