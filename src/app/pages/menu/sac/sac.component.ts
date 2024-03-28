@@ -25,8 +25,6 @@ export class SacComponent implements OnInit {
 
   public mState: boolean;
 
-  // searchQuery: string = '';
-  items: string[] = ['Item 1', 'Item 2', 'Outro Item', 'Mais um Item'];
   filteredItems: string[] = [];
 
   ngOnInit(): void {
