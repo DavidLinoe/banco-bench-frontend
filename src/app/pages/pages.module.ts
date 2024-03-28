@@ -99,7 +99,8 @@ const routes: Routes = [
     PixModalRouterComponent,
     PixModalComprovanteComponent,
     LoadingComponent,
-    SacComponent
+    SacComponent,
+    AccountComponent
   ], //declarar aqui as outras paginas que vao usar nb
   imports: [
     CommonModule,
