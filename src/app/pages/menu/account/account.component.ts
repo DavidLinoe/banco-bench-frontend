@@ -63,7 +63,7 @@ export class AccountComponent implements OnInit {
 
           // if (this.perfilFormSenha.value.senhaNova == '') {
           //   this.perfilFormSenha.value.senhaNova = res.body.value.senhaCorreta;
-          console.log('SENHA CORRETA NO SALVAR SENHA:', res.body);
+          // console.log('SENHA CORRETA NO SALVAR SENHA:', res.body);
           // }
           this.salvarAlteracoes();
         },
@@ -106,7 +106,15 @@ export class AccountComponent implements OnInit {
         error: (err: any) => {
           console.log('erro');
           alert('Algo Deu Errado !');
-          location.reload();
+
+          if (err.status == 405) {
+            alert('Email em Uso !');
+          } else if (err.status == 412) {
+            alert('Telefone em Uso !');
+          } else {
+            alert('UAI!');
+          }
+          // location.reload();
         },
       });
   }
