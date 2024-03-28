@@ -85,7 +85,8 @@ export class AccountComponent implements OnInit {
       this.perfilForm.value.telefone = this.perfilService.dados.value.telefone;
     }
     if (this.perfilFormSenha.value.senhaNova == '') {
-      this.perfilFormSenha.value.senhaNova = this.perfilFormSenha.value.senhaAtual;
+      this.perfilFormSenha.value.senhaNova =
+        this.perfilFormSenha.value.senhaAtual;
     }
     if (this.perfilForm.value.emailC == '') {
       this.perfilForm.value.emailC = this.perfilService.dados.value.email;
@@ -100,12 +101,12 @@ export class AccountComponent implements OnInit {
         next: (res: any) => {
           // sessionStorage.setItem('id_cliente', res.token);
           alert('Dados Alterados !');
-          this.routerNavigate.navigateByUrl('/pages/account');
+          location.reload();
         },
         error: (err: any) => {
           console.log('erro');
-            alert('Dados Alterados !');
-          this.routerNavigate.navigateByUrl('/pages/account');
+          alert('Algo Deu Errado !');
+          location.reload();
         },
       });
   }
