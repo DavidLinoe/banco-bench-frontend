@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { UserService } from '../../../../services/user.service';
 import { PixService } from '../../../../services/pix.service';
 import { jsPDF } from 'jspdf';
+import { PerfilService } from '../../../../services/perfil.service';
 
 @Component({
   selector: 'app-pix-modal-comprovante',
@@ -12,7 +13,7 @@ import { jsPDF } from 'jspdf';
 export class PixModalComprovanteComponent {
   @ViewChild('content', { static: false }) content!: ElementRef;
 
-  constructor(public userService: UserService, public pixService: PixService) {}
+  constructor(public userService: UserService, public pixService: PixService, public perfilService:PerfilService) {}
 
   nome = this.pixService.chaveExistente.getValue().nome_cliente;
   valor = localStorage.getItem('valorAmount');
