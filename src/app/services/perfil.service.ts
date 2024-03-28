@@ -5,6 +5,7 @@ interface dadosPerfil {
   telefone: string;
   email: string;
   nome_cliente: string;
+  cpf:string;
 }
 
 @Injectable({
@@ -18,6 +19,7 @@ export class PerfilService {
       telefone: '',
       email: '',
       nome_cliente: '',
+      cpf:'',
     }
   );
 }
