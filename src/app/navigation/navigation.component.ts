@@ -3,6 +3,7 @@ import { NbSidebarService } from '@nebular/theme';
 import { UserService } from '../services/user.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { PerfilService } from '../services/perfil.service';
 
 @Component({
   selector: 'app-navigation',
@@ -18,7 +19,8 @@ export class NavigationComponent implements OnInit {
     private sidebarService: NbSidebarService,
     public userService: UserService,
     private http: HttpClient,
-    private routerNavigate: Router
+    private routerNavigate: Router,
+    public perfilService:PerfilService
   ) {}
 
   toggleCompact() {
@@ -34,6 +36,8 @@ export class NavigationComponent implements OnInit {
     try {
       const id_cliente = sessionStorage.getItem('id_cliente');
       this.enviarDadosUser({ id_cliente });
+      this.enviarDadosPerfil({ id_cliente });
+
     } catch (error) {
       console.error('Nenhum Usuario Logado');
     }
@@ -55,9 +59,30 @@ export class NavigationComponent implements OnInit {
         alert('Sessão Expirada !');
         this.routerNavigate.navigateByUrl('/');
       },
+    }); 
+  }
+  enviarDadosPerfil(res: any) {
+    this.http.post(this.rotaDinamica + '/perfil', res).subscribe({
+      next: (res: any) => {
+        console.log('Resposta do Perfil: ', res.nome_cliente);
+        console.log('Resposta do Perfil: ', res.telefone);
+        console.log('Resposta do Perfil: ', res.email);
+
+        this.perfilService.dados.next(res); //envia a res para o service !
+      },
+      error: (err: any) => {
+        console.log('erro no enviar dados user !');
+        alert('Sessão Expirada !');
+        this.routerNavigate.navigateByUrl('/');
+      },
     });
   }
 
+
+
+
+
+  
   bSaldo = '***';
   saldoFormat: any;
 

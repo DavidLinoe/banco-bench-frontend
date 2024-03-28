@@ -2,32 +2,35 @@
 
 <div class="container">
   <div>
-    <form id="clienteForm">
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" placeholder="{{userService.usuario.getValue().nome_cliente}}" /><br />
+    <form id="clienteForm" [formGroup]="perfilForm">
+      <label for="nome">Nome: Opcional</label>
+      <input type="text"  formControlName="nome"placeholder="{{perfilService.dados.getValue().nome_cliente}}"  /><br />
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email"placeholder="{{pixService.chaveExistente.getValue().email}}" required /><br />
+      <label for="email">Email: Opcional</label>
+      <input type="email"  formControlName="email" placeholder="{{perfilService.dados.getValue().email}}" /><br />
 
-      <label for="senha">Senha Atual:</label>
-      <input type="password" id="senha" name="senha" required /><br />
+      <label for="agencia">Telefone: Opcional</label>
+      <input type="text" mask="(00)000000000" formControlName="telefone" placeholder="{{perfilService.dados.getValue().telefone}}" /><br />
+
+ 
     </form>
-  </div>
+  </div> 
   <br />
   <div>
-    <form id="clienteForm">
-      <label for="conta">Conta:</label>
-      <input type="text" id="conta" name="conta" required /><br />
+    <form id="clienteForm" [formGroup]="perfilFormSenha">
+      <label for="conta">Conta: Opcional</label>
+      <input type="text"  formControlName="conta"/><br />
 
-      <label for="agencia">Telefone:</label>
-      <input type="text" id="agencia" name="agencia" required /><br />
-
-      <label for="telefone">Nova Senha:</label>
-      <input type="text" id="telefone" name="telefone" required /><br />
+      <label for="senha">Senha Nova: Opcional</label>
+      <input type="password"  formControlName="senhaNova"   /><br />
+      
+      <label for="telefone">Senha Atual: Obrigatorio</label>
+      <input type="text"  formControlName="senhaAtual" [disabled]="perfilForm.invalid" /><br />
 
     </form>
   </div>
 
 </div>  
-<input type="submit" value="Salvar Alterações" />
+<button (click)="salvarSenha()" [disabled]="perfilFormSenha.invalid" > Salvar Alterações</button>
+
 
