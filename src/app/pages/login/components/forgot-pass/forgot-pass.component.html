@@ -3,16 +3,16 @@
   
     <br />
   
-    <input type="text" placeholder="Email de Recuperação" formControlName="email" />
+    <input type="text" placeholder="Email" formControlName="email" />
     <br />
 
-    <input type="text" placeholder="CPF" formControlName="cpf" />
+    <input type="text" placeholder="CPF" mask="000.000.000-00" formControlName="cpf" />
     <br />
   
-    <input type="text" placeholder="Telefone" formControlName="telefone" />
+    <input type="text" placeholder="Telefone" mask="(00)000000000" formControlName="telefone" />
   
     <div>
-      <button (click)="enviarLogin()" class="btn" [disabled]="forgotForm.invalid">
+      <button (click)="recuperar()" class="btn" [disabled]="forgotForm.invalid">
         Enviar
       </button>
     </div>
