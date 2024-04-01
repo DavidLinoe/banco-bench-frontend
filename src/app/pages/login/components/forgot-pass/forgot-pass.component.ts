@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrl: './forgot-pass.component.scss',
 })
 export class ForgotPassComponent {
-  public loginForm: FormGroup;
+  public forgotForm: FormGroup;
   public rotaDinamica: string | null = localStorage.getItem('BACKEND');
 
   public loginErr: string;
@@ -21,11 +21,11 @@ export class ForgotPassComponent {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private routerNavigate: Router,
+    private routerNavigate: Router
   ) {}
 
   ngOnInit(): void {
-    this.loginForm = this.formBuilder.group({
+    this.forgotForm = this.formBuilder.group({
       email: [
         ,
         [Validators.email, Validators.required, Validators.maxLength(50)],
@@ -37,6 +37,22 @@ export class ForgotPassComponent {
           Validators.minLength(6),
           Validators.maxLength(12),
           Validators.required,
+        ],
+      ],
+      cpf: [
+        ,
+        [
+          Validators.maxLength(11),
+          Validators.required,
+          Validators.pattern('[0-9]*'),
+        ],
+      ],
+      telefone: [
+        ,
+        [
+          Validators.maxLength(11),
+          Validators.required,
+          Validators.pattern('[0-9]*'),
         ],
       ],
     });
@@ -54,7 +70,7 @@ export class ForgotPassComponent {
         if (!sucess) {
           resposta = this.http
             .post(this.rotaDinamica + '/authentication', {
-              dados: this.loginForm.value,
+              dados: this.forgotForm.value,
             })
             .subscribe({
               next: (res: any) => {
@@ -77,11 +93,11 @@ export class ForgotPassComponent {
   }
 
   loginError() {
-    if (this.loginForm.get('senha')!.hasError('maxlength')) {
+    if (this.forgotForm.get('senha')!.hasError('maxlength')) {
       this.loginErr = 'Senha Exede o Tamanho Maximo!';
-    } else if (this.loginForm.get('email')!.hasError('maxlength')) {
+    } else if (this.forgotForm.get('email')!.hasError('maxlength')) {
       this.loginErr = 'Email Exede o Tamanho Maximo!';
-    } else if (this.loginForm.get('email')!.hasError('email')) {
+    } else if (this.forgotForm.get('email')!.hasError('email')) {
       this.loginErr = 'Email invalido!';
     } else {
       this.loginErr = '';
