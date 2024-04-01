@@ -1,21 +1,24 @@
-<div class="login-box" [formGroup]="loginForm">
-    <h1>Logar</h1>
+<div class="register-box" [formGroup]="forgotForm">
+    <h1>Recuperar Senha</h1>
   
     <br />
   
-    <input type="text" placeholder="Email" formControlName="email" />
+    <input type="text" placeholder="Email de Recuperação" formControlName="email" />
+    <br />
+
+    <input type="text" placeholder="CPF" formControlName="cpf" />
     <br />
   
-    <input type="password" placeholder="Password" formControlName="senha" />
+    <input type="text" placeholder="Telefone" formControlName="telefone" />
   
     <div>
-      <button (click)="enviarLogin()" class="btn" [disabled]="loginForm.invalid">
-        Login
+      <button (click)="enviarLogin()" class="btn" [disabled]="forgotForm.invalid">
+        Enviar
       </button>
     </div>
   </div>
   <div class="erros">
-    @if(loginForm.invalid ){
+    @if(forgotForm.invalid ){
   
     {{ loginError() }}
   
