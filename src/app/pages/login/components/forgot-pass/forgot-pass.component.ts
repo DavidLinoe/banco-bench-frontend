@@ -31,14 +31,6 @@ export class ForgotPassComponent {
         [Validators.email, Validators.required, Validators.maxLength(50)],
       ],
 
-      senha: [
-        ,
-        [
-          Validators.minLength(6),
-          Validators.maxLength(12),
-          Validators.required,
-        ],
-      ],
       cpf: [
         ,
         [
@@ -58,44 +50,41 @@ export class ForgotPassComponent {
     });
   }
 
-  enviarLogin() {
+  recuperar() {
     let resposta: any;
     let sucess: boolean = true;
 
     if (!resposta) {
-      this.routerNavigate.navigateByUrl('/loading');
+      // this.routerNavigate.navigateByUrl('/loading');
       sucess = false;
 
-      setTimeout(() => {
-        if (!sucess) {
-          resposta = this.http
-            .post(this.rotaDinamica + '/authentication', {
-              dados: this.forgotForm.value,
-            })
-            .subscribe({
-              next: (res: any) => {
-                sessionStorage.setItem('id_cliente', res.token);
+      // setTimeout(() => {
+      if (!sucess) {
+        resposta = this.http
+          .post(this.rotaDinamica + '/recuperar', {
+            dados: this.forgotForm.value,
+          })
+          .subscribe({
+            next: (res: any) => {
+              alert('Senha Atualizada, Verifique Sua caixa de entrada email !');
 
-                this.routerNavigate.navigateByUrl('/pages');
-                // setTimeout(function() {
-                //   location.reload();
-                // }, 40);
-              },
-              error: (err: any) => {
-                console.log('erro');
-                alert('Email ou Senha Invalidos !');
-                this.routerNavigate.navigateByUrl('/');
-              },
-            });
-        }
-      }, 1000);
+              setTimeout(function () {
+                location.reload();
+              }, 400);
+            },
+            error: (err: any) => {
+              console.log('erro');
+              alert('Dados Não Conferem !');
+              // this.routerNavigate.navigateByUrl('/');
+            },
+          });
+      }
+      // }, 1000);
     }
   }
 
   loginError() {
-    if (this.forgotForm.get('senha')!.hasError('maxlength')) {
-      this.loginErr = 'Senha Exede o Tamanho Maximo!';
-    } else if (this.forgotForm.get('email')!.hasError('maxlength')) {
+    if (this.forgotForm.get('email')!.hasError('maxlength')) {
       this.loginErr = 'Email Exede o Tamanho Maximo!';
     } else if (this.forgotForm.get('email')!.hasError('email')) {
       this.loginErr = 'Email invalido!';
