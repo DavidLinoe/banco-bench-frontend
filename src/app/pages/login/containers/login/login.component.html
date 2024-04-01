@@ -15,22 +15,23 @@
 
   <div class="login-box">
     <div class="login-content">
-      @if (conditionSignIn) {
+      @if (conditionSignIn === 0) {
 
       <div class="container-login">
         <app-signin> </app-signin>
         <a (click)="modificarCardLogin()">Nao Possui uma Conta Ainda? </a>
-        <a (click)="modificarCardLogin()">Recuperar Senha</a>
-
+        <a (click)="modificarCardLoginRecuperar()">Recuperar Senha</a>
       </div>
-
+      } @else if (conditionSignIn === 3) {
+      <div class="container-login">
+        <app-forgot-pass></app-forgot-pass>
+        <a (click)="modificarCardLogin()">Ja Possui Uma Conta ?</a>
+      </div>
       } @else {
 
       <div class="container-login">
-
         <app-signup> </app-signup>
         <a (click)="modificarCardLogin()">Ja Possui Uma Conta ?</a>
-
       </div>
 
       }
