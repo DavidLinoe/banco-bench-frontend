@@ -35,7 +35,12 @@ export class SigninComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       email: [
         ,
-        [Validators.email, Validators.required, Validators.maxLength(50)],
+        [
+          Validators.email,
+          Validators.required,
+          Validators.maxLength(50),
+          Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'),
+        ],
       ],
 
       senha: [
@@ -76,11 +81,10 @@ export class SigninComponent implements OnInit {
                 console.log('erro');
                 alert('Email ou Senha Invalidos !');
                 this.routerNavigate.navigateByUrl('/');
-
               },
             });
         }
-      },1000);
+      }, 1000);
     }
   }
 
@@ -91,6 +95,8 @@ export class SigninComponent implements OnInit {
       this.loginErr = 'Email Exede o Tamanho Maximo!';
     } else if (this.loginForm.get('email')!.hasError('email')) {
       this.loginErr = 'Email invalido!';
+    } else if (this.loginForm.get('email')!.hasError('pattern')) {
+      this.loginErr = 'Email maisculo ou caracteres invalidos ! ';
     } else {
       this.loginErr = '';
     }
