@@ -43,17 +43,15 @@ export class SignupComponent implements OnInit {
 
       email: [
         ,
-        [Validators.email, Validators.required, Validators.maxLength(50)],
-      ],
-
-      senha: [
-        ,
         [
-          Validators.minLength(6),
-          Validators.maxLength(12),
+          Validators.email,
           Validators.required,
+          Validators.maxLength(50),
+          Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'),
         ],
       ],
+
+      senha: [],
 
       cpf: [
         ,
@@ -75,22 +73,18 @@ export class SignupComponent implements OnInit {
           console.log('res');
           this.routerNavigate.navigateByUrl('/reload');
           localStorage.removeItem('check');
-          alert('Cadastro Realizado Com Sucesso!');
+          alert('Cadastro Realizado Com Sucesso, Verifique Sua Caixa Email !');
         },
         error: (err: any) => {
-          if(err.status == 405) {
+          if (err.status == 405) {
             alert('Email ja Cadastrado ! Tente Logar');
-           }
-          else if(err.status == 409) {
+          } else if (err.status == 409) {
             alert('CPF ja Cadastrado !');
-           }
-           else if (err.status == 412) {
+          } else if (err.status == 412) {
             alert('Telefone ja Cadastrado !');
-           }
-           else{
+          } else {
             alert('UAI!');
-
-           }
+          }
           // }
           //   else if ((err.status = 409)) {
           //     console.log(err.status);
@@ -136,6 +130,8 @@ export class SignupComponent implements OnInit {
       this.registerErr = ' CPF de outro Planeta ? Digita um valido ai !  ';
     } else if (this.RegisterForm.get('cpf')!.hasError('pattern')) {
       this.registerErr = 'CPF Apenas Numeros ';
+    } else if (this.RegisterForm.get('email')!.hasError('pattern')) {
+      this.registerErr = 'Email Maisculo ou caracteres Invalidos ! ';
     } else {
       this.registerErr = '';
     }
