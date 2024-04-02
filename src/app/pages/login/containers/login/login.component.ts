@@ -21,7 +21,7 @@ interface loginResponse {
 export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
 
-  public conditionSignIn: boolean = true;
+  public conditionSignIn: number = 0;
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {}
   ngOnInit(): void {
@@ -39,6 +39,15 @@ export class LoginComponent implements OnInit {
   }
 
   modificarCardLogin() {
-    this.conditionSignIn = !this.conditionSignIn;
+    this.conditionSignIn = this.conditionSignIn +1;
+    if(this.conditionSignIn >= 2){
+      this.conditionSignIn = 0;
+    }
   }
+  modificarCardLoginRecuperar() {
+    this.conditionSignIn = 3;
+   
+  }
+
+
 }

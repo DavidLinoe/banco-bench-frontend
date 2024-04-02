@@ -1,0 +1,29 @@
+<div class="register-box" [formGroup]="forgotForm">
+    <h1>Recuperar Senha</h1>
+  
+    <br />
+  
+    <input type="text" placeholder="Email" formControlName="email" />
+    <br />
+
+    <input type="text" placeholder="CPF" mask="000.000.000-00" formControlName="cpf" />
+    <br />
+  
+    <input type="text" placeholder="Telefone" mask="(00)000000000" formControlName="telefone" />
+  
+    <div>
+      <button (click)="recuperar()" class="btn" [disabled]="forgotForm.invalid">
+        Enviar
+      </button>
+    </div>
+  </div>
+  <div class="erros">
+    @if(forgotForm.invalid ){
+  
+    {{ loginError() }}
+  
+    {{ loginErr }}
+  
+    }
+  </div>
+  
